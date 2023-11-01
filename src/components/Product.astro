@@ -1,0 +1,66 @@
+---
+import AddToCartIcon from '../components/icons/AddToCartIcon.astro'
+import AddToWishList from '../components/icons/AddToWishList.astro'
+import ShopBill from '../components/icons/ShopBill.astro'
+import type { Product } from '../types/products'
+
+interface Props {
+  product: Product
+}
+
+const { product } = Astro.props
+---
+
+<article class="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow">
+  <header>
+    <a href={`/products/${product.slug}`}>
+      <img 
+        src={product.image}
+        alt={product.name}
+        class="object-cover object-center h-60"
+      />
+    </a>
+  </header>
+
+  <main class="p-3">
+    <a href={`/products/${product.slug}`}>
+      <h3 class="text-xl text-sky-500 font-semibold">
+        {
+          product.name.length < 25
+            ? product.name
+            : product.name.slice(0, 25) + '...'
+        }
+      </h3>
+    </a>
+
+    <p class="text-lg text-gray-700 mt-2 description">
+      {
+        product['short-description'].length < 150
+          ? product['short-description']
+          : product['short-description'].slice(0, 150) + '...'
+      }
+    </p>
+
+    <p class="mt-4 font-bold text-gray-600 text-lg">
+      ${product.price}
+    </p>
+
+    <p class="text-gray-500 font-semibold">
+      Impuestos: ${product.price}
+    </p>
+  </main>
+
+  <footer class="w-full flex flex-row justify-between items-center gap-0 mt-4">
+    <button class="bg-slate-300 w-full border border-slate-400 border-[0.25] py-2 flex justify-center">
+      <AddToCartIcon />
+    </button>
+
+    <button class="bg-slate-300 w-full border border-slate-400 border-[0.25] py-2 flex justify-center">
+      <AddToWishList />
+    </button>
+
+    <button class="bg-slate-300 w-full border border-slate-400 border-[0.25] py-2 flex justify-center">
+      <ShopBill />
+    </button>
+  </footer>
+</article>
