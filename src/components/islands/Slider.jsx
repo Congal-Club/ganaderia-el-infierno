@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 
 export default function Slider() {
   return (
-    <div className="w-[90%] mx-auto mt-8">
+    <div className="lg:w-[75%] xs:w-[90%] mx-auto mt-8">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -24,7 +24,7 @@ export default function Slider() {
           <div>
             <img
               src="/images/slider1.jpg"
-              className="w-full h-96 object-cover object-center"
+              className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
             />
@@ -34,7 +34,7 @@ export default function Slider() {
           <div>
             <img
               src="/images/slider2.jpg"
-              className="w-full h-96 object-cover object-center"
+              className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
             />
@@ -44,7 +44,7 @@ export default function Slider() {
           <div>
             <img
               src="/images/slider3.jpg"
-              className="w-full h-96 object-cover object-center"
+              className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
             />
@@ -54,7 +54,7 @@ export default function Slider() {
           <div>
             <img
               src="/images/slider4.jpeg"
-              className="w-full h-96 object-cover object-center"
+              className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
             />
