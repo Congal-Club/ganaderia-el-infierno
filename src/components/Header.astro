@@ -1,41 +1,57 @@
-<header>
-    <section>
-        <div>
-            <p>Moneda</p>
-        </div>
-        <div>
-            <ul>
-                <li><p>Telefono</p></li>
-                <li><p>Mi cuenta</p></li>
-                <li><p>Lista de deseos(0)</p></li>
-                <li><p>Carrito de compras</p></li>
-                <li><p>Pagar</p></li>
-            </ul>
-        </div>
-    </section>
-    <section>
-        <div>
-            <img src="/logo.jpeg" alt="logo">
-        </div>
-        <div>
-            <section>
-                <input type="text" placeholder="Buscar">
-                <button>Buscar</button>
-            </section>
-        </div>
-        <div>
-            <a href="">
-                Carrito 0 Articulos - $0.00
-            </a>
-        </div>
-    </section>
-    <section>
-        <ul>
-            <li><a href="">Catalogo</a></li>
-            <li><a href="">Alimento</a></li>
-            <li><a href="">Toros</a></li>
-            <li><a href="">Vacas</a></li>
-            <li><a href="">De engorda</a></li>
+---
+import PhoneIcon from "./icons/PhoneIcon.astro";
+import UserIcon from "./icons/UserIcon.astro";
+import Heart from "./icons/Heart.astro";
+import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
+import ShopBill from "./icons/ShopBill.astro";
+import SearchIcon from "./icons/SearchIcon.astro";
+---
+
+<header class="w-full bg-gray-300 py-4 border-b-gray-600 border-b-[1px]">
+  <div class="w-[90%] mx-auto">
+    <section class="w-full flex justify-between items-center gap-8">
+      <div>
+        <p><ShopBill /> Moneda</p>
+      </div>
+      <div class="flex-1">
+        <ul class="flex justify-end items-center gap-4">
+          <li><p><PhoneIcon />Telefono</p></li>
+          <li><p><UserIcon /> Mi cuenta</p></li>
+          <li><p><Heart /> Lista de deseos(0)</p></li>
+          <li><p><ShoppingCartIcon /> Carrito de compras</p></li>
+          <li><p><ShopBill /> Pagar</p></li>
         </ul>
+      </div>
     </section>
+  </div>
 </header>
+
+<div class="w-full mt-8">
+  <section class="w-[90%] mx-auto flex justify-between items-center gap-8">
+    <div>
+      <img class="w-48 object-cover object-center" src="/logo.jpeg" alt="logo" />
+    </div>
+    <div class="flex-1">
+      <section class="flex justify-center items-center gap-0 border-gray-600 border-[1px] overflow-hidden rounded-md">
+        <input type="text" class="py-2 px-4 outline-none block flex-1" placeholder="Buscar" />
+        <button class="p-2 bg-gray-300 text-gray-600 [&>svg]:w-6 [&>svg]:h-6"><SearchIcon /></button>
+      </section>
+    </div>
+    <div>
+      <a href="" class="bg-gray-800 py-2 px-8 rounded-md text-white flex gap-2"> <ShoppingCartIcon /> 0 Articulos - $0.00</a>
+    </div>
+  </section>
+</div>
+
+<div class="w-full">
+  <section class="w-[90%] mx-auto mt-4 p-2 bg-blue-600 rounded-md">
+    <ul class="flex gap-3">
+      <li><a href="" class="text-white">Catalogo</a></li>
+      <li><a href="" class="text-white">Alimento</a></li>
+      <li><a href="" class="text-white">Toros</a></li>
+      <li><a href="" class="text-white">Vacas</a></li>
+      <li><a href="" class="text-white">De engorda</a></li>
+    </ul>
+  </section>
+</div>
+
