@@ -5,6 +5,7 @@ import Heart from "./icons/Heart.astro";
 import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
 import ShopBill from "./icons/ShopBill.astro";
 import SearchIcon from "./icons/SearchIcon.astro";
+import Slider from "./islands/Slider";
 ---
 
 <header class="w-full bg-gray-300 py-4 border-b-gray-600 border-b-[1px]">
@@ -54,4 +55,6 @@ import SearchIcon from "./icons/SearchIcon.astro";
     </ul>
   </section>
 </div>
+
+<Slider transition:persist client:visible />
 
