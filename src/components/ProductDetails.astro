@@ -1,0 +1,184 @@
+---
+import type { Product } from '../types/products'
+import Heart from './icons/Heart.astro';
+import ShopBill from './icons/ShopBill.astro';
+import AddToCart from './islands/AddToCart';
+import Description from './islands/Description';
+
+interface Props {
+  product: Product
+}
+
+const { product } = Astro.props
+---
+
+<div class="w-full container">
+  <section class="images-container">
+    <figure class="image-container">
+      <img
+        class="image"
+        src={product.image}
+        alt={product.name}
+      />
+    </figure>
+
+    <footer class="secondary-images">
+      {product.images.map((image) => (
+        <img 
+          class="image-thumb"
+          src={image}
+          alt={product.name}
+        />
+      ))}
+    </footer>
+  </section>
+
+  <section class="info">
+    <h3 class="title">
+      {product.name}
+    </h3>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Modelo: </span>
+      {product.model}
+    </p>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Disponibilidad: </span>
+      {product.stock} en stock
+    </p>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Descripción: </span>
+      {product['short-description']}
+    </p>
+
+    <p class="price">
+      ${(product.price * 1.16)}
+    </p>
+
+    <p class="tax-price">
+      <span>Precio sin impuestos: </span>
+      <span class="paragraph-description">${product.price}</span>
+    </p>
+
+    <div class="actions">
+      <button class="action-button">
+        <Heart />
+      </button>
+
+      <button class="action-button">
+        <ShopBill />
+      </button>
+    </div>
+
+    <AddToCart
+      id={product.id}
+      stock={product.stock}
+      transition:persist
+      client:load
+    />
+
+    <Description
+      description={product.description}
+      transition:persist
+      client:load
+    />
+  </section>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .images-container {
+    display: inline-block;
+    width: 55%;
+  }
+
+  .image-container {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .image {
+    display: inline-block;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px -2px rgb(0 0 0 / 25%);
+  }
+
+  .secondary-images {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .image-thumb {
+    display: inline-block;
+    width: 175px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.25rem;
+  }
+
+  .info {
+    width: 45%;
+  }
+
+  .title {
+    color: rgb(51 65 85);
+    font-size: 2.5rem;
+    line-height: 1.15;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-wrap: balance;
+  }
+
+  .paragraph {
+    color: #25292e;
+  }
+
+  .paragraph-description {
+    font-weight: 600;
+  }
+
+  .price {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #25292e;
+  }
+
+  .tax-price {
+    color: #25292edd;
+  }
+
+  .actions {
+    margin-top: 1rem;
+  }
+
+  .action-button {
+    padding-block: 0.5rem;
+    padding-inline: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: rgb(51 65 85);
+    transition: all 0.2s ease;
+  }
+
+  .action-button:hover {
+    box-shadow: 2px 2px 0px #25292e;
+    transform: translateY(-1.5px);
+  }
+</style>
