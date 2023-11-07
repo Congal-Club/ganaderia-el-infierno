@@ -24,7 +24,7 @@ const { product } = Astro.props
 
   <main class="p-3">
     <a href={`/products/${product.slug}`}>
-      <h3 class="text-xl text-sky-500 font-semibold">
+      <h3 class="text-lg text-sky-500 font-semibold">
         {
           product.name.length < 25
             ? product.name
@@ -33,7 +33,7 @@ const { product } = Astro.props
       </h3>
     </a>
 
-    <p class="text-lg text-gray-700 mt-2 description">
+    <p class="text-base text-gray-700 mt-2 description">
       {
         product['short-description'].length < 150
           ? product['short-description']

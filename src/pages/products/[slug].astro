@@ -23,7 +23,7 @@ const { slug } = Astro.params
 const { product } = Astro.props
 ---
 
-<Layout title={Ganadería el infierno | ${product.name}} showSlider={false}>
+<Layout title={`Ganadería el infierno | ${product.name}`} showSlider={false}>
   <p>{slug}</p>
   <img src={product?.image} alt="">
   <div>
@@ -36,6 +36,7 @@ const { product } = Astro.props
         />
       ))}
     </div>
+
     <ReviewForm />
   </div>
 </Layout>

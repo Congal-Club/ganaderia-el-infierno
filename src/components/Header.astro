@@ -6,6 +6,12 @@ import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
 import ShopBill from "./icons/ShopBill.astro";
 import SearchIcon from "./icons/SearchIcon.astro";
 import Slider from "./islands/Slider";
+
+interface Props {
+  showSlider?: boolean
+}
+
+const { showSlider = true } = Astro.props
 ---
 
 <header class="w-full bg-gray-300 py-4 border-b-gray-600 border-b-[1px]">
@@ -30,7 +36,9 @@ import Slider from "./islands/Slider";
 <div class="w-full mt-8">
   <section class="w-[90%] mx-auto flex justify-between items-center gap-8">
     <div>
-      <img class="w-48 object-cover object-center" src="/logo.jpeg" alt="logo" />
+      <a href="/">
+        <img class="w-48 object-cover object-center" src="/logo.jpeg" alt="logo" />
+      </a>
     </div>
     <div class="flex-1">
       <section class="flex justify-center items-center gap-0 border-gray-600 border-[1px] overflow-hidden rounded-md">
@@ -56,5 +64,6 @@ import Slider from "./islands/Slider";
   </section>
 </div>
 
-<Slider transition:persist client:visible />
-
+{showSlider && (
+  <Slider transition:persist client:visible />
+)}
