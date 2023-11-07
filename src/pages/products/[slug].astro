@@ -4,6 +4,10 @@ import type { Product, Review as ReviewType } from '../../types/products'
 import ReviewForm from '../../components/ReviewForm.astro'
 import Review from '../../components/Review.astro'
 import Layout from '../../layouts/Layout.astro'
+import Description from '../../components/islands/Description'
+import Heart from '../../components/icons/Heart.astro'
+import ShopBill from '../../components/icons/ShopBill.astro'
+import AddToCart from '../../components/islands/AddToCart'
 
 interface Props{
   product: Product
@@ -24,8 +28,76 @@ const { product } = Astro.props
 ---
 
 <Layout title={`Ganadería el infierno | ${product.name}`} showSlider={false}>
-  <p>{slug}</p>
-  <img src={product?.image} alt="">
+  <div class="w-full">
+    <section>
+      <figure>
+        <img
+          src={product.image}
+          alt={product.name}
+        />
+      </figure>
+
+      <footer>
+        {product.images.map((image) => (
+          <img 
+            src={image}
+            alt={product.name}
+          />
+        ))}
+      </footer>
+    </section>
+
+    <section>
+      <h3>
+        {product.name}
+      </h3>
+
+      <p>
+        Modelo: {product.model}
+      </p>
+
+      <p>
+        Disponibilidad: <span>{product.stock}</span>
+      </p>
+
+      <p>
+        {product['short-description']}
+      </p>
+
+      <p>
+        ${(product.price * 1.16)}
+      </p>
+
+      <p>
+        Precio sin impuestos: <span>{product.price}</span>
+      </p>
+
+      <div>
+        <button>
+          <Heart />
+        </button>
+
+        <button>
+          <ShopBill />
+        </button>
+      </div>
+
+      <AddToCart
+        id={product.id}
+        stock={product.stock}
+        transition:persist
+        client:load
+      />
+
+      <Description
+        description={product.description}
+        transition:persist
+        client:load
+      />
+    </section>
+  </div>
+  
+
   <div>
     <div>
       <a class="text-blue-600 my-4 inline-block">Opiniones</a>
