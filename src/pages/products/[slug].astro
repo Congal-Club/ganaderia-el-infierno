@@ -3,11 +3,12 @@ import type { GetStaticPaths } from 'astro'
 import type { Product, Review as ReviewType } from '../../types/products'
 import ReviewForm from '../../components/ReviewForm.astro'
 import Review from '../../components/Review.astro'
-import Footer from '../../components/Footer.astro'
+import Layout from '../../layouts/Layout.astro'
 
 interface Props{
   product: Product
 }
+
 export const getStaticPaths = (async () => {
   const response = await fetch('http://localhost:3000/products')
   const products: Product[] = await response.json()
@@ -20,28 +21,21 @@ export const getStaticPaths = (async () => {
 
 const { slug } = Astro.params
 const { product } = Astro.props
-
 ---
 
-<p>{slug}</p>
-<img src={product?.image} alt="">
-<div>
+<Layout title={Ganadería el infierno | ${product.name}} showSlider={false}>
+  <p>{slug}</p>
+  <img src={product?.image} alt="">
   <div>
-    <a>Descripcion</a>
-    <br/>
-    <a class="text-blue-600">Opiniones</a>
-    {product.reviews?.map((review:ReviewType)=>(
-      <Review
-        review={review}
-      />
-  
-    ))}
-    
-  </div>
-  <ReviewForm
-  />
-  
-  <!-- Footer -->
-  <Footer />
+    <div>
+      <a class="text-blue-600 my-4 inline-block">Opiniones</a>
 
-</div>
+      {product.reviews?.map((review:ReviewType)=>(
+        <Review
+          review={review}
+        />
+      ))}
+    </div>
+    <ReviewForm />
+  </div>
+</Layout>

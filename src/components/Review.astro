@@ -1,5 +1,7 @@
 ---
 import type { Review } from '../types/products';
+import StarIcon from './icons/StarIcon.astro';
+
 interface Props{
     review: Review
 }
@@ -16,9 +18,12 @@ const {
     <p class="pb-5">
         {review.review}
     </p>
-    <p class="pb-2">
-       Aqui va el rate:{review.rate} 
-
-    </p>
+    <p class="p-2 flex flex-row gap-1">
+        {[1, 2, 3, 4, 5].map((rating) => (
+          <span class={rating <= review.rate ? 'text-yellow-500' : 'text-slate-800' }>
+            <StarIcon />
+          </span>
+        ))}
+      </p>
     
 </div>
