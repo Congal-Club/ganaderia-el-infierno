@@ -1,11 +1,24 @@
-<div>
-    <header>
-        <h4>UserName</h4>
+---
+import type { Review } from '../types/products';
+interface Props{
+    review: Review
+}
+
+const {
+    review
+} = Astro.props
+---
+
+<div class="sm:w-full md:w-[47%] lg:w-[80%] border rounded-md border-slate-400 overflow-hidden shadow ml-10 pb-2">
+    <header class="sm:w-full md:w-[47%] lg:w-[100%] border rounded-sm border-slate-400 overflow-hidden shadow bg-blue-100">
+        <h4 class="text-xl text-black font-semibold pb-2">{review.name}</h4>
     </header>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Maiores vel a quisquam atque omnis dolore aperiam earum, 
-        excepturi ducimus hic aut sunt sint perferendis non ipsa ea
-         delectus mollitia neque.
+    <p class="pb-5">
+        {review.review}
+    </p>
+    <p class="pb-2">
+       Aqui va el rate:{review.rate} 
+
     </p>
     
 </div>

@@ -17,7 +17,8 @@
       "short-description": "Este impresionante ejemplar es la encarnación de la belleza y la resistencia que ha caracterizado a la raza Cebú a lo largo de generaciones. Nuestro Toro Cebú es la elección perfecta para criadores y amantes de ganado que buscan una inversión sólida y un compañero confiable en su operación ganadera.",
       "name": "Toro Cebú de Alta Calidad",
       "tag": ["toro", "cebu", "engorda"],
-      "categories": ["Toros", "Todo"]
+      "categories": ["Toros", "Todo"],
+      "reviews":[{"name":"Manuel", "email":"maquinadefuego@gmail.com", "review":"Me gusta mucho ese toro, como para montarlo. Soy una persona de gustos sexosos, me encantan las cosas nuevas", "rate":4}]
     },
     {
       "id": 2,
@@ -36,7 +37,9 @@
       "short-description": "Este impresionante ejemplar es la encarnación de la belleza y la resistencia que ha caracterizado a la raza Cebú a lo largo de generaciones. Nuestro Toro Cebú es la elección perfecta para criadores y amantes de ganado que buscan una inversión sólida y un compañero confiable en su operación ganadera.",
       "name": "Toro Brahman Rojo",
       "tag": ["toro", "brahman"],
-      "categories": ["Toros", "Todo"]
+      "categories": ["Toros", "Todo"],
+      "reviews":[{"name":"Aranza", "email":"golosa69@gmail.com", "review":"Lo mismo que manuel", "rate":5}]
+
     },
     {
       "id": 1,
@@ -55,7 +58,9 @@
       "short-description": "Este impresionante ejemplar es la encarnación de la belleza y la resistencia que ha caracterizado a la raza Cebú a lo largo de generaciones. Nuestro Toro Cebú es la elección perfecta para criadores y amantes de ganado que buscan una inversión sólida y un compañero confiable en su operación ganadera.",
       "name": "Toro Cebú de Alta Calidad",
       "tag": ["toro", "cebu", "engorda"],
-      "categories": ["Toros", "Todo"]
+      "categories": ["Toros", "Todo"],
+      "reviews":[{"name":"Cesar", "email":"foraenoMaster@gmail.com", "review":"Traigo un chingo de hambre, se me antojo esa vaca como para un guisado", "rate":5}] 
+
     },
     {
       "id": 1,
@@ -74,7 +79,9 @@
       "short-description": "Este impresionante ejemplar es la encarnación de la belleza y la resistencia que ha caracterizado a la raza Cebú a lo largo de generaciones. Nuestro Toro Cebú es la elección perfecta para criadores y amantes de ganado que buscan una inversión sólida y un compañero confiable en su operación ganadera.",
       "name": "Toro Cebú de Alta Calidad",
       "tag": ["toro", "cebu", "engorda"],
-      "categories": ["Toros", "Todo"]
+      "categories": ["Toros", "Todo"],
+      "reviews":[{"name":"Julietota", "email":"julianAlvares@gmail.com", "review":"Empeñe la play, mi papa empeño la moto. Pero aqui estamos y no tenemos ni entrada, pero ve esto. Esto es boca loco dale bocaaaaaa", "rate":4}]
+
     }
   ]
 }

@@ -16,4 +16,11 @@ export interface Product {
   name:                string
   tag:                 string[]
   categories:          string[]
+  reviews?:            Review[]        
+}
+export interface Review {
+  name:                string
+  email:               string
+  review:              string
+  rate:                number
 }
