@@ -1,20 +1,22 @@
 ---
-import AddToCartIcon from '../components/icons/AddToCartIcon.astro'
-import Heart from './icons/Heart.astro'
-import ShopBill from '../components/icons/ShopBill.astro'
-import type { Product } from '../types/products'
+import AddToCartIcon from "../components/icons/AddToCartIcon.astro";
+import ShopBill from "../components/icons/ShopBill.astro";
+import type { Product } from "../types/products";
+import Heart from "./icons/Heart.astro";
 
 interface Props {
-  product: Product
+  product: Product;
 }
 
-const { product } = Astro.props
+const { product } = Astro.props;
 ---
 
-<article class="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg">
+<article
+  class="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg"
+>
   <header>
-    <a href={`/ganaderia-el-infierno/products/${product.slug}`}>
-      <img 
+    <a href={`/products/${product.slug}`}>
+      <img
         src={product.image}
         alt={product.name}
         class="object-cover object-center h-60"
@@ -23,21 +25,21 @@ const { product } = Astro.props
   </header>
 
   <main class="p-3">
-    <a href={`/ganaderia-el-infierno/products/${product.slug}`}>
+    <a href={`/products/${product.slug}`}>
       <h3 class="text-lg text-slate-700 font-semibold">
         {
           product.name.length < 25
             ? product.name
-            : product.name.slice(0, 25) + '...'
+            : product.name.slice(0, 25) + "..."
         }
       </h3>
     </a>
 
     <p class="text-base text-gray-700 mt-2 description">
       {
-        product['short-description'].length < 80
-          ? product['short-description']
-          : product['short-description'].slice(0, 80) + '...'
+        product["short-description"].length < 80
+          ? product["short-description"]
+          : product["short-description"].slice(0, 80) + "..."
       }
     </p>
 
@@ -51,15 +53,21 @@ const { product } = Astro.props
   </main>
 
   <footer class="w-full flex flex-row justify-between items-center gap-0 mt-4">
-    <button class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center">
+    <button
+      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
+    >
       <AddToCartIcon />
     </button>
 
-    <button class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center">
+    <button
+      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
+    >
       <Heart />
     </button>
 
-    <button class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center">
+    <button
+      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
+    >
       <ShopBill />
     </button>
   </footer>

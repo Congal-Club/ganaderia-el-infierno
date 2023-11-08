@@ -16,6 +16,7 @@
     "@astrojs/check": "0.3.1",
     "@astrojs/react": "3.0.4",
     "@astrojs/tailwind": "5.0.2",
+    "@astrojs/vercel": "^5.1.0",
     "astro": "3.4.0",
     "concurrently": "8.2.2",
     "gh-pages": "^6.0.0",

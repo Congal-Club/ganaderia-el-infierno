@@ -1,10 +1,10 @@
 ---
 import Products from '../components/Products.astro';
+import { products as db } from '../data/db';
 import Layout from '../layouts/Layout.astro'
 import { type Product } from '../types/products'
 
-const response = await fetch('http://localhost:3000/products')
-const products: Product[] = await response.json()
+const products: Product[] = db
 ---
 
 <Layout title="Ganadería el infierno">

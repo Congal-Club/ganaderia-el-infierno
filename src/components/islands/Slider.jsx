@@ -1,5 +1,5 @@
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,7 +23,7 @@ export default function Slider() {
         <SwiperSlide className="bg-red-500">
           <div>
             <img
-              src="/ganaderia-el-infierno/images/slider1.png"
+              src="/images/slider1.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -33,7 +33,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/ganaderia-el-infierno/images/slider2.png"
+              src="/images/slider2.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -43,7 +43,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/ganaderia-el-infierno/images/slider3.png"
+              src="/images/slider3.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -53,7 +53,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/ganaderia-el-infierno/images/slider4.png"
+              src="/images/slider4.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
