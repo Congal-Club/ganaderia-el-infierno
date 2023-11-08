@@ -23,7 +23,7 @@ export default function Slider() {
         <SwiperSlide className="bg-red-500">
           <div>
             <img
-              src="/images/slider1.png"
+              src="/ganaderia-el-infierno/images/slider1.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -33,7 +33,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider2.png"
+              src="/ganaderia-el-infierno/images/slider2.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -43,7 +43,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider3.png"
+              src="/ganaderia-el-infierno/images/slider3.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""
@@ -53,7 +53,7 @@ export default function Slider() {
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider4.png"
+              src="/ganaderia-el-infierno/images/slider4.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
               srcset=""

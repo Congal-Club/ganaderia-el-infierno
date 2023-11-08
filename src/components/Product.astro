@@ -13,7 +13,7 @@ const { product } = Astro.props
 
 <article class="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg">
   <header>
-    <a href={`/products/${product.slug}`}>
+    <a href={`/ganaderia-el-infierno/products/${product.slug}`}>
       <img 
         src={product.image}
         alt={product.name}
@@ -23,7 +23,7 @@ const { product } = Astro.props
   </header>
 
   <main class="p-3">
-    <a href={`/products/${product.slug}`}>
+    <a href={`/ganaderia-el-infierno/products/${product.slug}`}>
       <h3 class="text-lg text-slate-700 font-semibold">
         {
           product.name.length < 25
