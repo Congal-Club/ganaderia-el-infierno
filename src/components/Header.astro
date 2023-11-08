@@ -5,6 +5,7 @@ import SearchIcon from "./icons/SearchIcon.astro";
 import ShopBill from "./icons/ShopBill.astro";
 import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
 import UserIcon from "./icons/UserIcon.astro";
+import Cookies from "./islands/Cookies";
 import Slider from "./islands/Slider";
 
 interface Props {
@@ -111,3 +112,5 @@ const { showSlider = true } = Astro.props;
 </div>
 
 {showSlider && <Slider transition:persist client:visible />}
+
+<Cookies transition:persist client:load />

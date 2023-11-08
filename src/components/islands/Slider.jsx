@@ -26,7 +26,7 @@ export default function Slider() {
               src="/images/slider1.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
         </SwiperSlide>
@@ -36,7 +36,7 @@ export default function Slider() {
               src="/images/slider2.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
         </SwiperSlide>
@@ -46,7 +46,7 @@ export default function Slider() {
               src="/images/slider3.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
         </SwiperSlide>
@@ -56,7 +56,7 @@ export default function Slider() {
               src="/images/slider4.png"
               className="w-full h-[600px] object-cover object-center"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
         </SwiperSlide>
