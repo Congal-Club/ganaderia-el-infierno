@@ -6,10 +6,19 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 interface Props {
   title: string;
+  description: string
+  keywords?: string
+  imageFullUrl?: string
   showSlider?: boolean;
 }
 
-const { title, showSlider = true } = Astro.props;
+const {
+  title,
+  description,
+  keywords = '',
+  imageFullUrl = '',
+  showSlider = true 
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,11 +28,30 @@ const { title, showSlider = true } = Astro.props;
     <GoogleAnalytics />
 
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/icon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={`Ganadería el infierno, Ganadería, Ganado, Alimento para ganado, Toros, Vacas, Becerros, Bovinos, Crianza, Ganaderos, Engorda, Ganaderías, Ranchos, Compra, Venta, ${keywords}`}>
+    <meta name="author" content="Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Language" content="es">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="5;url=https://ganaderia-el-infierno.vercel.app/"> -->
+    <!-- <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/"> -->
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@chicho69_cesar">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={imageFullUrl}>
+
+    <meta name='og:title' content={title} />
+    <meta name='og:description' content={description }/>
+    {imageFullUrl && (
+      <meta name='og:image' content={imageFullUrl} />
+    )}
+    
+    <link rel="icon" type="image/png" href="/icon.png" />
     <title>{title}</title>
 
     <ViewTransitions />

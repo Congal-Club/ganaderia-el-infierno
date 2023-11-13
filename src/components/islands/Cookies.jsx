@@ -36,7 +36,7 @@ export default function Cookies() {
   return (
     <>
       {!isAccepted && (
-        <section className="fixed z-50 top-[15%] left-[30%] w-[50%] rounded-lg border bg-white text-card-foreground shadow-2xl max-w-lg" data-v0-t="card">
+        <section className="fixed transition z-50 top-[15%] left-[30%] w-[50%] rounded-lg border bg-white text-card-foreground shadow-2xl max-w-lg" data-v0-t="card">
           <header className="flex flex-col space-y-1.5 p-6 border-b border-dark-gray-300 pb-4">
             <section className="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" mr-2">

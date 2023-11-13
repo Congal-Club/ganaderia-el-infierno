@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPaths } from 'astro'
 import type { Product, Review as ReviewType } from '../../types/products'
 import ReviewForm from '../../components/ReviewForm.astro'
 import Review from '../../components/Review.astro'
@@ -15,7 +14,13 @@ const { slug } = Astro.params
 const product = db.find((p) => p.slug === slug)
 ---
 
-<Layout title={`Ganadería el infierno | ${product?.name}`} showSlider={false}>
+<Layout
+  title={`Ganadería el infierno | ${product?.name}`}
+  description={product?.['short-description'] ?? 'Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'}
+  keywords={product?.name}
+  imageFullUrl={product?.image}
+  showSlider={false}
+>
   {product === undefined ? (
     <div class="h-64 grid place-content-center">
       <h1 class="text-7xl font-bold text-slate-700">
