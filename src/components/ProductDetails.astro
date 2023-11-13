@@ -19,6 +19,7 @@ const { product } = Astro.props
         class="image"
         src={product.image}
         alt={product.name}
+        title={product.name}
       />
     </figure>
 
@@ -28,6 +29,7 @@ const { product } = Astro.props
           class="image-thumb"
           src={image}
           alt={product.name}
+          title={product.name}
         />
       ))}
     </footer>

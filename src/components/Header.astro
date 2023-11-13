@@ -21,6 +21,7 @@ const { showSlider = true } = Astro.props;
       <div>
         <a
           href=""
+          title="Moneda"
           class="flex text-gray-100 justify-between items-center gap-1 [&>svg]:w-4 [&>svg]:h-4"
           ><ShopBill />Moneda: MXN</a
         >
@@ -30,30 +31,35 @@ const { showSlider = true } = Astro.props;
           <li>
             <a
               href=""
+              title="Telefono"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><PhoneIcon />Teléfono: +52 449 273 0234</a>
           </li>
           <li>
             <a
               href=""
+              title="Mi cuenta"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><UserIcon /> Mi cuenta</a>
           </li>
           <li>
             <a
               href=""
+              title="Lista de deseos"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><Heart /> Lista de deseos (0)</a>
           </li>
           <li>
             <a
               href=""
+              title="Carrito de compras"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><ShoppingCartIcon /> Carrito de compras</a>
           </li>
           <li>
             <a
               href=""
+              title="Pagar"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><ShopBill /> Pagar</a>
           </li>
@@ -66,11 +72,12 @@ const { showSlider = true } = Astro.props;
 <div class="w-full mt-8">
   <section class="w-[90%] mx-auto flex justify-between items-center gap-8">
     <div>
-      <a href="/">
+      <a title="Logo" href="/">
         <img
           class="w-48 object-cover object-center"
           src="/logo.jpeg"
-          alt="logo"
+          alt="Logo de la tienda"
+          title="Logo de la tienda"
         />
       </a>
     </div>
@@ -102,15 +109,19 @@ const { showSlider = true } = Astro.props;
 <div class="w-full">
   <section class="w-[90%] mx-auto mt-4 p-2 bg-blue-600 rounded-md">
     <ul class="flex gap-3">
-      <li><a href="" class="text-white">Catalogo</a></li>
-      <li><a href="" class="text-white">Alimento</a></li>
-      <li><a href="" class="text-white">Toros</a></li>
-      <li><a href="" class="text-white">Vacas</a></li>
-      <li><a href="" class="text-white">De engorda</a></li>
+      <li><a href="" title="Catalogo" class="text-white">Catalogo</a></li>
+      <li><a href="" title="Alimento" class="text-white">Alimento</a></li>
+      <li><a href="" title="Toros" class="text-white">Toros</a></li>
+      <li><a href="" title="Vacas" class="text-white">Vacas</a></li>
+      <li><a href="" title="De engorda" class="text-white">De engorda</a></li>
     </ul>
   </section>
 </div>
 
 {showSlider && <Slider transition:persist client:visible />}
+
+<h1 class="w-[90%] mx-auto mt-6 text-center text-4xl font-bold text-red-700">
+  Ganadería el Infierno
+</h1>
 
 <Cookies transition:persist client:load />
