@@ -18,7 +18,7 @@ const product = db.find((p) => p.slug === slug)
   title={`Ganadería el infierno | ${product?.name}`}
   description={product?.['short-description'] ?? 'Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'}
   keywords={product?.name}
-  imageFullUrl={`https://ganaderia-el-infierno.vercel.app/{product?.image}`}
+  imageFullUrl={`https://ganaderia-el-infierno.vercel.app/${product?.image}`}
   showSlider={false}
 >
   {product === undefined ? (
@@ -32,7 +32,7 @@ const product = db.find((p) => p.slug === slug)
     
     <div>
       <div>
-        <a class="text-blue-600 my-4 inline-block">Opiniones</a>
+        <a title={product.name} class="text-blue-600 my-4 inline-block">Opiniones</a>
   
         {product.reviews?.map((review:ReviewType)=>(
           <Review

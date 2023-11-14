@@ -25,7 +25,8 @@ export default function Slider() {
             <img
               src="/images/slider1.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
+              alt="Toro charolais de alta calidad"
+              title="Toro charolais de alta calidad"
               srcSet=""
             />
           </div>
@@ -35,7 +36,8 @@ export default function Slider() {
             <img
               src="/images/slider2.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
+              alt="Toro angus de alta calidad"
+              title="Toro angus de alta calidad"
               srcSet=""
             />
           </div>
@@ -45,7 +47,8 @@ export default function Slider() {
             <img
               src="/images/slider3.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
+              alt="Becerro hereford"
+              title="Becerro hereford"
               srcSet=""
             />
           </div>
@@ -55,7 +58,8 @@ export default function Slider() {
             <img
               src="/images/slider4.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
+              alt="Toro angus negro"
+              title="Toro angus negro"
               srcSet=""
             />
           </div>
