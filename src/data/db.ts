@@ -8,7 +8,7 @@ export const products: Product[] = [
     'stock': 100,
     'image': '/products/alimento-concentrado.png',
     'images': ['/products/alimento-concentrado-1.png', '/products/alimento-concentrado-2.png'],
-    'price': 1,
+    'price': 129.99,
     'weight': 25,
     'length': 0.9,
     'width': 0.7,

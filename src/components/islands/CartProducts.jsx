@@ -1,15 +1,12 @@
 'use client'
 
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { useStore } from '@nanostores/react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
-import { cart as cartStore } from '../../store/store'
 import { currencyFormatter } from '../../lib/currency-formatter'
 
 const LazyPayPalButtons = lazy(() => import('./AppPayPalButtons'))
 
 export default function CartProducts({ clientId }) {
-  const $cartItems = useStore(cartStore)
   const [cart, setCart] = useState([])
 
   useEffect(() => {

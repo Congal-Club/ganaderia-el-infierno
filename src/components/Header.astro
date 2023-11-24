@@ -7,7 +7,6 @@ import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
 import UserIcon from "./icons/UserIcon.astro";
 import Cookies from "./islands/Cookies";
 import Slider from "./islands/Slider";
-import ProductsInCart from './islands/ProductsInCart'
 
 interface Props {
   showSlider?: boolean;
@@ -101,8 +100,8 @@ const { showSlider = true } = Astro.props;
         href="/cart"
         class="cart-nav bg-slate-800 py-2 px-8 rounded-md text-white flex gap-2"
       >
-        <ShoppingCartIcon />
-          <ProductsInCart client:load transition:persist />{' '}
+        <ShoppingCartIcon />{' '}
+        Carrito
       </a>
     </div>
   </section>

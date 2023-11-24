@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { addProduct } from '../../store/store.ts'
 
 export default function AddToCart({ id, stock, product, clientId }) {
   const [quantity, setQuantity] = useState(0)
@@ -43,8 +42,6 @@ export default function AddToCart({ id, stock, product, clientId }) {
 
       <button
         onClick={() => {
-          addProduct(product, quantity)
-
           const cartInStorage = localStorage.getItem('cart')
 
           if (cartInStorage) {
