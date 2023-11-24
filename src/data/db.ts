@@ -3,6 +3,26 @@ import type { Product } from '../types/products'
 export const products: Product[] = [
   {
     'id': 1,
+    'model': 'Alimento Concentrado',
+    'slug': 'alimento-concentrado-engorda',
+    'stock': 100,
+    'image': '/products/alimento-concentrado.png',
+    'images': ['/products/alimento-concentrado-1.png', '/products/alimento-concentrado-2.png'],
+    'price': 1,
+    'weight': 25,
+    'length': 0.9,
+    'width': 0.7,
+    'height': 0.5,
+    'status': 'disponible',
+    'description': '<p>Mejore la ganancia de peso de su ganado con nuestro alimento concentrado para engorda. Este alimento contiene una mezcla balanceada de nutrientes esenciales para un crecimiento rápido y saludable. Características destacadas:</p><ul><li><strong>Calidad</strong>: Alimento de alta calidad</li><li><strong>Nutrientes</strong>: Rico en proteínas y energía</li><li><strong>Engorda</strong>: Promueve un aumento de peso eficiente</li><li><strong>Adaptabilidad</strong>: Apto para diversas razas de ganado</li><li><strong>Origen</strong>: Elaborado por expertos en nutrición animal</li></ul>',
+    'short-description': 'Mejore la ganancia de peso de su ganado con nuestro alimento concentrado para engorda.',
+    'name': 'Alimento Concentrado para Engorda',
+    'tag': ['alimento', 'engorda', 'nutrición'],
+    'categories': ['Alimentación', 'Engorda'],
+    'reviews': []
+  },
+  {
+    'id': 2,
     'model': 'Toro Cebu',
     'slug': 'toro-cebu-alta-calidad',
     'stock': 100,
@@ -29,7 +49,7 @@ export const products: Product[] = [
     ]
   },
   {
-    'id': 2,
+    'id': 3,
     'model': 'Toro Charolais',
     'slug': 'toro-charolais-alta-calidad',
     'stock': 50,
@@ -49,7 +69,7 @@ export const products: Product[] = [
     'reviews': []
   },
   {
-    'id': 3,
+    'id': 4,
     'model': 'Becerro Hereford',
     'slug': 'becerro-hereford-registro',
     'stock': 30,
@@ -69,7 +89,7 @@ export const products: Product[] = [
     'reviews': []
   },
   {
-    'id': 4,
+    'id': 5,
     'model': 'Forraje Nutricional',
     'slug': 'forraje-alta-nutricion',
     'stock': 200,
@@ -89,7 +109,7 @@ export const products: Product[] = [
     'reviews': []
   },
   {
-    'id': 5,
+    'id': 6,
     'model': 'Vaca Holstein',
     'slug': 'vaca-holstein-leche',
     'stock': 40,
@@ -106,26 +126,6 @@ export const products: Product[] = [
     'name': 'Vaca Holstein de Leche',
     'tag': ['vaca', 'holstein', 'leche'],
     'categories': ['Vacuno', 'Leche'],
-    'reviews': []
-  },
-  {
-    'id': 6,
-    'model': 'Alimento Concentrado',
-    'slug': 'alimento-concentrado-engorda',
-    'stock': 100,
-    'image': '/products/alimento-concentrado.png',
-    'images': ['/products/alimento-concentrado-1.png', '/products/alimento-concentrado-2.png'],
-    'price': 1200,
-    'weight': 25,
-    'length': 0.9,
-    'width': 0.7,
-    'height': 0.5,
-    'status': 'disponible',
-    'description': '<p>Mejore la ganancia de peso de su ganado con nuestro alimento concentrado para engorda. Este alimento contiene una mezcla balanceada de nutrientes esenciales para un crecimiento rápido y saludable. Características destacadas:</p><ul><li><strong>Calidad</strong>: Alimento de alta calidad</li><li><strong>Nutrientes</strong>: Rico en proteínas y energía</li><li><strong>Engorda</strong>: Promueve un aumento de peso eficiente</li><li><strong>Adaptabilidad</strong>: Apto para diversas razas de ganado</li><li><strong>Origen</strong>: Elaborado por expertos en nutrición animal</li></ul>',
-    'short-description': 'Mejore la ganancia de peso de su ganado con nuestro alimento concentrado para engorda.',
-    'name': 'Alimento Concentrado para Engorda',
-    'tag': ['alimento', 'engorda', 'nutrición'],
-    'categories': ['Alimentación', 'Engorda'],
     'reviews': []
   },
   {

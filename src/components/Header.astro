@@ -7,6 +7,7 @@ import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
 import UserIcon from "./icons/UserIcon.astro";
 import Cookies from "./islands/Cookies";
 import Slider from "./islands/Slider";
+import ProductsInCart from './islands/ProductsInCart'
 
 interface Props {
   showSlider?: boolean;
@@ -51,7 +52,7 @@ const { showSlider = true } = Astro.props;
           </li>
           <li>
             <a
-              href=""
+              href="/cart"
               title="Carrito de compras"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
               ><ShoppingCartIcon /> Carrito de compras</a>
@@ -97,11 +98,12 @@ const { showSlider = true } = Astro.props;
     </div>
     <div>
       <a
-        href=""
+        href="/cart"
         class="bg-slate-800 py-2 px-8 rounded-md text-white flex gap-2"
       >
-        <ShoppingCartIcon /> 0 Articulos - $0.00</a
-      >
+        <ShoppingCartIcon />
+          <ProductsInCart client:load transition:persist />{' '}
+      </a>
     </div>
   </section>
 </div>
@@ -120,8 +122,10 @@ const { showSlider = true } = Astro.props;
 
 {showSlider && <Slider transition:persist client:visible />}
 
-<h1 class="w-[90%] mx-auto mt-6 text-center text-4xl font-bold text-red-700">
-  Ganadería el Infierno
-</h1>
+{showSlider && (
+  <h1 class="w-[90%] mx-auto mt-6 text-center text-4xl font-bold text-red-700">
+    Ganadería el Infierno
+  </h1>
+)}
 
 <Cookies transition:persist client:load />

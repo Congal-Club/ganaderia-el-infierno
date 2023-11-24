@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { product } = Astro.props
+const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
 <div class="w-full container">
@@ -77,6 +78,8 @@ const { product } = Astro.props
     <AddToCart
       id={product.id}
       stock={product.stock}
+      product={product}
+      clientId={clientId}
       transition:persist
       client:load
     />
