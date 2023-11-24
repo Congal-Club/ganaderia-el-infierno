@@ -1,3 +1,5 @@
+'use client'
+
 import { useStore } from '@nanostores/react'
 import { cart } from '../../store/store'
 import { currencyFormatter } from '../../lib/currency-formatter'

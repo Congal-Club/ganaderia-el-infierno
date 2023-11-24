@@ -3,6 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import ToasterViewer from "../components/islands/ToasterViewer";
 
 interface Props {
   title: string;
@@ -67,6 +68,12 @@ const {
 
     <!-- Footer -->
     <Footer />
+
+    <!-- Toaster -->
+    <ToasterViewer
+      client:load
+      transition:persist
+    />
   </body><style is:global>
     :root {
       --accent: 136, 58, 234;

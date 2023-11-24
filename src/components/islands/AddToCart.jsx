@@ -42,7 +42,28 @@ export default function AddToCart({ id, stock, product, clientId }) {
       </div>
 
       <button
-        onClick={() => addProduct(product, quantity)}
+        onClick={() => {
+          addProduct(product, quantity)
+
+          const cartInStorage = localStorage.getItem('cart')
+
+          if (cartInStorage) {
+            const cart = JSON.parse(cartInStorage)
+            const existingProductIndex = cart.findIndex((item) => item.product.id === product.id)
+
+            if (existingProductIndex !== -1) {
+              cart[existingProductIndex].quantity += 1
+            } else {
+              const newProduct = { product, quantity }
+              cart.push(newProduct)
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart))
+          } else {
+            const cart = [{ product, quantity }]
+            localStorage.setItem('cart', JSON.stringify(cart))
+          }
+        }}
         className="bg-slate-500 text-white py-1 px-4 rounded-md shadow-md"
       >
         Agregar al carrito

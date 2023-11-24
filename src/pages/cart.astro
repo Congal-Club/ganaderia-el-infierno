@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import CartProducts from "../components/islands/CartProducts"
+
+const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
 <Layout
@@ -8,5 +11,13 @@ import Layout from "../layouts/Layout.astro"
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
   showSlider={false}
 >
-  <h1>Hola Mundo</h1>
+  <h1 class="text-3xl text-slate-800 font-medium mb-4">
+    Productos en el carrito
+  </h1>
+
+  <CartProducts
+    clientId={clientId}
+    client:load
+    transition:persist
+  />
 </Layout>
