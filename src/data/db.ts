@@ -125,7 +125,7 @@ export const products: Product[] = [
     'short-description': 'Obtenga una Vaca Holstein de alta calidad conocida por su producción de leche excepcional.',
     'name': 'Vaca Holstein de Leche',
     'tag': ['vaca', 'holstein', 'leche'],
-    'categories': ['Vacuno', 'Leche'],
+    'categories': ['Vaca', 'Leche'],
     'reviews': []
   },
   {
