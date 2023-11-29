@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Orders from "../components/islands/Orders";
+import Products from "../components/islands/Products";
 ---
 
 <Layout
@@ -10,5 +12,7 @@ import Layout from "../layouts/Layout.astro"
 >
   <h1 class="text-3xl text-slate-800 font-medium mb-4">
     Perfil de usuario
+    <Orders></Orders>
+    <Products/>
   </h1>
 </Layout>
