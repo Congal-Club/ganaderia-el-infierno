@@ -13,6 +13,12 @@ export default function ProfileUser(){
         <a href="/wish-list">
           <li className="py-1  hover:text-blue-800 block max-w-max" >Modificar tu lista de deseos</li>
         </a>
+        <a href="/">
+          <li className="py-1  hover:text-blue-800 block max-w-max" >Iniciar sesión</li>
+        </a>
+        <a href="/">
+          <li className="py-1  hover:text-blue-800 block max-w-max" >Registrarse</li>
+        </a>
 
       </ul>
     </div>
