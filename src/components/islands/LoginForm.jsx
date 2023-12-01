@@ -1,13 +1,33 @@
 import styles from "../../styles/LoginForm.module.css"
+import toast from 'react-hot-toast'
+
 
 
 export default function LoginForm () {
+  const handleLogin= (e)=>{
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    const email = formData.get("email")
+    const password = formData.get("password")
+
+    window.localStorage.setItem("user", JSON.stringify({email, password}))
+
+    toast.success('Inicio de sesion exitoso', {
+      duration: 5000,
+      position: 'bottom-right',
+    })
+    
+    setTimeout(()=>{
+      window.location.href= "/"
+    },2000)
+  }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}> 
         Inicia sesion con tu cuenta
       </h2>
-      <form> 
+      <form onSubmit={handleLogin}> 
         <div className={styles.group}>
           <label htmlFor="email" className={styles.label}>
             Correo Electronico
