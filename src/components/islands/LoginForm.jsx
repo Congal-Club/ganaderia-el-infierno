@@ -42,10 +42,11 @@ export default function LoginForm () {
           <input type="password" name="password" id="password" className={styles.input} placeholder="Escribe tu contraseña"/>
         </div>
 
+        <a href="/register" className={styles.link}>¿Aun no tiene cuenta? Registrate</a>
+
         <button type="submit" className={styles.button}>
           Iniciar Sesion
         </button>
-
       </form>
     </div>
   )

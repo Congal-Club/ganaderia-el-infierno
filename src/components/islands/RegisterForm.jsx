@@ -75,6 +75,8 @@ export default function LoginForm () {
           <input type="password" name="password" id="password" className={styles.input} placeholder="Confirme contraseña"/>
         </div>
 
+        <a href="/login" className={styles.link}>¿Ya tienes cuenta? Inicia sesion</a>
+
         <button type="submit" className={styles.button}>
           Registrar usuario
         </button>
