@@ -1,43 +1,47 @@
 ---
-import type { GetStaticPaths } from 'astro'
 import type { Product, Review as ReviewType } from '../../types/products'
 import ReviewForm from '../../components/ReviewForm.astro'
 import Review from '../../components/Review.astro'
 import Layout from '../../layouts/Layout.astro'
 import ProductDetails from '../../components/ProductDetails.astro'
+import { products as db } from '../../data/db'
 
 interface Props{
   product: Product
 }
 
-export const getStaticPaths = (async () => {
-  const response = await fetch('http://localhost:3000/products')
-  const products: Product[] = await response.json()
-
-  return products.map((product) => ({
-    params: { slug: product.slug },
-    props: { product: products.find((p) => p.slug === product.slug) }
-  }))
-}) satisfies GetStaticPaths
-
 const { slug } = Astro.params
-const { product } = Astro.props
+const product = db.find((p) => p.slug === slug)
 ---
 
-<Layout title={`Ganadería el infierno | ${product.name}`} showSlider={false}>
-  <ProductDetails product={product} />
-  
-  <div>
-    <div>
-      <a class="text-blue-600 my-4 inline-block">Opiniones</a>
-
-      {product.reviews?.map((review:ReviewType)=>(
-        <Review
-          review={review}
-        />
-      ))}
+<Layout
+  title={`Ganadería el infierno | ${product?.name}`}
+  description={product?.['short-description'] ?? 'Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'}
+  keywords={product?.name}
+  imageFullUrl={`https://ganaderia-el-infierno.vercel.app/${product?.image}`}
+  showSlider={false}
+>
+  {product === undefined ? (
+    <div class="h-64 grid place-content-center">
+      <h1 class="text-7xl font-bold text-slate-700">
+        Product Not Found
+      </h1>
     </div>
-
-    <ReviewForm />
-  </div>
+  ) : (
+    <ProductDetails product={product} />
+    
+    <div>
+      <div>
+        <a title={product.name} class="text-blue-600 my-4 inline-block">Opiniones</a>
+  
+        {product.reviews?.map((review:ReviewType)=>(
+          <Review
+            review={review}
+          />
+        ))}
+      </div>
+  
+      <ReviewForm />
+    </div>
+  )}
 </Layout>

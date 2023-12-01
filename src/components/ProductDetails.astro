@@ -4,12 +4,14 @@ import Heart from './icons/Heart.astro';
 import ShopBill from './icons/ShopBill.astro';
 import AddToCart from './islands/AddToCart';
 import Description from './islands/Description';
+import AddToWishList from './islands/AddToWishList'; 
 
 interface Props {
   product: Product
 }
 
 const { product } = Astro.props
+const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
 <div class="w-full container">
@@ -19,6 +21,7 @@ const { product } = Astro.props
         class="image"
         src={product.image}
         alt={product.name}
+        title={product.name}
       />
     </figure>
 
@@ -28,6 +31,7 @@ const { product } = Astro.props
           class="image-thumb"
           src={image}
           alt={product.name}
+          title={product.name}
         />
       ))}
     </footer>
@@ -63,10 +67,16 @@ const { product } = Astro.props
     </p>
 
     <div class="actions">
-      <button class="action-button">
+      <!-- <button class="action-button">
         <Heart />
-      </button>
-
+      </button> -->
+      <AddToWishList 
+        id={product.id}
+        product={product}
+        stock={product.stock}
+        client:load
+        transition:persist
+      />
       <button class="action-button">
         <ShopBill />
       </button>
@@ -75,6 +85,8 @@ const { product } = Astro.props
     <AddToCart
       id={product.id}
       stock={product.stock}
+      product={product}
+      clientId={clientId}
       transition:persist
       client:load
     />

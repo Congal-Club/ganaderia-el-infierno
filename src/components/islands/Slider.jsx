@@ -1,5 +1,5 @@
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,40 +23,44 @@ export default function Slider() {
         <SwiperSlide className="bg-red-500">
           <div>
             <img
-              src="/images/slider1.jpg"
+              src="/images/slider1.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
-              srcset=""
+              alt="Toro charolais de alta calidad"
+              title="Toro charolais de alta calidad"
+              srcSet=""
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider2.jpg"
+              src="/images/slider2.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
-              srcset=""
+              alt="Toro angus de alta calidad"
+              title="Toro angus de alta calidad"
+              srcSet=""
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider3.jpg"
+              src="/images/slider3.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
-              srcset=""
+              alt="Becerro hereford"
+              title="Becerro hereford"
+              srcSet=""
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <img
-              src="/images/slider4.jpeg"
+              src="/images/slider4.png"
               className="w-full h-[600px] object-cover object-center"
-              alt=""
-              srcset=""
+              alt="Toro angus negro"
+              title="Toro angus negro"
+              srcSet=""
             />
           </div>
         </SwiperSlide>

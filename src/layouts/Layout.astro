@@ -1,53 +1,90 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import ToasterViewer from "../components/islands/ToasterViewer";
 
 interface Props {
-	title: string
-	showSlider?: boolean
+  title: string;
+  description: string
+  keywords?: string
+  imageFullUrl?: string
+  showSlider?: boolean;
 }
 
-const { title, showSlider = true } = Astro.props
+const {
+  title,
+  description,
+  keywords = '',
+  imageFullUrl = '',
+  showSlider = true 
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/icon.png" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <!-- Google Analytics -->
+    <GoogleAnalytics />
 
-		<title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={`Ganadería el infierno, Ganadería, Ganado, Alimento para ganado, Toros, Vacas, Becerros, Bovinos, Crianza, Ganaderos, Engorda, Ganaderías, Ranchos, Compra, Venta, ${keywords}`}>
+    <meta name="author" content="Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Language" content="es">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="5;url=https://ganaderia-el-infierno.vercel.app/"> -->
+    <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/">
 
-		<ViewTransitions />
-	</head>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@chicho69_cesar">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={imageFullUrl}>
 
-	<body class="min-h-screen">
-		<!-- Header -->
-		<Header showSlider={showSlider} />
+    <meta name='og:title' content={title} />
+    <meta name='og:description' content={description }/>
+    {imageFullUrl && (
+      <meta name='og:image' content={imageFullUrl} />
+    )}
+    
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <title>{title}</title>
 
-		<main class="sm:max-w-[90%] lg:max-w-6xl mx-auto py-8">
-			<slot />
-		</main>
+    <ViewTransitions />
+  </head>
 
-		<!-- Footer -->
-		<Footer />
-	</body>
+  <body class="min-h-screen">
+    <!-- Header -->
+    <Header showSlider={showSlider} />
+
+    <main class="sm:max-w-[90%] lg:max-w-6xl mx-auto pt-4 pb-8">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Toaster -->
+    <ToasterViewer
+      client:load
+      transition:persist
+    />
+  </body><style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+  </style>
 </html>
-
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-</style>
