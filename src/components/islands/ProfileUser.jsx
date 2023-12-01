@@ -2,9 +2,10 @@ export default function ProfileUser() {
   return (
     <div>
       <div className="p-2">
-        <h2 className="text-lg font-semibold mb-2">Nombre: </h2>
-        <h2 className="text-lg font-semibold mb-2">Apellido: </h2>
-        <h2 className="text-lg font-semibold mb-2">Correo Electrónico: </h2>
+        <h2 className="text-lg font-semibold mb-2">Nombre: Manuel </h2>
+        <h2 className="text-lg font-semibold mb-2">Apellido: Alvarado</h2>
+        <h2 className="text-lg font-semibold mb-2">Correo Electrónico: manualvaradoibarr@gmail.com</h2>
+        <h2 className="text-lg font-semibold mb-2">Dirección: Misión de Santa Lucía. San Justino de Orona Madrigal #148 </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="bg-white rounded-lg p-4 shadow-md">
@@ -12,12 +13,12 @@ export default function ProfileUser() {
             Mi Cuenta
           </h2>
           <ul className="text-blue-600">
-            <a href="/modifyAccount">
+            <a href="/modify-account">
               <li className="py-1 hover:text-blue-800 block max-w-max">
                 Editar la información de la cuenta
               </li>
             </a>
-            <a href="/changePassword">
+            <a href="/change-password">
               <li className="py-1  hover:text-blue-800 block max-w-max">
                 Cambiar tu contraseña
               </li>
