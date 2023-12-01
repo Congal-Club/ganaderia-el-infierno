@@ -1,11 +1,29 @@
+import {useEffect, useState} from "react"; 
+
 export default function ProfileUser() {
+
+  const [user,setUser] = useState({name:"Manuel", lastName:"Alvarado",email:"manualvaradoibarr@gmail.com",address:"Misión de Santa Lucía. San Justino de Orona Madrigal #148"}); 
+
+  useEffect(()=>{
+    const userFromStorage = window.localStorage.getItem('user'); 
+    if(userFromStorage){
+      setUser({
+        name: userFromStorage.name??"Manuel", 
+        lastName: userFromStorage.lastName??"Alvarado", 
+        email: userFromStorage.email??"manualvaradoibarr@gmail.com", 
+        address: userFromStorage.address??"Misión de Santa Lucía. San Justino de Orona Madrigal #148"
+      })
+    }
+  },[]); 
+
+
   return (
     <div>
       <div className="p-2">
-        <h2 className="text-lg font-semibold mb-2">Nombre: Manuel </h2>
-        <h2 className="text-lg font-semibold mb-2">Apellido: Alvarado</h2>
-        <h2 className="text-lg font-semibold mb-2">Correo Electrónico: manualvaradoibarr@gmail.com</h2>
-        <h2 className="text-lg font-semibold mb-2">Dirección: Misión de Santa Lucía. San Justino de Orona Madrigal #148 </h2>
+        <h2 className="text-lg font-semibold mb-2">Nombre: {user.name} </h2>
+        <h2 className="text-lg font-semibold mb-2">Apellido: {user.lastName}</h2>
+        <h2 className="text-lg font-semibold mb-2">Correo Electrónico: {user.email}</h2>
+        <h2 className="text-lg font-semibold mb-2">Dirección: {user.address}</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="bg-white rounded-lg p-4 shadow-md">
