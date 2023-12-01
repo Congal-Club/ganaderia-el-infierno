@@ -59,6 +59,24 @@ export default function ModifyProfile() {
               placeholder="Correo Electrónico"
             />
           </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="address"
+            >
+              <div className="flex items-center">
+                <p className="text-red-500">*</p>
+                <p className="ml-2">Dirección</p>
+              </div>
+            </label>
+            <input
+              className="border rounded w-[50%] py-2 px-3 text-gray-700  focus:outline-none "
+              id="address"
+              type="text"
+              required
+              placeholder="Dirección"
+            />
+          </div>
           <div className="flex justify-between mt-2">
             <a href="/account">
             <button className="py-2 px-4 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">

@@ -68,8 +68,7 @@ export default function ProfileUser() {
                 href="https://www.facebook.com/profile.php?id=61553058448723"
                 target="_blank"
               >
-                <i className="fab fa-facebook-square text-blue-700"></i>{" "}
-                Facebook
+                <i className="fab fa-facebook-square text-blue-700"></i> Facebook
               </a>
             </li>
             <li className="py-1  hover:text-red-500 block max-w-max">
@@ -87,8 +86,7 @@ export default function ProfileUser() {
                 href="https://www.instagram.com/ganaderiaelinfierno/"
                 target="_blank"
               >
-                <i className="fab fa-instagram-square text-pink-600"></i>{" "}
-                Instagram
+                <i className="fab fa-instagram-square text-pink-600"></i> Instagram
               </a>
             </li>
           </ul>
