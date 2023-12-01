@@ -3,19 +3,19 @@ import styles from "../../styles/LoginForm.module.css"
 
 export default function LoginForm () {
   return (
-    <div>
-      <h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}> 
         Inicia sesion con tu cuenta
       </h2>
       <form> 
-        <div>
+        <div className={styles.group}>
           <label htmlFor="email">
             Correo Electronico
           </label>
           <input type="email" name="email" id="email"/>
         </div>
 
-        <div>
+        <div className={styles.group}>
           <label htmlFor="password">
             Contraseña
           </label>
