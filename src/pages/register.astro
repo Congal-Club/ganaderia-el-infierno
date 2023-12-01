@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import RegisterForm  from "../components/islands/RegisterForm";
 ---
 
 <Layout
@@ -8,7 +9,5 @@ import Layout from "../layouts/Layout.astro"
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
   showSlider={false}
 >
-  <h1 class="text-3xl text-slate-800 font-medium mb-4">
-   Register
-  </h1>
+  <RegisterForm client:load/> 
 </Layout>
