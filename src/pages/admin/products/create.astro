@@ -1,12 +1,5 @@
 ---
-import AdminLayout from "../../layouts/AdminLayout.astro"
-import { COOKIE_NAME } from '../../constants'
-
-const cookie = Astro.cookies.get(COOKIE_NAME)
-
-if (cookie === undefined) {
-  return Astro.redirect('/admin/login')
-}
+import AdminLayout from "../../../layouts/AdminLayout.astro"
 ---
 
 <AdminLayout
@@ -16,7 +9,7 @@ if (cookie === undefined) {
 >
   <section class="pl-72">
     <h1 class="text-3xl text-slate-800 font-medium my-4">
-      Panel de administración
+      Productos
     </h1>
   </section>
 </AdminLayout>

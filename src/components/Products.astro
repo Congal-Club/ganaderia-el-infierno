@@ -15,7 +15,7 @@ const { products } = Astro.props
   </h2>
 
   <section class="w-full flex justify-start items-start gap-6 flex-wrap">
-    {products.map((product: ProductType) => (
+    {products.map((product) => (
       <Product product={product} />
     ))}
   </section>

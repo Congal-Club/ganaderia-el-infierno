@@ -1,4 +1,6 @@
 import type { Product } from '../types/products'
+import type { User } from '../types/user'
+import type { Category } from '../types/categories'
 
 export const products: Product[] = [
   {
@@ -207,5 +209,127 @@ export const products: Product[] = [
     'tag': ['forraje', 'alfalfa', 'nutrición'],
     'categories': ['Forraje', 'Todo'],
     'reviews': []
+  }
+]
+
+export const users: User[] = [
+  {
+    id: 1,
+    email: 'cesar@gmail.com',
+    last_name: 'Villalobos Olmos',
+    name: 'Cesar',
+    picture: '',
+    role: 'admin',
+    password: '123456',
+    user_name: 'chicho'
+  },
+  {
+    id: 2,
+    email: 'hector@gmail.com',
+    last_name: 'Hernandez Garcia',
+    name: 'Hector Felipe',
+    picture: '',
+    role: 'admin',
+    password: '123456',
+    user_name: 'pipen'
+  },
+  {
+    id: 3,
+    email: 'aranzazu@gmail.com',
+    last_name: 'Messa Sanchez',
+    name: 'Jimena Aranzazu',
+    picture: '',
+    role: 'admin',
+    password: '123456',
+    user_name: 'aranza'
+  },
+  {
+    id: 4,
+    email: 'manuel@gmail.com',
+    last_name: 'Alvarado Ibarra',
+    name: 'Manuel Alejandro',
+    picture: '',
+    role: 'user',
+    password: '123456',
+    user_name: 'aleks'
+  },
+  {
+    id: 5,
+    email: 'luis@gmail.com',
+    last_name: 'Hernandez Lopez',
+    name: 'Luis Angel',
+    picture: '',
+    role: 'user',
+    password: '123456',
+    user_name: 'bolby'
+  }
+]
+
+export const categories: Category[] = [
+  {
+    id: 1,
+    name: 'Alimentación',
+    description: 'Alimentación',
+    slug: 'alimentacion'
+  },
+  {
+    id: 2,
+    name: 'Engorda',
+    description: 'Engorda',
+    slug: 'engorda'
+  },
+  {
+    id: 3,
+    name: 'Toros',
+    description: 'Toros',
+    slug: 'toros'
+  },
+  {
+    id: 4,
+    name: 'Todo',
+    description: 'Todo',
+    slug: 'todo'
+  },
+  {
+    id: 5,
+    name: 'Carne',
+    description: 'Carne',
+    slug: 'carne'
+  },
+  {
+    id: 6,
+    name: 'Becerro',
+    description: 'Becerro',
+    slug: 'becerro'
+  },
+  {
+    id: 7,
+    name: 'Registro',
+    description: 'Registro',
+    slug: 'registro'
+  },
+  {
+    id: 8,
+    name: 'Forraje',
+    description: 'Forraje',
+    slug: 'forraje'
+  },
+  {
+    id: 9,
+    name: 'Vaca',
+    description: 'Vaca',
+    slug: 'vaca'
+  },
+  {
+    id: 10,
+    name: 'Leche',
+    description: 'Leche',
+    slug: 'leche'
+  },
+  {
+    id: 11,
+    name: 'Salud',
+    description: 'Salud',
+    slug: 'salud'
   }
 ]

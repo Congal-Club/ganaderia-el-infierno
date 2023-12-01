@@ -1,22 +1,21 @@
 ---
+import AdminForm from "../../components/islands/AdminForm"
 import AdminLayout from "../../layouts/AdminLayout.astro"
-import { COOKIE_NAME } from '../../constants'
-
-const cookie = Astro.cookies.get(COOKIE_NAME)
-
-if (cookie === undefined) {
-  return Astro.redirect('/admin/login')
-}
 ---
 
 <AdminLayout
   title="Ganadería el infierno | panel de administración"
   description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  isForLogin
 >
-  <section class="pl-72">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">
-      Panel de administración
-    </h1>
-  </section>
+  <h1 class="text-3xl text-slate-800 font-medium my-4 text-center">
+    Panel de administración
+  </h1>
+
+  <AdminForm client:load />
+
+  <p class="text-center mt-12">
+    Todos los derechos reservados © 2023 <span class="font-medium">GIOficial</span>
+  </p>
 </AdminLayout>
