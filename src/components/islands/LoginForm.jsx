@@ -9,20 +9,20 @@ export default function LoginForm () {
       </h2>
       <form> 
         <div className={styles.group}>
-          <label htmlFor="email">
+          <label htmlFor="email" className={styles.label}>
             Correo Electronico
           </label>
-          <input type="email" name="email" id="email"/>
+          <input type="email" name="email" id="email" className={styles.input} placeholder="Escribe tu correo electronico"/>
         </div>
 
         <div className={styles.group}>
-          <label htmlFor="password">
+          <label htmlFor="password" className={styles.label}>
             Contraseña
           </label>
-          <input type="password" name="password" id="password"/>
+          <input type="password" name="password" id="password" className={styles.input} placeholder="Escribe tu contraseña"/>
         </div>
 
-        <button type="submit">
+        <button type="submit" className={styles.button}>
           Iniciar Sesion
         </button>
 
