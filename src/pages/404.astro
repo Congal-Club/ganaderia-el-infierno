@@ -8,7 +8,46 @@ import Layout from "../layouts/Layout.astro"
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
   showSlider={false}
 >
-  <h1 class="text-3xl text-slate-800 font-medium mb-4">
-    404 Not found
-  </h1>
+  <div>
+    <section>
+      <h1>
+        404      
+      </h1>
+      <p>
+        La pagina que buscas no existe o no fue encontrada
+      </p>
+      <a href="/">
+        Regresar al inicio
+      </a>
+    </section>
+    <figure>
+      <img src="/vaca-confundida-404.png" alt="Pagina confundida 404">
+    </figure>
+  </div>
 </Layout>
+
+<style>
+  div{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1{
+    font-size: 5rem;
+    color: #25292E;
+  }
+  a{
+    color: #003049;
+    margin-top: 1rem;
+  }
+</style>
+
