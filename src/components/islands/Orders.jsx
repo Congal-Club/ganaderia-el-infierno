@@ -9,14 +9,14 @@ export default function Orders(){
         <p className="text-2xl mb-5">Ordenes de compra</p>
       </div>
       <table className="border rounded-md border-slate-400 text-base text-center m-auto">
-        <tr className="border rounded-md border-slate-400">
-          <td className="border rounded-md border-slate-400 pl-3 pr-3">ID del Pedido</td>
-          <td className="border rounded-md border-slate-400 pl-10 pr-10">Cliente</td>
-          <td className="border rounded-md border-slate-400 pl-3 pr-3">N° de Productos</td>
-          <td className="border rounded-md border-slate-400 pl-20 pr-20">Estado</td>
-          <td className="border rounded-md border-slate-400 pl-10 pr-10">Total</td>
-          <td className="border rounded-md border-slate-400 pl-5 pr-5">Fecha de creación</td>
-          <td className="border rounded-md border-slate-400 pl-10 pr-10">    </td>
+        <tr className="border rounded-md border-slate-400 bg-[#f2f2f2]">
+          <th className="border rounded-md border-slate-400 pl-3 pr-3">ID del Pedido</th>
+          <th className="border rounded-md border-slate-400 pl-10 pr-10">Cliente</th>
+          <th className="border rounded-md border-slate-400 pl-3 pr-3">N° de Productos</th>
+          <th className="border rounded-md border-slate-400 pl-20 pr-20">Estado</th>
+          <th className="border rounded-md border-slate-400 pl-10 pr-10">Total</th>
+          <th className="border rounded-md border-slate-400 pl-5 pr-5">Fecha de creación</th>
+          <th className="border rounded-md border-slate-400 pl-10 pr-10">    </th>
 
         </tr>
 
@@ -33,8 +33,6 @@ export default function Orders(){
         ))}
       </table>
       
-
-     
     </>
   )
 }
