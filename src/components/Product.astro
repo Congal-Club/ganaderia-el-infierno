@@ -1,8 +1,5 @@
 ---
-import AddToCartIcon from "../components/icons/AddToCartIcon.astro";
-import ShopBill from "../components/icons/ShopBill.astro";
 import type { Product } from "../types/products";
-import Heart from "./icons/Heart.astro";
 
 interface Props {
   product: Product;
@@ -14,19 +11,17 @@ const { product } = Astro.props;
 <article
   class="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg"
 >
-  <header>
-    <a title={product.name} href={`/products/${product.slug}`}>
+  <a title={product.name} href={`/products/${product.slug}`}>
+    <header>
       <img
         src={product.image}
         alt={product.name}
         title={product.name}
         class="object-cover object-center h-60"
       />
-    </a>
-  </header>
+    </header>
 
-  <main class="p-3">
-    <a title={product.name} href={`/products/${product.slug}`}>
+    <main class="p-3">
       <h3 class="text-lg text-slate-700 font-semibold">
         {
           product.name.length < 25
@@ -34,42 +29,17 @@ const { product } = Astro.props;
             : product.name.slice(0, 25) + "..."
         }
       </h3>
-    </a>
+      <p class="text-base text-gray-700 mt-2 description">
+        {
+          product["short-description"].length < 80
+            ? product["short-description"]
+            : product["short-description"].slice(0, 80) + "..."
+        }
+      </p>
 
-    <p class="text-base text-gray-700 mt-2 description">
-      {
-        product["short-description"].length < 80
-          ? product["short-description"]
-          : product["short-description"].slice(0, 80) + "..."
-      }
-    </p>
-
-    <p class="mt-4 font-bold text-gray-600 text-lg">
-      ${product.price}
-    </p>
-
-    <p class="text-gray-500 font-semibold">
-      Impuestos: ${product.price}
-    </p>
-  </main>
-
-  <footer class="w-full flex flex-row justify-between items-center gap-0 mt-4">
-    <button
-      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
-    >
-      <AddToCartIcon />
-    </button>
-
-    <button
-      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
-    >
-      <Heart />
-    </button>
-
-    <button
-      class="bg-slate-800 text-gray-100 w-full border-slate-600 border-[0.25px] py-2 flex justify-center"
-    >
-      <ShopBill />
-    </button>
-  </footer>
+      <p class="mt-4 font-bold text-gray-600 text-lg">
+        ${product.price}
+      </p>
+    </main>
+  </a>
 </article>

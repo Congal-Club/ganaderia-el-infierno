@@ -1,0 +1,44 @@
+---
+import { type Product } from '../types/products.ts'
+import StarIcon from './icons/StarIcon.astro'
+
+interface Props {
+  product: Product
+}
+
+const { product } = Astro.props
+---
+
+<article class="shadow bg-white rounded-md">
+  <h3 class="text-lg font-medium pt-2 px-4">
+    Reseña sobre el producto: {product.name}
+  </h3>
+
+  <div class="[&>*:nth-child(even)]:bg-gray-100">
+    {product.reviews?.map((review) => (
+      <article class="mt-2 py-2 px-4">
+        <div class="w-full flex flex-row justify-start items-center gap-1">
+          <h4 class="font-medium">
+            {review.name}
+          </h4>
+
+          <h4 class="text-sm text-gray-600">
+            {review.email}
+          </h4>
+        </div>
+
+        <p class="flex flex-row gap-0">
+          {[1, 2, 3, 4, 5].map((rating) => (
+            <span class={rating <= review.rate ? 'text-yellow-500 scale-75' : 'text-slate-800 scale-75'}>
+              <StarIcon />
+            </span>
+          ))}
+        </p>
+
+        <p class="text-gray-700">
+          {review.review}
+        </p>
+      </article>
+    ))}
+  </div>
+</article>

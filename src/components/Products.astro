@@ -16,20 +16,10 @@ const filter = "Price L-H"
   <h2 class="text-2xl font-semibold text-slate-700 mb-6">
     Productos destacados
   </h2>
-  <div class="mb-4">
-    <label>Ordenar por</label>
-    <select name="filterMenu" id="filterMenu">
-      <option>Seleccionar...</option>
-      <option value="Alphabet Asc">Alfabeticamente de manera ascendente</option>
-      <option value="Alphabet Desc">Alfabeticamente de manera descendente</option>
-      <option value="Price H-L">Precio alto-bajo</option>
-      <option value="Price L-H">Precio bajo-alto</option>
-    </select>
-  </div>
+  
 
   <section class="w-full flex justify-start items-start gap-6 flex-wrap">
-    
-    {products.map((product: ProductType) => (
+    {products.map((product) => (
       <Product product={product} />
     ))}
   </section>

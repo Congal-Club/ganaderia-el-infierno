@@ -70,7 +70,7 @@ const { showSlider = true } = Astro.props;
 </header>
 
 <div class="w-full mt-8">
-  <section class="w-[90%] mx-auto flex justify-between items-center gap-8">
+  <section class="w-[90%] mx-auto flex  justify-between items-center gap-8">
     <div>
       <a title="Logo" href="/">
         <img
@@ -81,18 +81,25 @@ const { showSlider = true } = Astro.props;
         />
       </a>
     </div>
-    <div class="flex-1">
+    <div class="flex-1 ">
       <section
-        class="flex justify-center items-center gap-0 border-gray-600 border-[1px] overflow-hidden rounded-md"
+        class=" border-gray-600 border-[1px] overflow-hidden rounded-md"
       >
-        <input
-          type="text"
-          class="py-2 px-4 outline-none block flex-1"
-          placeholder="Buscar"
-        />
-        <button class="p-2 bg-slate-800 text-white [&>svg]:w-6 [&>svg]:h-6"
-          ><SearchIcon /></button
-        >
+        <form class="flex justify-center items-center gap-0" action="/search" method="get">
+          <input
+            type="text"
+            name="query"
+            class="py-2 px-4 outline-none block flex-1"
+            placeholder="Buscar"
+          />
+
+          <button
+            type="submit"
+            class=" p-2 bg-slate-800 text-white [&>svg]:w-6 [&>svg]:h-6"
+          >
+            <SearchIcon />
+          </button>
+        </form>
       </section>
     </div>
     <div>

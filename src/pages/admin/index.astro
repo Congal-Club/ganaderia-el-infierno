@@ -1,14 +1,83 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import AdminLayout from "../../layouts/AdminLayout.astro"
+import { COOKIE_NAME } from '../../constants'
+import ShoppingCartIcon from "../../components/icons/ShoppingCartIcon.astro"
+import UserIcon from "../../components/icons/UserIcon.astro"
+import StarIcon from "../../components/icons/StarIcon.astro"
+import PencilIcon from "../../components/icons/PencilIcon.astro"
+import { products, categories, users } from '../../data/db.ts'
+
+const cookie = Astro.cookies.get(COOKIE_NAME)
+
+if (cookie === undefined) {
+  return Astro.redirect('/admin/login')
+}
+
+const numberOfReviews = products.reduce((acc, el) => {
+  return el.reviews && el.reviews.length > 0
+    ? acc + el.reviews.length
+    : acc
+}, 0)
 ---
 
-<Layout
-  title="Ganadería el infierno | calidad para tu ganadería"
+<AdminLayout
+  title="Ganadería el infierno | panel de administración"
   description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
-  showSlider={false}
 >
-  <h1 class="text-3xl text-slate-800 font-medium mb-4">
-    Panel de administración
-  </h1>
-</Layout>
+  <section class="pl-60 pr-4">
+    <div class="flex justify-start items-center gap-4 my-4">
+      <h1 class="text-3xl text-slate-800 font-medium">
+        Panel de administración
+      </h1>
+
+      <a href="/" target="_blank" class="py-1 px-3 bg-gray-200 rounded-md shadow-sm">
+        Ir a la tienda ↗️
+      </a>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <a href="/admin/products" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
+        <span class="scale-150 mb-2 text-green-600">
+          <ShoppingCartIcon />
+        </span>
+
+        <p class="text-xl text-center leading-tight mt-2 text-gray-700">
+          {products.length} productos en la tienda
+        </p>
+      </a>
+      
+      <a href="/admin/users" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
+        <span class="scale-150 mb-2 text-gray-600">
+          <UserIcon />
+        </span>
+
+        <p class="text-xl text-center leading-tight mt-2 text-gray-700">
+          {users.length} usuarios registrados en la tienda
+        </p>
+      </a>
+      
+      <a href="/admin/reviews" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
+        <span class="scale-150 mb-2 text-yellow-500">
+          <StarIcon />
+        </span>
+
+        <p class="text-xl text-center leading-tight mt-2 text-gray-700">
+          {numberOfReviews} reseñas sobre los productos
+        </p>
+      </a>
+      
+      <a href="/admin/reviews" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
+        <span class="scale-150 mb-2 text-blue-600">
+          <PencilIcon />
+        </span>
+
+        <p class="text-xl text-center leading-tight mt-2 text-gray-700">
+          {categories.length} categorías registradas
+        </p>
+      </a>
+    </div>
+
+    <!--  -->
+  </section>
+</AdminLayout>

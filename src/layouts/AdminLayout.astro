@@ -1,16 +1,15 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import GoogleAnalytics from "../components/GoogleAnalytics.astro";
-import ToasterViewer from "../components/islands/ToasterViewer";
+import { ViewTransitions } from "astro:transitions"
+import GoogleAnalytics from "../components/GoogleAnalytics.astro"
+import ToasterViewer from "../components/islands/ToasterViewer"
+import AdminMenu from "../components/islands/AdminMenu"
 
 interface Props {
-  title: string;
+  title: string
   description: string
   keywords?: string
   imageFullUrl?: string
-  showSlider?: boolean;
+  isForLogin?: boolean
 }
 
 const {
@@ -18,8 +17,8 @@ const {
   description,
   keywords = '',
   imageFullUrl = '',
-  showSlider = true 
-} = Astro.props;
+  isForLogin = false 
+} = Astro.props
 ---
 
 <!doctype html>
@@ -37,7 +36,6 @@ const {
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Language" content="es">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta http-equiv="refresh" content="5;url=https://ganaderia-el-infierno.vercel.app/"> -->
     <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/">
 
     <meta name="twitter:card" content="summary">
@@ -58,19 +56,40 @@ const {
     <ViewTransitions />
   </head>
 
-  <body class="min-h-screen">
-    <!-- Header -->
-    <Header showSlider={showSlider} />
+  <body class="min-h-screen flex flex-col">
+    <header class="w-full p-[0.625rem] bg-white fixed border-b-[0.5px] border-gray-200">
+      <section>
+        <div>
+          <img
+            class="w-20 object-cover object-center"
+            src="/logo.jpeg"
+            alt="Logo de la tienda"
+            title="Logo de la tienda"
+          />
+        </div>
 
-    <main class="sm:max-w-[90%] lg:max-w-6xl mx-auto pt-4 pb-8">
-      <slot />
+        <div>
+          <!-- info -->
+        </div>
+      </section>
+    </header>
+
+    <main class="w-full flex flex-1 pt-16 flex-row justify-start items-start gap-4 bg-gray-100">
+      <!-- Admin Menu -->
+      {!isForLogin && (
+        <AdminMenu client:only />
+      )}
+
+      <section class="flex-1">
+        <slot />
+      </section>
     </main>
 
-    <!-- Footer -->
-    <Footer />
-
     <!-- Toaster -->
-    <ToasterViewer client:load />
+    <ToasterViewer
+      client:load
+      transition:persist
+    />
   </body>
 </html>
 
@@ -85,5 +104,15 @@ const {
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+
+  .nav-scroll::-webkit-scrollbar-thumb {
+    background: #364552;
+    border-radius: 5px;
   }
 </style>
