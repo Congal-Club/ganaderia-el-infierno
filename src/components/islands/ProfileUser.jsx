@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react"; 
+import { Facebook, Gmail, Instagram} from "./icons/Socials"
 
 export default function ProfileUser() {
 
@@ -103,8 +104,9 @@ export default function ProfileUser() {
                 title="Facebook"
                 href="https://www.facebook.com/profile.php?id=61553058448723"
                 target="_blank"
+                className="text-blue-700  flex gap-1"
               >
-                <i className="fab fa-facebook-square text-blue-700"></i> Facebook
+                <Facebook/> Facebook
               </a>
             </li>
             <li className="py-1  hover:text-red-500 block max-w-max">
@@ -112,8 +114,9 @@ export default function ProfileUser() {
                 title="Gmail"
                 href="https://mail.google.com/mail/u/2/#inbox"
                 target="_blank"
+                className="text-red-500 flex gap-1"
               >
-                <i className="fa-brands fa-google text-red-500"></i> Gmail
+                <Gmail/> Gmail
               </a>
             </li>
             <li className="py-1  hover:text-pink-600 block max-w-max">
@@ -121,8 +124,9 @@ export default function ProfileUser() {
                 title="Instagram"
                 href="https://www.instagram.com/ganaderiaelinfierno/"
                 target="_blank"
+                className="text-pink-600 flex gap-1"
               >
-                <i className="fab fa-instagram-square text-pink-600"></i> Instagram
+                <Instagram/> Instagram
               </a>
             </li>
           </ul>
