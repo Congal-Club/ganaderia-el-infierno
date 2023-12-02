@@ -12,7 +12,7 @@ export default function AdminMenu() {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <div className={`${isOpen && 'w-1/5'} bg-slate-800 fixed top-16 bottom-0 overflow-y-scroll nav-scroll transition`}>
+    <div className={`${isOpen && 'w-1/6'} bg-slate-800 fixed top-16 bottom-0 overflow-y-scroll nav-scroll transition`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className='text-white py-2 px-4 mb-2 flex flex-row justify-start items-center gap-2'

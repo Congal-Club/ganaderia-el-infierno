@@ -9,7 +9,7 @@ export const products: Product[] = [
     'slug': 'alimento-concentrado-engorda',
     'stock': 100,
     'image': '/products/alimento-concentrado.png',
-    'images': ['/products/alimento-concentrado-1.png', '/products/alimento-concentrado-2.png'],
+    'images': ['/products/alimento-concentrado.png', '/products/alimento-concentrado-1.png', '/products/alimento-concentrado-2.png'],
     'price': 129.99,
     'weight': 25,
     'length': 0.9,
@@ -29,7 +29,7 @@ export const products: Product[] = [
     'slug': 'toro-cebu-alta-calidad',
     'stock': 100,
     'image': '/products/toro-cebu.png',
-    'images': ['/products/toro-cebu-1.png', '/products/toro-cebu-2.png', '/products/toro-cebu-3.png'],
+    'images': ['/products/toro-cebu.png', '/products/toro-cebu-1.png', '/products/toro-cebu-2.png', '/products/toro-cebu-3.png'],
     'price': 60000,
     'weight': 1200,
     'length': 1.75,
@@ -43,7 +43,8 @@ export const products: Product[] = [
     'categories': ['Toros', 'Todo'],
     'reviews': [
       {
-        'name': 'Manuel',
+        'id': 1,
+        'name': 'Manuel Alvarado',
         'email': 'maquinadefuego@gmail.com',
         'review': 'Me gusta mucho ese toro, como para semental. Soy una ganadero de gustos exigentes, me encantan los animales con esta calidad',
         'rate': 4
@@ -56,7 +57,7 @@ export const products: Product[] = [
     'slug': 'toro-charolais-alta-calidad',
     'stock': 50,
     'image': '/products/toro-charolais.png',
-    'images': ['/products/toro-charolais-1.png', '/products/toro-charolais-2.png', '/products/toro-charolais-3.png'],
+    'images': ['/products/toro-charolais.png', '/products/toro-charolais-1.png', '/products/toro-charolais-2.png', '/products/toro-charolais-3.png'],
     'price': 75000,
     'weight': 1300,
     'length': 1.8,
@@ -76,7 +77,7 @@ export const products: Product[] = [
     'slug': 'becerro-hereford-registro',
     'stock': 30,
     'image': '/products/becerro-hereford.png',
-    'images': ['/products/becerro-hereford-1.png', '/products/becerro-hereford-2.png', '/products/becerro-hereford-3.png'],
+    'images': ['/products/becerro-hereford.png', '/products/becerro-hereford-1.png', '/products/becerro-hereford-2.png', '/products/becerro-hereford-3.png'],
     'price': 45000,
     'weight': 600,
     'length': 1.2,
@@ -96,7 +97,7 @@ export const products: Product[] = [
     'slug': 'forraje-alta-nutricion',
     'stock': 200,
     'image': '/products/forraje.png',
-    'images': ['/products/forraje-1.png', '/products/forraje-2.png', '/products/forraje-3.png'],
+    'images': ['/products/forraje.png', '/products/forraje-1.png', '/products/forraje-2.png', '/products/forraje-3.png'],
     'price': 1000,
     'weight': 50,
     'length': 1.0,
@@ -116,7 +117,7 @@ export const products: Product[] = [
     'slug': 'vaca-holstein-leche',
     'stock': 40,
     'image': '/products/vaca-holstein.png',
-    'images': ['/products/vaca-holstein-1.png', '/products/vaca-holstein-2.png'],
+    'images': ['/products/vaca-holstein.png', '/products/vaca-holstein-1.png', '/products/vaca-holstein-2.png'],
     'price': 50000,
     'weight': 800,
     'length': 1.4,
@@ -128,7 +129,15 @@ export const products: Product[] = [
     'name': 'Vaca Holstein de Leche',
     'tag': ['vaca', 'holstein', 'leche'],
     'categories': ['Vaca', 'Leche'],
-    'reviews': []
+    'reviews': [
+      {
+        "id": 2,
+        "name": "Luis Angel Hernandez",
+        "email": "luis.ranchero@gmail.com",
+        "review": "Compré una vaca lechera y estoy impresionado con su producción de leche. ¡Es una adición valiosa a mi granja! Definitivamente recomendaría esta tienda a otros agricultores.",
+        "rate": 5
+      }
+    ]
   },
   {
     'id': 7,
@@ -136,7 +145,7 @@ export const products: Product[] = [
     'slug': 'toro-angus-negro',
     'stock': 60,
     'image': '/products/toro-angus-negro.png',
-    'images': ['/products/toro-angus-negro-1.png', '/products/toro-angus-negro-2.png'],
+    'images': ['/products/toro-angus-negro.png', '/products/toro-angus-negro-1.png', '/products/toro-angus-negro-2.png'],
     'price': 70000,
     'weight': 1400,
     'length': 1.7,
@@ -156,7 +165,7 @@ export const products: Product[] = [
     'slug': 'suplemento-mineral-ganado',
     'stock': 150,
     'image': '/products/suplemento-mineral.png',
-    'images': ['/products/suplemento-mineral-1.png', '/products/suplemento-mineral-2.png'],
+    'images': ['/products/suplemento-mineral.png', '/products/suplemento-mineral-1.png', '/products/suplemento-mineral-2.png'],
     'price': 800,
     'weight': 20,
     'length': 0.8,
@@ -168,7 +177,15 @@ export const products: Product[] = [
     'name': 'Suplemento Mineral para Ganado',
     'tag': ['suplemento', 'mineral', 'ganado'],
     'categories': ['Alimentación', 'Salud'],
-    'reviews': []
+    'reviews': [
+      {
+        "id": 4,
+        "name": "María del Refugio",
+        "email": "maria.granja@gmail.com",
+        "review": "Los suplementos alimenticios para ganado son de alta calidad. Han mejorado significativamente la salud de mis animales. Estoy agradecida por la recomendación que me dieron.",
+        "rate": 5
+      },
+    ]
   },
   {
     'id': 9,
@@ -176,7 +193,7 @@ export const products: Product[] = [
     'slug': 'becerro-simmental-registro',
     'stock': 50,
     'image': '/products/becerro-simmental.png',
-    'images': ['/products/becerro-simmental-1.png', '/products/becerro-simmental-2.png', '/products/becerro-simmental-3.png'],
+    'images': ['/products/becerro-simmental.png', '/products/becerro-simmental-1.png', '/products/becerro-simmental-2.png', '/products/becerro-simmental-3.png'],
     'price': 45000,
     'weight': 600,
     'length': 1.2,
@@ -188,7 +205,15 @@ export const products: Product[] = [
     'name': 'Becerro Simmental de Registro',
     'tag': ['becerro', 'simmental', 'registro'],
     'categories': ['Becerro', 'Todo'],
-    'reviews': []
+    'reviews': [
+      {
+        "id": 3,
+        "name": "Roberto Carlos Vazquez",
+        "email": "roberto.ganaderia@gmail.com",
+        "review": "Adquirí un becerro recientemente y estoy impresionado con su crecimiento y salud. La genética de los animales aquí es destacable. Sin duda, volveré a comprar.",
+        "rate": 5
+      },
+    ]
   },
   {
     'id': 10,
@@ -196,7 +221,7 @@ export const products: Product[] = [
     'slug': 'forraje-alfalfa-premium',
     'stock': 200,
     'image': '/products/forraje-alfalfa.png',
-    'images': ['/products/forraje-alfalfa-1.png', '/products/forraje-alfalfa-2.png'],
+    'images': ['/products/forraje-alfalfa.png', '/products/forraje-alfalfa-1.png', '/products/forraje-alfalfa-2.png'],
     'price': 1200,
     'weight': 25,
     'length': 0.8,
@@ -208,7 +233,22 @@ export const products: Product[] = [
     'name': 'Forraje de Alfalfa Premium',
     'tag': ['forraje', 'alfalfa', 'nutrición'],
     'categories': ['Forraje', 'Todo'],
-    'reviews': []
+    'reviews': [
+      {
+        "id": 5,
+        "name": "Ana Karolina Viramontes",
+        "email": "carolina.vaquera@gmail.com",
+        "review": "La entrega de los productos fue rápida y eficiente. Todos los artículos llegaron en perfecto estado. ¡Excelente servicio!",
+        "rate": 4
+      },
+      {
+        "id": 6,
+        "name": "Robin Van Persie",
+        "email": "pipen.magic13@gmail.com",
+        "review": "La alfalfa es de una gran calidad, aparte de que rinde muchísimo, definitivamente super recomendada.",
+        "rate": 5
+      }
+    ]
   }
 ]
 
@@ -269,67 +309,67 @@ export const categories: Category[] = [
   {
     id: 1,
     name: 'Alimentación',
-    description: 'Alimentación',
+    description: 'Encuentra una amplia selección de productos y alimentos especializados para la nutrición óptima de tu ganado. Desde piensos balanceados hasta suplementos alimenticios.',
     slug: 'alimentacion'
   },
   {
     id: 2,
     name: 'Engorda',
-    description: 'Engorda',
+    description: 'Descubre productos y herramientas para el proceso de engorda de tus animales. Contamos con alimentos de alta calidad y aditivos que aseguran un aumento de peso saludable. Asi también como animales para que comiences tu engorda rápidamente.',
     slug: 'engorda'
   },
   {
     id: 3,
     name: 'Toros',
-    description: 'Toros',
+    description: 'Explora nuestra categoría dedicada a los toros, aquí encontraras los toros y ejemplares mas bonitas y con los mejores cuidados, carne de la mejor calidad, ademas que encontrarás productos específicos para el cuidado, reproducción y bienestar de estos animales de gran importancia en la ganadería.',
     slug: 'toros'
   },
   {
     id: 4,
     name: 'Todo',
-    description: 'Todo',
+    description: 'Descubre todo lo que necesitas para la ganadería en un solo lugar. Desde animales de la mejor calidad, alimentos y cuidados, hasta productos especializados para cada etapa del desarrollo de tu ganado.',
     slug: 'todo'
   },
   {
     id: 5,
     name: 'Carne',
-    description: 'Carne',
+    description: 'Explora nuestra selección animales con la carne de la mejor calidad, certificados y registrados para que comiences tu negocio de venta de carne.',
     slug: 'carne'
   },
   {
     id: 6,
     name: 'Becerro',
-    description: 'Becerro',
+    description: 'Encuentra becerros de alta calidad para tu ganadería. Desde terneros recién nacidos hasta animales jóvenes, ofrecemos una variedad de opciones para tus necesidades específicas.',
     slug: 'becerro'
   },
   {
     id: 7,
     name: 'Registro',
-    description: 'Registro',
+    description: 'Descubre todos los animales cuyo proceso de registro y documentación de la información relacionada con el ganado, esta en total regla, con certificaciones que garantizan la mas alta calidad de los animales incluyendo datos genealógicos y de salud.',
     slug: 'registro'
   },
   {
     id: 8,
     name: 'Forraje',
-    description: 'Forraje',
+    description: 'Optimiza la alimentación de tu ganado con nuestro surtido de forrajes de alta calidad. Encuentra opciones nutritivas para mejorar la salud y productividad de tus animales.',
     slug: 'forraje'
   },
   {
     id: 9,
     name: 'Vaca',
-    description: 'Vaca',
+    description: 'Descubre todos los ejemplares de vacas que tenemos para ofrecerte, aquí podrías encontrar vacas para crianza y para producción de leche de la mejor calidad, con las cuales podrás tener un estable totalmente prospero.',
     slug: 'vaca'
   },
   {
     id: 10,
     name: 'Leche',
-    description: 'Leche',
+    description: 'Optimiza la producción de leche con nuestros productos especializados. Encuentra alimentos y suplementos que aseguran una leche de calidad y un ganado lechero saludable.',
     slug: 'leche'
   },
   {
     id: 11,
     name: 'Salud',
-    description: 'Salud',
+    description: 'Mantén la salud óptima de tu ganado con nuestra selección de productos para cuidados veterinarios. Desde medicamentos preventivos hasta accesorios para mantener a tus animales en su mejor estado.',
     slug: 'salud'
   }
 ]
