@@ -19,7 +19,7 @@ export default function ProfileUser(){
     <div className="bg-white rounded-lg p-4 shadow-md">
       <h2 className="text-2xl text-slate-800 font-medium mb-4">Mis Pedidos</h2>
       <ul className="text-blue-700">
-        <a href="">
+        <a href="/history">
           <li className="py-1  hover:text-blue-800 block max-w-max" >Ver historial de compra</li>
         </a>
         <a href="/cart">
