@@ -1,5 +1,6 @@
 import Product from "./Product";
 import {useState} from "react"
+
 export default function Products({ products }) {
   const [filteredProducts, setFilteredProducts] = useState(products)
 
@@ -40,11 +41,13 @@ export default function Products({ products }) {
       }
     }
   }
+
   return (
-    <section>
+    <section className="w-[95%] mx-auto md:w-full">
       <h2 className="text-2xl font-semibold text-slate-700 mb-6">
         Productos destacados
       </h2>
+
       <div className="mb-4 flex justify-start items-center gap-2">
         <label className="font-medium">Ordenar por</label>
         <select className="py-2 px-4 border border-gray-300 rounded-md" name="filterMenu" id="filterMenu" onChange={handleChange}>
@@ -64,7 +67,7 @@ export default function Products({ products }) {
         </select>
       </div>
 
-      <section className="w-full flex justify-start items-start gap-6 flex-wrap">
+      <section className="w-full flex justify-start items-start gap-3 lg:gap-6 flex-wrap">
         {filteredProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}

@@ -1,11 +1,12 @@
 ---
 import AdminLayout from "../../layouts/AdminLayout.astro"
 import { COOKIE_NAME } from '../../constants'
+import BarChar from '../../components/islands/BarChar'
 import ShoppingCartIcon from "../../components/icons/ShoppingCartIcon.astro"
 import UserIcon from "../../components/icons/UserIcon.astro"
 import StarIcon from "../../components/icons/StarIcon.astro"
 import PencilIcon from "../../components/icons/PencilIcon.astro"
-import { products, categories, users } from '../../data/db.ts'
+import { products, categories, users, orders } from '../../data/db.ts'
 
 const cookie = Astro.cookies.get(COOKIE_NAME)
 
@@ -78,6 +79,6 @@ const numberOfReviews = products.reduce((acc, el) => {
       </a>
     </div>
 
-    <!--  -->
+    <BarChar client:only orders={orders} />
   </section>
 </AdminLayout>

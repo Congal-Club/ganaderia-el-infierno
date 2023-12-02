@@ -1,77 +1,85 @@
 ---
-import Heart from "./icons/Heart.astro";
-import PhoneIcon from "./icons/PhoneIcon.astro";
-import SearchIcon from "./icons/SearchIcon.astro";
-import ShopBill from "./icons/ShopBill.astro";
-import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro";
-import UserIcon from "./icons/UserIcon.astro";
-import Cookies from "./islands/Cookies";
-import Slider from "./islands/Slider";
+import Heart from "./icons/Heart.astro"
+import PhoneIcon from "./icons/PhoneIcon.astro"
+import SearchIcon from "./icons/SearchIcon.astro"
+import ShopBill from "./icons/ShopBill.astro"
+import ShoppingCartIcon from "./icons/ShoppingCartIcon.astro"
+import UserIcon from "./icons/UserIcon.astro"
+import Cookies from "./islands/Cookies"
+import Slider from "./islands/Slider"
+import ResponsiveMenu from "./islands/ResponsiveMenu"
 
 interface Props {
-  showSlider?: boolean;
+  showSlider?: boolean
 }
 
-const { showSlider = true } = Astro.props;
+const { showSlider = true } = Astro.props
 ---
 
 <header class="w-full bg-slate-800 py-4 border-b-gray-600 border-b-[1px]">
   <div class="w-[90%] mx-auto">
     <section class="w-full flex justify-between items-center gap-8">
-      <div>
-        <a
-          href=""
+      <div class="hidden md:flex">
+        <span
           title="Moneda"
           class="flex text-gray-100 justify-between items-center gap-1 [&>svg]:w-4 [&>svg]:h-4"
-          ><ShopBill />Moneda: MXN</a
         >
+          <ShopBill />Moneda: MXN
+        </span>
       </div>
-      <div class="flex-1">
-        <ul class="flex justify-end items-center gap-4">
+
+      <div class="hidden md:flex-1 md:flex md:justify-end">
+        <ul class="flex justify-center md:justify-end items-center gap-4">
           <li>
             <a
               href="/contact"
               title="Telefono"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
-              ><PhoneIcon />Contacto</a>
+            >
+              <PhoneIcon /> Contacto
+            </a>
           </li>
+
           <li>
             <a
               href="/account"
               title="Mi cuenta"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
-              ><UserIcon /> Mi cuenta</a>
+            >
+              <UserIcon /> Mi cuenta
+            </a>
           </li>
+
           <li>
             <a
               href="/wish-list"
               title="Lista de deseos"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
-              ><Heart /> Lista de deseos</a>
+            >
+              <Heart /> Lista de deseos
+            </a>
           </li>
+
           <li>
             <a
               href="/cart"
               title="Carrito de compras"
               class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
-              ><ShoppingCartIcon /> Carrito de compras</a>
-          </li>
-          <li>
-            <a
-              href="/cart"
-              title="Pagar"
-              class="flex text-gray-100 justify-between items-center gap-1 text-sm [&>svg]:w-4 [&>svg]:h-4"
-              ><ShopBill /> Pagar</a>
+            >
+              <ShoppingCartIcon /> Carrito de compras
+            </a>
           </li>
         </ul>
       </div>
     </section>
   </div>
+
+  <ResponsiveMenu client:visible />
 </header>
 
 <div class="w-full mt-8">
-  <section class="w-[90%] mx-auto flex  justify-between items-center gap-8">
-    <div>
+  <section class="w-[90%] mx-auto flex justify-between items-center gap-8">
+    <div class="hidden md:block">
       <a title="Logo" href="/">
         <img
           class="w-48 object-cover object-center"
@@ -81,6 +89,7 @@ const { showSlider = true } = Astro.props;
         />
       </a>
     </div>
+
     <div class="flex-1 ">
       <section
         class=" border-gray-600 border-[1px] overflow-hidden rounded-md"
@@ -102,6 +111,7 @@ const { showSlider = true } = Astro.props;
         </form>
       </section>
     </div>
+
     <div>
       <a
         href="/cart"
@@ -122,21 +132,25 @@ const { showSlider = true } = Astro.props;
           Catalogo
         </a>
       </li>
+
       <li>
         <a href="/categories/alimento" title="Alimento" class="text-white">
           Alimento
         </a>
       </li>
+
       <li>
         <a href="/categories/toros" title="Toros" class="text-white">
           Toros
         </a>
       </li>
+
       <li>
         <a href="/categories/vacas" title="Vacas" class="text-white">
           Vacas
         </a>
       </li>
+
       <li>
         <a href="/categories/nutricional" title="De engorda" class="text-white">
           De engorda

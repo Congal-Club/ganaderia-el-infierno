@@ -1,6 +1,6 @@
 export default function Product({ product }) {
   return (
-    <article className="sm:w-full md:w-[47%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg">
+    <article className="w-2/3 mx-auto sm:w-[47%] md:w-[32%] lg:w-[23%] border rounded-md border-slate-400 overflow-hidden shadow-lg">
       <a title={product.name} href={`/products/${product.slug}`}>
         <header>
           <img

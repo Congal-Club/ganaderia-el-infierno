@@ -6,8 +6,9 @@ export default function ProfileUser() {
   const [user,setUser] = useState({name:"Manuel", lastName:"Alvarado",email:"manualvaradoibarr@gmail.com",address:"Misión de Santa Lucía. San Justino de Orona Madrigal #148"}); 
   const [userIsLogged, setUserIsLogged] = useState(false); 
 
-  useEffect(()=>{
+  useEffect(() => {
     const userFromStorage = window.localStorage.getItem('user'); 
+
     if(userFromStorage){
       setUser({
         name: userFromStorage.name??"Manuel", 
@@ -15,6 +16,7 @@ export default function ProfileUser() {
         email: userFromStorage.email??"manualvaradoibarr@gmail.com", 
         address: userFromStorage.address??"Misión de Santa Lucía. San Justino de Orona Madrigal #148"
       })
+      
       setUserIsLogged(true)
     }
   },[]); 
