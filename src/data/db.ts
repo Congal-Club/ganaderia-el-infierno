@@ -1,7 +1,67 @@
 import type { Product } from '../types/products'
 import type { User } from '../types/user'
 import type { Category } from '../types/categories'
+import type { Order } from '../types/products'
 
+export const orders: Order[] = [
+  {
+    "id" : 1,
+    "nameClient": "Hector Garcia",
+    "colonia": "Valle de los cactus",
+    "street": "Recinto pitajay",
+    "streetNumber": "48",
+    "suitNumber": "605",
+    "country": "México",
+    "city": "Aguascalientes, Aguascalientes",
+    "postalCode": "20196",
+    "numProducts": 1,
+    "status": "Pendiente",
+    "total" : 259.98,
+    "date" : "2023-11-28",
+    "products": [
+      {
+        "id": 1,
+        "name": "Alimento Concentrado para Engorda",
+        "model": "Alimento Concentrado",
+        "quantity": 2,
+        "price": 129.99
+      }
+    ]
+    
+  },
+  {
+    "id" : 2,
+    "nameClient": "Hector Garcia",
+    "colonia": "Valle de los cactus",
+    "street": "Recinto pitajay",
+    "streetNumber": "48",
+    "suitNumber": "605",
+    "country": "México",
+    "city": "Aguascalientes, Aguascalientes",
+    "postalCode": "20196",
+    "numProducts": 2,
+    "status": "Realizado",
+    "total" : 60129.99,
+    "date" : "2023-11-28",
+    "products": [
+      {
+        "id": 1,
+        "name": "Alimento Concentrado para Engorda",
+        "model": "Alimento Concentrado",
+        "quantity": 1,
+        "price": 129.99
+      },
+      {
+        "id": 2,
+        "name": "Toro Cebú de Alta Calidad",
+        "model": "Toro Cebu",
+        "quantity": 1,
+        "price": 60000
+      }
+    ]
+  }
+  
+]
 export const products: Product[] = [
   {
     'id': 1,

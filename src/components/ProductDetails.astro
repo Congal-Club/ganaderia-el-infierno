@@ -4,6 +4,7 @@ import Heart from './icons/Heart.astro';
 import ShopBill from './icons/ShopBill.astro';
 import AddToCart from './islands/AddToCart';
 import Description from './islands/Description';
+import AddToWishList from './islands/AddToWishList'; 
 
 interface Props {
   product: Product
@@ -66,10 +67,16 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
     </p>
 
     <div class="actions">
-      <button class="action-button">
+      <!-- <button class="action-button">
         <Heart />
-      </button>
-
+      </button> -->
+      <AddToWishList 
+        id={product.id}
+        product={product}
+        stock={product.stock}
+        client:load
+        transition:persist
+      />
       <button class="action-button">
         <ShopBill />
       </button>
