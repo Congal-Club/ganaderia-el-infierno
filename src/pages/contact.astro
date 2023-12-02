@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import SocialsNetworks from "../components/SocialsNetworks.astro";
+import FrecuentQuestions from "../components/islands/FrecuentQuestions"
 ---
 
 <Layout
@@ -10,9 +11,8 @@ import SocialsNetworks from "../components/SocialsNetworks.astro";
   showSlider={false}
 >
   <h1>Contacto</h1>
-<SocialsNetworks/>
-
+  <SocialsNetworks/>
+  <FrecuentQuestions client:load/>
 </Layout>
-
 <style>
 </style>
