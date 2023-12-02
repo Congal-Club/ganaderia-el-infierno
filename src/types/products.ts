@@ -19,6 +19,7 @@ export interface Product {
   reviews?:            Review[]        
 }
 export interface Review {
+  id:                  number
   name:                string
   email:               string
   review:              string

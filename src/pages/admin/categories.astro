@@ -1,0 +1,19 @@
+---
+import AdminCategories from "../../components/islands/AdminCategories"
+import AdminLayout from "../../layouts/AdminLayout.astro"
+import { categories } from '../../data/db'
+---
+
+<AdminLayout
+  title="Ganadería el infierno | panel de administración"
+  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
+  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+>
+  <section class="pl-60 pr-4">
+    <h1 class="text-3xl text-slate-800 font-medium my-4">
+      Categorías
+    </h1>
+
+    <AdminCategories client:load categories={categories} />
+  </section>
+</AdminLayout>
