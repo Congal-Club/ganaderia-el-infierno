@@ -61,7 +61,7 @@ export default function AddToCart({ id, stock, product, clientId }) {
             localStorage.setItem('cart', JSON.stringify(cart))
           }
         }}
-        className="bg-slate-500 text-white py-1 px-4 rounded-md shadow-md"
+        className="bg-slate-700 text-white py-1 px-4 rounded-md shadow-md"
       >
         Agregar al carrito
       </button>

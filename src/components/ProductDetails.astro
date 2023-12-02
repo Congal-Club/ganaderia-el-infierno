@@ -1,6 +1,5 @@
 ---
 import type { Product } from '../types/products'
-import Heart from './icons/Heart.astro';
 import ShopBill from './icons/ShopBill.astro';
 import AddToCart from './islands/AddToCart';
 import Description from './islands/Description';
@@ -58,18 +57,10 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
     </p>
 
     <p class="price">
-      ${(product.price * 1.16)}
-    </p>
-
-    <p class="tax-price">
-      <span>Precio sin impuestos: </span>
-      <span class="paragraph-description">${product.price}</span>
+      ${(product.price)}
     </p>
 
     <div class="actions">
-      <!-- <button class="action-button">
-        <Heart />
-      </button> -->
       <AddToWishList 
         id={product.id}
         product={product}
@@ -77,9 +68,6 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
         client:load
         transition:persist
       />
-      <button class="action-button">
-        <ShopBill />
-      </button>
     </div>
 
     <AddToCart
