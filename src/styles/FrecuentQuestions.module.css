@@ -1,14 +1,14 @@
 .main {
 	max-width: 1000px;
 	width: 90%;
-	margin: 40px auto;
+	margin: 2rem auto;
 }
 
 .title {
-	color: #3a3a3a;
+	color: #25292E;
 	font-weight: 700;
 	text-align: center;
-	margin: 60px 0;
+	margin: 2rem 0;
 }
 
 .categories {
@@ -36,7 +36,7 @@
 }
 
 .category:hover path {
-	fill: #e23939;
+	fill: #003049;
 }
 
 .category svg {
@@ -50,16 +50,16 @@
 }
 
 .category.active {
-	border: 2px solid #e23939;
+	border: 2px solid #003049;
 	color: #000;
 }
 
 .category.active path {
-	fill: #e23939;
+	fill: #003049;
 }
 
 .questions-container {
-	display: none;
+	display: grid;
 	grid-template-columns: 1fr;
 	gap: 40px;
 }
@@ -71,7 +71,7 @@
 .question-container {
 	background: #fff;
 	padding: 40px;
-	border: 2px solid transparent;
+	border: 2px solid #cfcfcf;
 	border-radius: 10px;
 	overflow: hidden;
 	transition: .3s ease all;
@@ -83,7 +83,7 @@
 }
 
 .question-container.active {
-	border: 2px solid #e23939;
+	border: 2px solid #003049;
 }
 
 .question {
