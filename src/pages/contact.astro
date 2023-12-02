@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import SocialsNetworks from "../components/SocialsNetworks.astro";
 import FrecuentQuestions from "../components/islands/FrecuentQuestions"
+import ContactForm from "../components/islands/ContactForm"
 ---
 
 <Layout
@@ -13,6 +14,7 @@ import FrecuentQuestions from "../components/islands/FrecuentQuestions"
   <h1>Contacto</h1>
   <SocialsNetworks/>
   <FrecuentQuestions client:load/>
+  <ContactForm client:load/>
 </Layout>
 <style>
 </style>
