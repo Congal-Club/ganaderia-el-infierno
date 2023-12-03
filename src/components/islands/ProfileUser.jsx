@@ -82,7 +82,7 @@ export default function ProfileUser() {
               Mis Pedidos
             </h2>
             <ul className="text-blue-700">
-              <a href="">
+              <a href="/history">
                 <li className="py-1  hover:text-blue-800 block max-w-max">
                   Ver historial de compra
                 </li>

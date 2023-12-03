@@ -295,7 +295,7 @@ export const products: Product[] = [
     'reviews': [
       {
         "id": 5,
-        "name": "Ana Karolina Viramontes",
+        "name": "Ana Villalobos",
         "email": "carolina.vaquera@gmail.com",
         "review": "La entrega de los productos fue rápida y eficiente. Todos los artículos llegaron en perfecto estado. ¡Excelente servicio!",
         "rate": 4
