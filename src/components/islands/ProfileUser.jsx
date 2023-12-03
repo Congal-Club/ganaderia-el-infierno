@@ -21,6 +21,11 @@ export default function ProfileUser() {
     }
   },[]); 
 
+  function handleLogout(){
+    window.localStorage.removeItem("user"); 
+    window.location.href="/login"; 
+  }
+
   return (
     <div>
       {userIsLogged?(
@@ -135,7 +140,7 @@ export default function ProfileUser() {
         </div>
         {userIsLogged&&(
           <div className="p-4  md:col-span-3 flex items-center justify-center">
-            <button className="py-2 px-4 bg-slate-500 text-white rounded-md hover:bg-slate-700">
+            <button className="py-2 px-4 bg-slate-500 text-white rounded-md hover:bg-slate-700" onClick={handleLogout}>
               Cerrar Sesión
             </button>
           </div>
