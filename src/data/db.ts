@@ -6,9 +6,9 @@ import type { Order } from '../types/products'
 export const orders: Order[] = [
   {
     "id" : 1,
-    "nameClient": "Hector Garcia",
-    "colonia": "Valle de los cactus",
-    "street": "Recinto pitajay",
+    "nameClient": "Manuel Alvarado",
+    "colonia": "Misión de Santa Lucía.",
+    "street": " San Justino de Orona Madrigal",
     "streetNumber": "48",
     "suitNumber": "605",
     "country": "México",
@@ -30,9 +30,9 @@ export const orders: Order[] = [
   },
   {
     "id" : 2,
-    "nameClient": "Hector Garcia",
-    "colonia": "Valle de los cactus",
-    "street": "Recinto pitajay",
+    "nameClient": "Manuel Alvarado",
+    "colonia": "Misión de Santa Lucía",
+    "street": "San Justino de Orona Madrigal",
     "streetNumber": "48",
     "suitNumber": "605",
     "country": "México",
