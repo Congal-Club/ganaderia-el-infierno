@@ -1,6 +1,7 @@
 import { useState } from "react"
+import toast from "react-hot-toast"
 
-export default function AddToCart({ id, stock, product, clientId }) {
+export default function AddToCart({ id, stock, product, clientId, updatedCart }) {
   const [quantity, setQuantity] = useState(0)
 
   return (
@@ -43,6 +44,10 @@ export default function AddToCart({ id, stock, product, clientId }) {
       <button
         onClick={() => {
           const cartInStorage = localStorage.getItem('cart')
+          toast.success('Producto agregado al Carrito de Producto', {
+            duration: 5000,
+            position: 'bottom-right',
+          })
 
           if (cartInStorage) {
             const cart = JSON.parse(cartInStorage)

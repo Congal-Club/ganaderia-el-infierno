@@ -90,7 +90,7 @@ function ReviewForm({ onAddReview}) {
       </div>
 
       <div className="flex justify-start mt-4 gap-4">
-        <a href="/" className="bg-red-600 text-white py-1 px-2 rounded-md shadow-sm ">Atras</a>
+        <a href="/" className="bg-red-600 text-white py-1 px-2 rounded-md shadow-sm">Atras</a>
         <button className="bg-slate-700 text-white py-1 px-2 rounded-md shadow-sm">Guardar</button>
       </div>
     </form>
@@ -114,6 +114,5 @@ function Review({ review }) {
         ))}
       </p>
     </div>
-
   )
 }

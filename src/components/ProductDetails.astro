@@ -56,6 +56,26 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
       {product['short-description']}
     </p>
 
+    <p class="paragraph">
+      <span class="paragraph-description">Peso: </span>
+      {product['weight']} kg
+    </p>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Longitud: </span>
+      {product['length']} mts
+    </p>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Ancho: </span>
+      {product['width']} mts
+    </p>
+
+    <p class="paragraph">
+      <span class="paragraph-description">Alto: </span>
+      {product['height']} mts
+    </p>
+
     <p class="price">
       ${(product.price)}
     </p>
@@ -77,6 +97,7 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
       clientId={clientId}
       transition:persist
       client:load
+      updatedCart
     />
 
     <Description

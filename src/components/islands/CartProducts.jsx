@@ -3,6 +3,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 import { currencyFormatter } from '../../lib/currency-formatter'
+import Trash from './icons/Trash'
 
 const LazyPayPalButtons = lazy(() => import('./AppPayPalButtons'))
 
@@ -19,6 +20,12 @@ export default function CartProducts({ clientId }) {
       setCart([])
     }
   }, [])
+
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter(({product}) => product.id !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
   return (
     <PayPalScriptProvider
@@ -52,20 +59,30 @@ export default function CartProducts({ clientId }) {
                   {product['short-description']}
                 </p>
 
-                <p className='text-lg font-bold mt-4 text-slate-700'>
-                  <span className='font-medium text-slate-900'>Cantidad: </span>
-                  {quantity}
-                </p>
+                <section className='flex justify-between items-center'>
+                  <div>
+                    <p className='text-lg font-bold mt-4 text-slate-700'>
+                      <span className='font-medium text-slate-900'>Cantidad: </span>
+                      {quantity}
+                    </p>
 
-                <p className='text-lg font-bold text-slate-700'>
-                  <span className='font-medium text-slate-900'>Precio: </span>
-                  {currencyFormatter.format(product.price)}
-                </p>
+                    <p className='text-lg font-bold text-slate-700'>
+                      <span className='font-medium text-slate-900'>Precio: </span>
+                      {currencyFormatter.format(product.price)}
+                    </p>
 
-                <p className='text-lg font-bold text-slate-700'>
-                  <span className='font-medium text-slate-900'>Total a pagar: </span>
-                  {currencyFormatter.format(product.price * quantity)}
-                </p>
+                    <p className='text-lg font-bold text-slate-700'>
+                      <span className='font-medium text-slate-900'>Total a pagar: </span>
+                      {currencyFormatter.format(product.price * quantity)}
+                    </p>
+                  </div>
+
+                  <button className='flex gap-1 text-white border border-red-500 rounded-md bg-red-500 p-2 hover:bg-red-600'
+                    onClick={()=>removeFromCart(product.id)}>
+                    <Trash />{' '}
+                    Eliminar
+                  </button>
+                </section>
               </section>
             </article>
           ))}
