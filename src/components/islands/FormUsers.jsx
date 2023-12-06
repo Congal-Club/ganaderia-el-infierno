@@ -120,7 +120,7 @@ export default function FormUsers({ activeUser, isEditing, onAddUser, onEditUser
         className="flex flex-row gap-2 justify-center bg-blue-600 py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm"
       >
         <span>
-          {isEditing ? 'Editar Categoría ' : 'Agregar Categoría '}
+          {isEditing ? 'Editar Usuario ' : 'Agregar Usuario '}
         </span>
         
         {isEditing ? <Pencil /> : <Plus />}
