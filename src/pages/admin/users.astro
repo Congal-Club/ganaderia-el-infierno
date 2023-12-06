@@ -1,5 +1,6 @@
 ---
 import AdminLayout from "../../layouts/AdminLayout.astro"
+import AdminUsers from "../../components/islands/AdminUsers";
 import { users } from '../../data/db'
 ---
 
@@ -8,51 +9,11 @@ import { users } from '../../data/db'
   description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
 >
+
   <section class="pl-60 pr-4">
     <h1 class="text-3xl text-slate-800 font-medium my-4">
       Usuarios
     </h1>
-
-    <table class="w-full border-2 border-collapse border-gray-300 mb-4">
-      <thead>
-        <tr class="border-2 border-slate-700 bg-slate-700 text-white">
-          <th class="text-center py-1">Nombre</th>
-          <th class="text-center py-1">Apellidos</th>
-          <th class="text-center py-1">Correo electrónico</th>
-          <th class="text-center py-1">Nombre de usuario</th>
-          <th class="text-center py-1">Imagen</th>
-          <th class="text-center py-1">Role</th>
-        </tr>
-      </thead>
-
-      <tbody class="[&>*:nth-child(even)]:bg-gray-200">
-        {users.map((user) => (
-          <tr class="border-2 border-gray-300 bg-white">
-            <td class="text-center text-lg py-2">
-              {user.name}
-            </td> 
-            <td class="text-center text-lg py-2">
-              {user.last_name}
-            </td>
-            <td class="text-center text-lg py-2">
-              {user.email}
-            </td>
-            <td class="text-center text-lg py-2">
-              {user.user_name}
-            </td>
-            <td class="text-center text-lg py-2">
-              <img
-                src={user.picture}
-                alt={user.name}
-                class="w-32 block mx-auto rounded-md aspect-[9/12] object-center object-cover"
-              />
-            </td>
-            <td class="text-center text-lg py-2">
-              {user.role}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+  <AdminUsers client:load users={users} /> 
   </section>
 </AdminLayout>
