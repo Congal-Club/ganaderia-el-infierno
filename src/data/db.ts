@@ -164,7 +164,7 @@ export const products: Product[] = [
     'height': 0.3,
     'status': 'disponible',
     'description': '<p>Mejore la alimentación de su ganado con nuestro forraje de alta nutrición. Este forraje ha sido cuidadosamente seleccionado y procesado para brindar los nutrientes esenciales que su ganado necesita. Características destacadas:</p><ul><li><strong>Calidad</strong>: Forraje de primera calidad</li><li><strong>Nutrición</strong>: Rico en proteínas y minerales esenciales</li><li><strong>Packaging</strong>: Empaquetado para mantener la frescura</li><li><strong>Adaptabilidad</strong>: Apto para diferentes tipos de ganado</li><li><strong>Origen</strong>: Producido en fincas de confianza</li></ul>',
-    'short-description': 'Mejore la alimentación de su ganado con nuestro forraje de alta nutrición.',
+    'short-description': 'Mejore la alimentación de su ganado con nuestro forraje de alta nutrición. El cual tiene minerales y vitaminas con muchos nutrientes.',
     'name': 'Forraje de Alta Nutrición',
     'tag': ['forraje', 'nutrición', 'alimentación'],
     'categories': ['Forraje', 'Alimentación'],

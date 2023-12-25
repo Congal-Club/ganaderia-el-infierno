@@ -1,12 +1,11 @@
 ---
-import Products from '../components/islands/Products';
+import Products from '../components/Products.astro'
 
-import { products as db } from '../data/db';
+import { products as db } from '../data/db'
 import Layout from '../layouts/Layout.astro'
 import { type Product } from '../types/products'
 
 const products: Product[] = db
-
 ---
 
 <Layout
@@ -16,6 +15,5 @@ const products: Product[] = db
 >
 	<Products 
     products={products}
-    client:load
   />
 </Layout>
