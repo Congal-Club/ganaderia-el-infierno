@@ -36,10 +36,10 @@ switch (query) {
   description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
   showSlider={false}
+  showCategories={true}
 >
-  <h1 class="text-3xl text-slate-800 font-medium mb-4">
-    Productos destacados de {query}
-  </h1>
-
-  <Products products={filteredProducts} />
+  <Products
+    products={filteredProducts}
+    title={`Productos destacados de ${query}`}
+  />
 </Layout>

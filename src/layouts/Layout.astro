@@ -1,6 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
-
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
@@ -12,6 +10,7 @@ interface Props {
   keywords?: string
   imageFullUrl?: string
   showSlider?: boolean
+  showCategories?: boolean
 }
 
 const {
@@ -19,7 +18,8 @@ const {
   description,
   keywords = '',
   imageFullUrl = '',
-  showSlider = true 
+  showSlider = true ,
+  showCategories = false
 } = Astro.props
 ---
 
@@ -55,14 +55,15 @@ const {
     
     <link rel='icon' type='image/png' href='/icon.png' />
     <title>{title}</title>
-
-    <!-- <ViewTransitions /> -->
   </head>
   
 
   <body class='min-h-screen'>
     <!-- Header -->
-    <Header showSlider={showSlider} />
+    <Header
+      showSlider={showSlider}
+      showCategories={showCategories}
+    />
 
     <main class='w-[90%] lg:max-w-6xl mx-auto pt-4 pb-8'>
       <slot />

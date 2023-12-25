@@ -1,15 +1,15 @@
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 export default function Slider() {
   return (
-    <div className="lg:w-[75%] xs:w-[90%] mx-auto mt-8">
+    <div className='w-full h-screen mx-auto mt-2'>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -18,61 +18,65 @@ export default function Slider() {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        onSlideChange={() => console.log('slide change')}
       >
-        <SwiperSlide className="bg-red-500">
-          <div>
-            <a title="Toro charolais de alta calidad" href="/products/toro-charolais-alta-calidad">
-              <img
-                src="/images/slider1.png"
-                className="w-full h-[600px] object-cover object-center"
-                alt="Toro charolais de alta calidad"
-                title="Toro charolais de alta calidad"
-                srcSet=""
-              />
-            </a>
-          </div>
-        </SwiperSlide>
         <SwiperSlide>
-          <div>
-            <a href="/products/vaca-holstein-leche">
-              <img
-                src="/images/slider2.png"
-                className="w-full h-[600px] object-cover object-center"
-                alt="Toro angus de alta calidad"
-                title="Toro angus de alta calidad"
-                srcSet=""
-              />
-            </a>
-          </div>
+          <SliderElement
+            img='/images/slider1.png'
+            link='/products/toro-charolais-alta-calidad'
+            title='Toro charolais de alta calidad'
+            description='Descubra la elegancia y calidad del Toro Charolais de Alta Calidad, conocido por su carne de alta calidad y su temperamento dócil.'
+          />
         </SwiperSlide>
+
         <SwiperSlide>
-          <div>
-            <a href="/products/becerro-simmental-registro">
-              <img
-                src="/images/slider3.png"
-                className="w-full h-[600px] object-cover object-center"
-                alt="Becerro hereford"
-                title="Becerro hereford"
-                srcSet=""
-              />
-            </a>
-          </div>
+          <SliderElement
+            img='/images/slider2.png'
+            link='/products/vaca-holstein-leche'
+            title='Vaca Holstein de Leche'
+            description='Obtenga una Vaca Holstein de alta calidad conocida por su producción de leche excepcional.'
+          />
         </SwiperSlide>
+
         <SwiperSlide>
-          <div>
-            <a href="/products/toro-angus-negro">
-              <img
-                src="/images/slider4.png"
-                className="w-full h-[600px] object-cover object-center"
-                alt="Toro angus negro"
-                title="Toro angus negro"
-                srcSet=""
-              />
-            </a>
-          </div>
+          <SliderElement
+            img='/images/slider3.png'
+            link='/products/becerro-simmental-registro'
+            title='Becerro hereford'
+            description='Descubra la pureza y la belleza del Becerro Simmental de Registro. Este ejemplar posee una genética excepcional y es ideal para la cría selectiva de ganado.'
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <SliderElement
+            img='/images/slider4.png'
+            link='/products/toro-angus-negro'
+            title='Toro angus negro'
+            description='Descubra la calidad de un Toro Angus Negro, conocido por su carne de alto marmoleo y sabor excepcional.'
+          />
         </SwiperSlide>
       </Swiper>
     </div>
-  );
+  )
+}
+
+function SliderElement({ link, img, title, description }) {
+  return (
+    <a href={link} className='h-screen relative grid place-content-center'>
+      <img
+        src={img}
+        className='w-full h-full object-cover object-center absolute top-0 left-0 -z-10'
+        alt={title}
+        title={title}
+      />
+
+      <h1 className='text-5xl text-white font-black text-center'>
+        {title}
+      </h1>
+
+      <p className='w-2/3 mx-auto mt-4 text-white text-center text-lg'>
+        {description}
+      </p>
+    </a>
+  )
 }
