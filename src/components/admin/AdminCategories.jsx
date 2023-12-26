@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import Plus from '../islands/icons/Plus'
-import Pencil from '../islands/icons/Pencil'
-import Trash from '../islands/icons/Trash'
+import Plus from '../icons/Plus'
+import Pencil from '../icons/Pencil'
+import Trash from '../icons/Trash'
 
 export default function AdminCategories({ categories }) {
   const [adminCategories, setAdminCategories] = useState(categories)

@@ -1,6 +1,5 @@
 ---
 import type { Product } from '../types/products'
-import ShopBill from './icons/ShopBill.astro';
 import AddToCart from './islands/AddToCart';
 import Description from './islands/Description';
 import AddToWishList from './islands/AddToWishList'; 
@@ -86,7 +85,6 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
         product={product}
         stock={product.stock}
         client:load
-        transition:persist
       />
     </div>
 
@@ -95,14 +93,12 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
       stock={product.stock}
       product={product}
       clientId={clientId}
-      transition:persist
       client:load
       updatedCart
     />
 
     <Description
       description={product.description}
-      transition:persist
       client:load
     />
   </section>

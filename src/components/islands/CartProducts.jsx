@@ -3,7 +3,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 import { currencyFormatter } from '../../lib/currency-formatter'
-import Trash from './icons/Trash'
+import Trash from '../icons/Trash'
 
 const LazyPayPalButtons = lazy(() => import('./AppPayPalButtons'))
 

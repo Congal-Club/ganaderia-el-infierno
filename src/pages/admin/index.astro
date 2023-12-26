@@ -2,10 +2,6 @@
 import AdminLayout from "../../layouts/AdminLayout.astro"
 import { COOKIE_NAME } from '../../constants'
 import BarChar from '../../components/islands/BarChar'
-import ShoppingCartIcon from "../../components/icons/ShoppingCartIcon.astro"
-import UserIcon from "../../components/icons/UserIcon.astro"
-import StarIcon from "../../components/icons/StarIcon.astro"
-import PencilIcon from "../../components/icons/PencilIcon.astro"
 import { products, categories, users, orders } from '../../data/db.ts'
 
 const cookie = Astro.cookies.get(COOKIE_NAME)
@@ -40,7 +36,10 @@ const numberOfReviews = products.reduce((acc, el) => {
     <div class="grid grid-cols-4 gap-4">
       <a href="/admin/products" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
         <span class="scale-150 mb-2 text-green-600">
-          <ShoppingCartIcon />
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 2a1 1 0 0 1 .993 .883l.007 .117v1.068l13.071 .935a1 1 0 0 1 .929 1.024l-.01 .114l-1 7a1 1 0 0 1 -.877 .853l-.113 .006h-12v2h10a3 3 0 1 1 -2.995 3.176l-.005 -.176l.005 -.176c.017 -.288 .074 -.564 .166 -.824h-5.342a3 3 0 1 1 -5.824 1.176l-.005 -.176l.005 -.176a3.002 3.002 0 0 1 1.995 -2.654v-12.17h-1a1 1 0 0 1 -.993 -.883l-.007 -.117a1 1 0 0 1 .883 -.993l.117 -.007h2zm0 16a1 1 0 1 0 0 2a1 1 0 0 0 0 -2zm11 0a1 1 0 1 0 0 2a1 1 0 0 0 0 -2z" stroke-width="0" fill="currentColor"></path>
+          </svg>
         </span>
 
         <p class="text-xl text-center leading-tight mt-2 text-gray-700">
@@ -50,7 +49,11 @@ const numberOfReviews = products.reduce((acc, el) => {
       
       <a href="/admin/users" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
         <span class="scale-150 mb-2 text-gray-600">
-          <UserIcon />
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+          </svg>
         </span>
 
         <p class="text-xl text-center leading-tight mt-2 text-gray-700">
@@ -60,7 +63,10 @@ const numberOfReviews = products.reduce((acc, el) => {
       
       <a href="/admin/reviews" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
         <span class="scale-150 mb-2 text-yellow-500">
-          <StarIcon />
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0" fill="currentColor"></path>
+          </svg>
         </span>
 
         <p class="text-xl text-center leading-tight mt-2 text-gray-700">
@@ -70,7 +76,11 @@ const numberOfReviews = products.reduce((acc, el) => {
       
       <a href="/admin/categories" class="py-12 px-6 bg-white shadow rounded-md flex flex-col justify-center items-center hover:shadow-lg transition">
         <span class="scale-150 mb-2 text-blue-600">
-          <PencilIcon />
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+            <path d="M13.5 6.5l4 4"></path>
+          </svg>
         </span>
 
         <p class="text-xl text-center leading-tight mt-2 text-gray-700">

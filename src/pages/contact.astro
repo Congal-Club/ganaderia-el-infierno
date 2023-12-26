@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import SocialsNetworks from "../components/SocialsNetworks.astro";
-import FrecuentQuestions from "../components/islands/FrecuentQuestions"
-import ContactForm from "../components/islands/ContactForm"
+import Layout from '../layouts/Layout.astro'
+import SocialsNetworks from '../components/SocialsNetworks.astro'
+import ContactForm from '../components/ContactForm.astro'
+import FAQ from '../components/islands/FAQ'
 ---
 
 <Layout
-  title="Ganadería el infierno | perfil de usuario"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | perfil de usuario'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-  <SocialsNetworks/>
-  <FrecuentQuestions client:load/>
-  <ContactForm client:load/>
+  <SocialsNetworks />
+  <FAQ client:load />
+  <ContactForm />
 </Layout>
