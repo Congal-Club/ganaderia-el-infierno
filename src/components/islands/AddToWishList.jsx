@@ -1,4 +1,5 @@
 import toast from 'react-hot-toast'
+
 export default function AddToWishList({ id, stock, product}){
   return(
     <div>

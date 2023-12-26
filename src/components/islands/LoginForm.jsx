@@ -1,8 +1,6 @@
 import styles from "../../styles/LoginForm.module.css"
 import toast from 'react-hot-toast'
 
-
-
 export default function LoginForm () {
   const handleLogin= (e)=>{
     e.preventDefault()

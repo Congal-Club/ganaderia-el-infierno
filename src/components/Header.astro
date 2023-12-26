@@ -16,13 +16,13 @@ interface Props {
 const { showSlider = true, showCategories = false } = Astro.props
 ---
 
-<header class='w-full bg-white py-4 border-b-gray-200 border-b-[1px]'>
+<header id='header' class='w-full bg-white transition sticky top-0 z-50 py-4 border-b-gray-200 border-b-[1px]'>
   <div class='w-[90%] mx-auto'>
     <section class='w-full flex justify-between items-center gap-8'>
       <div class='hidden md:block'>
         <a title='Logo' href='/'>
           <img
-            class='w-32 object-cover object-center'
+            class='w-24 object-cover object-center'
             src='/logo.jpeg'
             alt='Logo de la tienda'
             title='Logo de la tienda'
@@ -170,3 +170,19 @@ const { showSlider = true, showCategories = false } = Astro.props
 )}
 
 <Cookies transition:persist client:load />
+
+<script>
+  const $header = document.querySelector('#header')!
+
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      $header.classList.add('py-1')
+      $header.classList.remove('py-4')
+      $header.classList.add('shadow-lg')
+    } else {
+      $header.classList.remove('py-1')
+      $header.classList.add('py-4')
+      $header.classList.remove('shadow-lg')
+    }
+  })
+</script>

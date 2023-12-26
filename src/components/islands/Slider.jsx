@@ -9,7 +9,7 @@ import 'swiper/css/scrollbar'
 
 export default function Slider() {
   return (
-    <div className='w-full h-screen mx-auto mt-2'>
+    <div className='w-full h-[300px] md:h-[400px] lg:h-[600px] mx-auto'>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -62,7 +62,7 @@ export default function Slider() {
 
 function SliderElement({ link, img, title, description }) {
   return (
-    <a href={link} className='h-screen relative grid place-content-center'>
+    <a href={link} className='h-[300px] md:h-[400px] lg:h-[600px] relative grid place-content-center'>
       <img
         src={img}
         className='w-full h-full object-cover object-center absolute top-0 left-0 -z-10'
