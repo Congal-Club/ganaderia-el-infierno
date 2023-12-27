@@ -181,7 +181,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
   )
 }
 
-export default function TableOfUsers({ users, onClickUser, onDeleteUser }){
+function TableOfUsers({ users, onClickUser, onDeleteUser }){
   return(
     <div className='flex-1 [&>*:nth-child(even)]:bg-gray-200'>
       {users.map((user) => (
