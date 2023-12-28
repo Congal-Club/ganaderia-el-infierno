@@ -1,28 +1,32 @@
 ---
-import Products from "../components/Products.astro";
-import { products } from "../data/db";
-import Layout from "../layouts/Layout.astro";
-import type { Product } from "../types/product";
+import Title from '../components/Title.astro'
+import Products from '../components/products/Products.astro'
+import { products } from '../data/products'
+import Layout from '../layouts/Layout.astro'
+import type { Product } from '../types/product'
 
-const { searchParams } = Astro.url;
-const query = searchParams.get("query");
+const { searchParams } = Astro.url
+const query = searchParams.get('query')
 
-let filteredProducts: Product[] = [];
+let filteredProducts: Product[] = []
 filteredProducts = products.filter(
   (p) =>
     p.name.includes(`${query}`) ||
     p.model.includes(`${query}`) ||
     p.description.includes(`${query}`) ||
-    p["short-description"].includes(`${query}`)
-);
+    p['short-description'].includes(`${query}`)
+)
 ---
 
 <Layout
-  title="Ganadería el infierno | calidad para tu ganadería"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | calidad para tu ganadería'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-  <Products products={filteredProducts} />
+  <Title title={`Resultados de la búsqueda ${query}`} />
+
+  <Products
+    products={filteredProducts}
+  />
 </Layout>
- ../data/orders

@@ -1,9 +1,9 @@
-import { PayPalButtons } from '@paypal/react-paypal-js'
+import { PayPalButtons as ReactPayPal } from '@paypal/react-paypal-js'
 import toast from 'react-hot-toast'
 
-export default function AppPayPalButtons({ total, clearProducts }) {
+export default function PayPalButtons({ total, clearProducts }) {
   return (
-    <PayPalButtons
+    <ReactPayPal
       createOrder={(data, actions) => {
         return actions.order.create({
           purchase_units: [

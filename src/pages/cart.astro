@@ -1,19 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import CartProducts from "../components/islands/CartProducts"
+import Layout from '../layouts/Layout.astro'
+import CartProducts from '../components/products/CartProducts'
+import Title from '../components/Title.astro';
 
 const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
 <Layout
-  title="Ganadería el infierno | calidad para tu ganadería"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | calidad para tu ganadería'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-  <h1 class="mb-4 text-3xl font-medium text-slate-800">
-    Productos en el carrito
-  </h1>
+  <Title title='Productos en el carrito' />
 
   <CartProducts
     clientId={clientId}

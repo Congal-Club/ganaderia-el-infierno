@@ -1,53 +1,53 @@
 ---
-import Products from "../../components/Products.astro";
-import { products } from "../../data/db";
-import Layout from "../../layouts/Layout.astro";
-import type { Product } from "../../types/product";
+import Products from '../../components/products/Products.astro'
+import { products } from '../../data/products'
+import Layout from '../../layouts/Layout.astro'
+import type { Product } from '../../types/product'
 
-const { query } = Astro.params;
-let filteredProducts: Product[] = [];
+const { query } = Astro.params
+let filteredProducts: Product[] = []
 
 switch (query) {
-  case "alimento": {
+  case 'alimento': {
     filteredProducts = products.filter(
       (p) =>
-        p.categories.includes("Alimentación") ||
-        p.categories.includes("Engorda") ||
-        p.categories.includes("Forraje")
-    );
-    break;
+        p.categories.some((c) => c.name === 'Alimentación') ||
+        p.categories.some((c) => c.name === 'Engorda') ||
+        p.categories.some((c) => c.name === 'Forraje')
+    )
+    break
   }
-  case "toros": {
+  case 'toros': {
     filteredProducts = products.filter(
       (p) =>
-        p.categories.includes("Toros") ||
-        p.categories.includes("Carne") ||
-        p.categories.includes("Becerro") ||
-        p.categories.includes("Registro")
-    );
-    break;
+        p.categories.some((c) => c.name === 'Toros') ||
+        p.categories.some((c) => c.name === 'Carne') ||
+        p.categories.some((c) => c.name === 'Becerro') ||
+        p.categories.some((c) => c.name === 'Registro')
+    )
+    break
   }
-  case "vacas": {
+  case 'vacas': {
     filteredProducts = products.filter(
-      (p) => p.categories.includes("Vaca") || p.categories.includes("Leche")
-    );
-    break;
+      (p) => p.categories.some((c) => c.name === 'Vaca') || p.categories.some((c) => c.name === 'Leche')
+    )
+    break
   }
-  case "nutricional": {
-    filteredProducts = products.filter((p) => p.categories.includes("Salud"));
-    break;
+  case 'nutricional': {
+    filteredProducts = products.filter((p) => p.categories.some((c) => c.name === 'Salud'))
+    break
   }
   default: {
-    filteredProducts = products;
-    break;
+    filteredProducts = products
+    break
   }
 }
 ---
 
 <Layout
-  title="Ganadería el infierno | perfil de usuario"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | perfil de usuario'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
   showCategories={true}
 >
@@ -56,4 +56,3 @@ switch (query) {
     title={`Productos destacados de ${query}`}
   />
 </Layout>
- ../../data/orders

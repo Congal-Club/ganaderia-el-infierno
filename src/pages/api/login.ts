@@ -14,7 +14,7 @@ export const POST: APIRoute = async ({ request }) => {
       : u.email === email && u.password === password
   })
 
-  return user ?
-    new Response(JSON.stringify(user))
+  return user 
+    ? new Response(JSON.stringify(user))
     : new Response(null, { status: 401 })
 }

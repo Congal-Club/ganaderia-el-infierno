@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import SocialsNetworks from '../components/SocialsNetworks.astro'
-import ContactForm from '../components/ContactForm.astro'
-import FAQ from '../components/islands/FAQ'
+import SocialsNetworks from '../components/contact/SocialsNetworks.astro'
+import ContactForm from '../components/contact/ContactForm.astro'
+import FAQ from '../components/contact/FAQ'
+import Title from '../components/Title.astro';
 ---
 
 <Layout
@@ -11,6 +12,8 @@ import FAQ from '../components/islands/FAQ'
   imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
+  <Title title='Contáctanos' />
+
   <SocialsNetworks />
   <FAQ client:load />
   <ContactForm />

@@ -1,14 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Orders from "../components/islands/Orders";
+import Layout from '../layouts/Layout.astro'
+import Orders from '../components/orders/Orders'
+import Title from '../components/Title.astro'
 ---
 
 <Layout
-  title="Ganadería el infierno | perfil de usuario"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | perfil de usuario'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-<h1 class="text-3xl text-slate-800 font-medium mb-4">Historial de ordenes</h1>
+<Title title='Historial de ordenes' />
 <Orders/>
 </Layout>

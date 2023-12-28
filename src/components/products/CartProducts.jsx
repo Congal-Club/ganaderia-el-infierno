@@ -2,10 +2,11 @@
 
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
+
 import { currencyFormatter } from '../../lib/currency-formatter'
 import Trash from '../icons/Trash'
 
-const LazyPayPalButtons = lazy(() => import('./AppPayPalButtons'))
+const LazyPayPalButtons = lazy(() => import('./PayPalButtons'))
 
 export default function CartProducts({ clientId }) {
   const [cart, setCart] = useState([])
@@ -22,10 +23,10 @@ export default function CartProducts({ clientId }) {
   }, [])
 
   const removeFromCart = (productId) => {
-    const updatedCart = cart.filter(({product}) => product.id !== productId);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
+    const updatedCart = cart.filter(({product}) => product.id !== productId)
+    setCart(updatedCart)
+    localStorage.setItem('cart', JSON.stringify(updatedCart))
+  }
 
   return (
     <PayPalScriptProvider
@@ -34,28 +35,28 @@ export default function CartProducts({ clientId }) {
         currency: 'MXN'
       }}
     >
-      <div className='flex flex-row flex-nowrap justify-between items-start gap-6'>
-        <section className='flex-1 flex flex-col gap-2'>
+      <div className='flex flex-row flex-wrap md:flex-nowrap justify-between items-start gap-6'>
+        <section className='w-full md:flex-1 flex flex-col gap-2'>
           {cart.map(({ product, quantity }) => (
             <article
               key={product.id}
               className='w-full flex flex-row justify-start gap-4 items-center bg-gray-100 py-2 px-4 shadow-sm rounded-md'
             >
-              <figure>
+              <picture>
                 <img
                   src={product.image}
                   alt={product.name}
                   title={product.name}
-                  className='w-40 aspect-[9/12] object-cover object-center'
+                  className='w-56 aspect-[12/9] object-cover object-center rounded'
                 />
-              </figure>
+              </picture>
 
               <section className='flex-1'>
                 <h3 className='text-xl font-medium text-slate-800 mb-1'>
                   {product.name}
                 </h3>
 
-                <p className='font-normal text-slate-900 mb-2'>
+                <p className='font-normal text-slate-900 mb-2 text-pretty'>
                   {product['short-description']}
                 </p>
 
@@ -77,8 +78,10 @@ export default function CartProducts({ clientId }) {
                     </p>
                   </div>
 
-                  <button className='flex gap-1 text-white border border-red-500 rounded-md bg-red-500 p-2 hover:bg-red-600'
-                    onClick={()=>removeFromCart(product.id)}>
+                  <button
+                    className='flex gap-1 text-white border border-red-500 rounded-md bg-red-500 p-2 hover:bg-red-600'
+                    onClick={()=>removeFromCart(product.id)}
+                  >
                     <Trash />{' '}
                     Eliminar
                   </button>
@@ -88,7 +91,7 @@ export default function CartProducts({ clientId }) {
           ))}
         </section>
 
-        <section className='w-[30%] border border-slate-400 rounded-md'>
+        <section className='w-full md:w-[30%] border border-slate-400 rounded-md'>
           <h3 className='p-2 border-b border-slate-400 text-2xl text-slate-800 text-center font-semibold'>
             Carrito de compras
           </h3>

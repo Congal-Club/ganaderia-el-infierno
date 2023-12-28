@@ -1,8 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions"
 import GoogleAnalytics from "../components/GoogleAnalytics.astro"
-import ToasterViewer from "../components/islands/ToasterViewer"
-import AdminMenu from "../components/islands/AdminMenu"
+import ToasterViewer from "../components/ToasterViewer"
+import AdminMenu from "../components/admin/AdminMenu"
 
 interface Props {
   title: string
@@ -15,9 +15,9 @@ interface Props {
 const {
   title,
   description,
-  keywords = '',
-  imageFullUrl = '',
-  isForLogin = false 
+  keywords = "",
+  imageFullUrl = "",
+  isForLogin = false,
 } = Astro.props
 ---
 
@@ -31,25 +31,29 @@ const {
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="keywords" content={`Ganadería el infierno, Ganadería, Ganado, Alimento para ganado, Toros, Vacas, Becerros, Bovinos, Crianza, Ganaderos, Engorda, Ganaderías, Ranchos, Compra, Venta, ${keywords}`}>
-    <meta name="author" content="Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Language" content="es">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/">
+    <meta
+      name="keywords"
+      content={`Ganadería el infierno, Ganadería, Ganado, Alimento para ganado, Toros, Vacas, Becerros, Bovinos, Crianza, Ganaderos, Engorda, Ganaderías, Ranchos, Compra, Venta, ${keywords}`}
+    />
+    <meta
+      name="author"
+      content="Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/" />
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@chicho69_cesar">
-    <meta name="twitter:title" content={title}>
-    <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={imageFullUrl}>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@chicho69_cesar" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageFullUrl} />
 
-    <meta name='og:title' content={title} />
-    <meta name='og:description' content={description }/>
-    {imageFullUrl && (
-      <meta name='og:image' content={imageFullUrl} />
-    )}
-    
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    {imageFullUrl && <meta name="og:image" content={imageFullUrl} />}
+
     <link rel="icon" type="image/png" href="/icon.png" />
     <title>{title}</title>
 
@@ -57,7 +61,9 @@ const {
   </head>
 
   <body class="min-h-screen flex flex-col">
-    <header class="w-full p-[0.625rem] bg-white fixed border-b-[0.5px] border-gray-200">
+    <header
+      class="w-full p-[0.625rem] bg-white fixed border-b-[0.5px] border-gray-200"
+    >
       <section>
         <div>
           <img
@@ -74,11 +80,11 @@ const {
       </section>
     </header>
 
-    <main class="w-full flex flex-1 pt-16 flex-row justify-start items-start gap-4 bg-gray-100">
+    <main
+      class="w-full flex flex-1 pt-16 flex-row justify-start items-start gap-4 bg-gray-100"
+    >
       <!-- Admin Menu -->
-      {!isForLogin && (
-        <AdminMenu client:only />
-      )}
+      {!isForLogin && <AdminMenu client:only />}
 
       <section class="flex-1">
         <slot />

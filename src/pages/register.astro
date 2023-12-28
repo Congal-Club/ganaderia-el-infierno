@@ -1,13 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import RegisterForm  from "../components/islands/RegisterForm";
+import Layout from '../layouts/Layout.astro'
+import RegisterForm  from '../components/users/RegisterForm'
+import Title from '../components/Title.astro'
 ---
 
 <Layout
-  title="Ganadería el infierno | registro e inicio de sesion"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | registro e inicio de sesión'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
+  <Title title='Regístrate para tener tu propia cuenta' />
   <RegisterForm client:load/> 
 </Layout>

@@ -1,12 +1,15 @@
 ---
-import ProductDetails from '../../components/ProductDetails.astro'
-import Reviews from '../../components/islands/Reviews'
-import { products as db } from '../../data/db'
+import ProductDetails from '../../components/products/ProductDetails.astro'
+import Reviews from '../../components/products/Reviews'
+import { products as db } from '../../data/products'
 import Layout from '../../layouts/Layout.astro'
-
 
 const { slug } = Astro.params
 const product = db.find((p) => p.slug === slug)
+
+if (product === undefined) {
+  return Astro.redirect('/404', 404)
+}
 ---
 
 <Layout
@@ -32,4 +35,3 @@ const product = db.find((p) => p.slug === slug)
     <Reviews client:load reviews={product.reviews}/>
   )}
 </Layout>
-../../data/orders

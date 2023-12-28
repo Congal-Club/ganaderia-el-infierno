@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import { COOKIE_NAME } from '../constants'
 import type { User } from '../types/user'
 import { Facebook, Gmail, Instagram } from '../components/icons/Socials'
+import Title from '../components/Title.astro'
+import Logout from '../components/users/Logout'
 
 const cookie = Astro.cookies.get(COOKIE_NAME)
 
@@ -22,9 +24,7 @@ if (cookie === undefined) {
   imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-  <h1 class='mb-4 text-2xl font-semibold text-slate-700'>
-    Perfil del usuario
-  </h1>
+  <Title title='Perfil del usuario' />
 
   <div class='w-full my-4 flex justify-center gap-8 items-center'>
     {isAuthenticated ? (
@@ -49,6 +49,8 @@ if (cookie === undefined) {
         <p class='font-bold text-lg'>
           Correo electrónico: <span class='font-normal'>{user?.email}</span>
         </p>
+
+        <Logout client:load />
       </section>
     ) : (
       <picture class='w-1/2 max-w-60'>
@@ -86,10 +88,6 @@ if (cookie === undefined) {
         <a href='/change-password' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
           Cambiar tu contraseña
         </a>
-        
-        <a href='/wish-list' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
-          Modificar tu lista de deseos
-        </a>
       </article>
     ) : (
       <article class='bg-white shadow-lg rounded p-4'>
@@ -119,6 +117,10 @@ if (cookie === undefined) {
 
         <a href='/history' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
           Ver mi historial de compras
+        </a>
+
+        <a href='/wish-list' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Modificar tu lista de deseos
         </a>
       </article>
     )}
