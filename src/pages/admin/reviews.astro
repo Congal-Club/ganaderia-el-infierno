@@ -1,7 +1,7 @@
 ---
-import AdminLayout from "../../layouts/AdminLayout.astro"
-import { products } from '../../data/db'
-import AdminReviews from "../../components/admin/AdminReviews.astro"
+import AdminReviews from "../../components/admin/AdminReviews.astro";
+import { products } from "../../data/db";
+import AdminLayout from "../../layouts/AdminLayout.astro";
 ---
 
 <AdminLayout
@@ -15,9 +15,12 @@ import AdminReviews from "../../components/admin/AdminReviews.astro"
     </h1>
 
     <div class="grid grid-cols-2 gap-4 mb-4">
-      {products.filter((p) => p.reviews && p.reviews.length > 0).map((product) => (
-        <AdminReviews product={product} />
-      ))}
+      {
+        products
+          .filter((p) => p.reviews && p.reviews.length > 0)
+          .map((product) => <AdminReviews product={product} />)
+      }
     </div>
   </section>
 </AdminLayout>
+ ../../data/orders

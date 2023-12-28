@@ -1,7 +1,7 @@
 ---
-import AdminProducts from "../../components/admin/AdminProducts"
-import AdminLayout from "../../layouts/AdminLayout.astro"
-import { products } from '../../data/db'
+import AdminProducts from "../../components/admin/AdminProducts";
+import { products } from "../../data/db";
+import AdminLayout from "../../layouts/AdminLayout.astro";
 ---
 
 <AdminLayout
@@ -10,10 +10,9 @@ import { products } from '../../data/db'
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
 >
   <section class="pl-60 pr-4">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">
-      Productos
-    </h1>
+    <h1 class="text-3xl text-slate-800 font-medium my-4">Productos</h1>
 
     <AdminProducts client:load products={products} />
   </section>
 </AdminLayout>
+ ../../data/orders

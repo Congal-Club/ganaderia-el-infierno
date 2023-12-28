@@ -1,8 +1,8 @@
 import { type APIRoute } from 'astro'
-import { users } from '../../data/db'
+import { users } from '../../data/users'
 
 export const POST: APIRoute = async ({ request }) => {
-  const data = await request.formData()  
+  const data = await request.formData()
 
   const from = data.get('from')
   const email = data.get('email')

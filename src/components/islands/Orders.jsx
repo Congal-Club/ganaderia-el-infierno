@@ -1,8 +1,8 @@
-import { orders } from "../../data/db"
+import { orders } from "../../data/orders"
 import OrderCard from "./OrderCard"
 
 
-export default function Orders(){
+export default function Orders() {
   return (
     <>
       <div>
@@ -32,7 +32,7 @@ export default function Orders(){
           />
         ))}
       </table>
-      
+
     </>
   )
 }

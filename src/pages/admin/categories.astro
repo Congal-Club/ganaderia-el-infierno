@@ -1,7 +1,7 @@
 ---
-import AdminCategories from "../../components/admin/AdminCategories"
-import AdminLayout from "../../layouts/AdminLayout.astro"
-import { categories } from '../../data/db'
+import AdminCategories from "../../components/admin/AdminCategories";
+import { categories } from "../../data/db";
+import AdminLayout from "../../layouts/AdminLayout.astro";
 ---
 
 <AdminLayout
@@ -10,11 +10,9 @@ import { categories } from '../../data/db'
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
 >
   <section class="pl-60 pr-4">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">
-      Categorías
-    </h1>
+    <h1 class="text-3xl text-slate-800 font-medium my-4">Categorías</h1>
 
     <AdminCategories client:load categories={categories} />
   </section>
 </AdminLayout>
-../../components/admin/AdminCategories
+ ../../components/admin/AdminCategories../../data/orders

@@ -1,6 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import ProfileUser from '../components/islands/ProfileUser'
+import { COOKIE_NAME } from '../constants'
+import type { User } from '../types/user'
+import { Facebook, Gmail, Instagram } from '../components/icons/Socials'
+
+const cookie = Astro.cookies.get(COOKIE_NAME)
+
+let isAuthenticated = true
+let user: User | null = null
+
+if (cookie === undefined) {
+  isAuthenticated = false
+} else {
+  user = JSON.parse(cookie.value) as User
+}
 ---
 
 <Layout
@@ -9,7 +22,138 @@ import ProfileUser from '../components/islands/ProfileUser'
   imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showSlider={false}
 >
-  <h1 class='text-3xl text-slate-800 font-medium mb-4'>Perfil del usuario</h1>
-  
-  <ProfileUser client:load />
+  <h1 class='mb-4 text-2xl font-semibold text-slate-700'>
+    Perfil del usuario
+  </h1>
+
+  <div class='w-full my-4 flex justify-center gap-8 items-center'>
+    {isAuthenticated ? (
+      <picture class='w-1/2 max-w-60'>
+        <img
+          src={user!.picture}
+          alt={user?.name}
+          title={user?.name}
+          class='w-full aspect-square rounded-full object-cover object-center'
+        />
+      </picture>
+
+      <section class='flex flex-col flex-nowrap items-start justify-center gap-0.5'>
+        <p class='font-bold text-lg'>
+          Nombre: <span class='font-normal'>{user?.name}</span>
+        </p>
+        
+        <p class='font-bold text-lg'>
+          Apellidos: <span class='font-normal'>{user?.last_name}</span>
+        </p>
+        
+        <p class='font-bold text-lg'>
+          Correo electrónico: <span class='font-normal'>{user?.email}</span>
+        </p>
+      </section>
+    ) : (
+      <picture class='w-1/2 max-w-60'>
+        <img
+          src='https://i.pinimg.com/564x/9e/83/75/9e837528f01cf3f42119c5aeeed1b336.jpg'
+          alt='No image'
+          title='No image'
+          class='w-full aspect-square rounded-full object-cover object-center'
+        />
+      </picture>
+
+      <section class='flex flex-col flex-nowrap items-start justify-center gap-0.5'>
+        <h3 class='text-xl font-bold'>
+          Aún no ha iniciado sesión
+        </h3>
+      </section>
+    )}
+  </div>
+
+  <h2 class='text-xl font-medium my-4'>
+    Información de la cuenta
+  </h2>
+
+  <div class={`grid ${isAuthenticated ? 'grid-cols-3' : 'grid-cols-2'} gap-4`}>
+    {isAuthenticated ? (
+      <article class='bg-white shadow-lg rounded p-4'>
+        <h3 class='text-lg mb-3 text-center font-bold'>
+          Mi cuenta
+        </h3>
+
+        <a href='/modify-account' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Editar la información de la cuenta
+        </a>
+        
+        <a href='/change-password' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Cambiar tu contraseña
+        </a>
+        
+        <a href='/wish-list' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Modificar tu lista de deseos
+        </a>
+      </article>
+    ) : (
+      <article class='bg-white shadow-lg rounded p-4'>
+        <h3 class='text-lg mb-3 text-center font-bold'>
+          Puedes tener una cuenta
+        </h3>
+
+        <a href='/login' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Inicia sesión
+        </a>
+
+        <a href='/register' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Regístrate
+        </a>
+      </article>
+    )}
+
+    {isAuthenticated && (
+      <article class='bg-white shadow-lg rounded p-4'>
+        <h3 class='text-lg mb-3 text-center font-bold'>
+          Mis pedidos
+        </h3>
+
+        <a href='/cart' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Ver carrito de compras
+        </a>
+
+        <a href='/history' class='w-full text-center text-base inline-block font-medium text-indigo-700 hover:text-indigo-500 transition'>
+          Ver mi historial de compras
+        </a>
+      </article>
+    )}
+
+    <article class='bg-white shadow-lg rounded p-4'>
+      <h3 class='text-lg mb-3 text-center font-bold'>
+        Contáctanos
+      </h3>
+
+      <a
+        title='Facebook'
+        href='https://www.facebook.com/profile.php?id=61553058448723'
+        target='_blank'
+        class='text-blue-700 flex justify-center w-full gap-1 font-semibold mb-1 hover:text-blue-800 transition'
+      >
+        <Facebook /> Facebook
+      </a>
+
+      <a
+        title='Gmail'
+        href='https://mail.google.com/mail/u/2/#inbox'
+        target='_blank'
+        class='text-red-500 flex justify-center w-full gap-1 font-semibold mb-1 hover:text-red-600 transition'
+      >
+        <Gmail /> Gmail
+      </a>
+
+      <a
+        title='Instagram'
+        href='https://www.instagram.com/ganaderiaelinfierno/'
+        target='_blank'
+        class='text-pink-600 flex justify-center w-full gap-1 font-semibold mb-1 hover:text-pink-700 transition'
+      >
+        <Instagram /> Instagram
+      </a>
+    </article>
+  </div>
 </Layout>

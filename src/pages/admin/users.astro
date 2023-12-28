@@ -1,7 +1,7 @@
 ---
-import AdminLayout from "../../layouts/AdminLayout.astro"
 import AdminUsers from "../../components/admin/AdminUsers";
-import { users } from '../../data/db'
+import { users } from "../../data/db";
+import AdminLayout from "../../layouts/AdminLayout.astro";
 ---
 
 <AdminLayout
@@ -9,11 +9,9 @@ import { users } from '../../data/db'
   description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
 >
-
   <section class="pl-60 pr-4">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">
-      Usuarios
-    </h1>
-  <AdminUsers client:load users={users} /> 
+    <h1 class="text-3xl text-slate-800 font-medium my-4">Usuarios</h1>
+    <AdminUsers client:load users={users} />
   </section>
 </AdminLayout>
+ ../../data/orders

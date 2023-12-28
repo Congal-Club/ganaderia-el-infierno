@@ -1,13 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import { orders as db } from '../../data/db'
+import { orders as db } from "../../data/db";
+import Layout from "../../layouts/Layout.astro";
 
-const {id} = Astro.params
-const order = db.find((p) => p.id === Number(id))
-console.log(order)
-let total = 0
-let envio = 120.00
-
+const { id } = Astro.params;
+const order = db.find((p) => p.id === Number(id));
+console.log(order);
+let total = 0;
+let envio = 120.0;
 ---
 
 <Layout
@@ -16,31 +15,49 @@ let envio = 120.00
   imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
   showSlider={false}
 >
-{order === undefined ? 
-<p>Orden no registrada</p> 
-: 
-<div>
-      <h2 class="text-3xl"><b>Detalles del pedido</b></h2>
+  {
+    order === undefined ? (
+      <p>Orden no registrada</p>
+    ) : (
+      <div>
+        <h2 class="text-3xl">
+          <b>Detalles del pedido</b>
+        </h2>
         <h3 class="text-xl">Pedido</h3>
         <div class="m-auto flex flex-row justify-between text-lg text-left mt-3 mb-5">
           <div class="ml-5  ">
-            <p><b>ID del pedido: </b> {order.id}</p>
-            <p><b>Estatus: </b> {order.status}</p>
-            
+            <p>
+              <b>ID del pedido: </b> {order.id}
+            </p>
+            <p>
+              <b>Estatus: </b> {order.status}
+            </p>
           </div>
           <div class="mr-5 rounded-md">
             <table class="rounded-md shadow-md">
               <tr class="border rounded-md border-slate-400 text-left">
-                <th class="border rounded-md border-slate-400 pr-12 pl-2">Metodo de envio</th>
-                <td class="border rounded-md border-slate-400 pr-12 pl-2">Tarifa Plana de Envio</td>
+                <th class="border rounded-md border-slate-400 pr-12 pl-2">
+                  Metodo de envio
+                </th>
+                <td class="border rounded-md border-slate-400 pr-12 pl-2">
+                  Tarifa Plana de Envio
+                </td>
               </tr>
               <tr class="border rounded-md border-slate-400">
-                <th class="border rounded-md border-slate-400 pr-12 pl-2">Metodo de pago</th>
-                <td class="border rounded-md border-slate-400 pr-12 pl-2">Contra Reembolso</td>
+                <th class="border rounded-md border-slate-400 pr-12 pl-2">
+                  Metodo de pago
+                </th>
+                <td class="border rounded-md border-slate-400 pr-12 pl-2">
+                  Contra Reembolso
+                </td>
               </tr>
               <tr class="border rounded-md border-slate-400">
-                <th class="border rounded-md border-slate-400 pr-12 pl-2">Fecha de creación</th>
-                <td class="border rounded-md border-slate-400 pr-12 pl-2">2023-11-29</td>
+                <th class="border rounded-md border-slate-400 pr-12 pl-2">
+                  Fecha de creación
+                </th>
+                <td class="border rounded-md border-slate-400 pr-12 pl-2">
+                  2023-11-29
+                </td>
               </tr>
             </table>
           </div>
@@ -51,71 +68,132 @@ let envio = 120.00
             <b class="ml-2">Dirección</b>
           </div>
           <div class="ml-5 text-base">
-            <p> <b>Nombre: </b>{" "} {order.nameClient}</p>
-            <p> <b>Colonia:</b>{" "} {order.colonia}</p>
-            <p> <b>Calle:</b>{" "} {order.street}</p>
-            <p> <b>Numero interior:</b>{" "}{order.streetNumber}</p>
-            <p> <b>Numero exterior:</b>{" "} {order.suitNumber}</p>
-            <p>{order.city} {" "}{order.postalCode}</p>
+            <p>
+              {" "}
+              <b>Nombre: </b> {order.nameClient}
+            </p>
+            <p>
+              {" "}
+              <b>Colonia:</b> {order.colonia}
+            </p>
+            <p>
+              {" "}
+              <b>Calle:</b> {order.street}
+            </p>
+            <p>
+              {" "}
+              <b>Numero interior:</b> {order.streetNumber}
+            </p>
+            <p>
+              {" "}
+              <b>Numero exterior:</b> {order.suitNumber}
+            </p>
+            <p>
+              {order.city} {order.postalCode}
+            </p>
             <p>{order.country}</p>
-
           </div>
         </div>
-        
 
         <div class="mb-5 rounded-md">
           <table class="border rounded-md shadow-md border-slate-400 text-base text-center">
             <tr class="border rounded-md border-slate-400 bg-[#f2f2f2]">
-              <th class="border rounded-md border-slate-400 pl-3 pr-3">Nombre del producto</th>
-              <th class="border rounded-md border-slate-400 pl-10 pr-10">Modelo</th>
-              <th class="border rounded-md border-slate-400 pl-5 pr-5">Cantidad</th>
-              <th class="border rounded-md border-slate-400 pl-5 pr-5">Precio</th>
-              <th class="border rounded-md border-slate-400 pl-5 pr-5">Total</th>
+              <th class="border rounded-md border-slate-400 pl-3 pr-3">
+                Nombre del producto
+              </th>
+              <th class="border rounded-md border-slate-400 pl-10 pr-10">
+                Modelo
+              </th>
+              <th class="border rounded-md border-slate-400 pl-5 pr-5">
+                Cantidad
+              </th>
+              <th class="border rounded-md border-slate-400 pl-5 pr-5">
+                Precio
+              </th>
+              <th class="border rounded-md border-slate-400 pl-5 pr-5">
+                Total
+              </th>
             </tr>
             {order.products.map((product) => (
               <tr>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">{product.name}</td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">{product.model}</td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">{product.quantity}</td>
-                <td class="border rounded-md border-slate-400" >${product.price}</td>
-                <td class="border rounded-md border-slate-400">${product.price * product.quantity}</td>
+                <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                  {product.name}
+                </td>
+                <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                  {product.model}
+                </td>
+                <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                  {product.quantity}
+                </td>
+                <td class="border rounded-md border-slate-400">
+                  ${product.price}
+                </td>
+                <td class="border rounded-md border-slate-400">
+                  ${product.price * product.quantity}
+                </td>
               </tr>
             ))}
             <tr class="text-right">
-                <td colspan="3" class="border rounded-md border-slate-400 pl-5 pr-5"></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5"><b>Subtotal</b></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">$ {order.total}</td>
+              <td
+                colspan="3"
+                class="border rounded-md border-slate-400 pl-5 pr-5"
+              />
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                <b>Subtotal</b>
+              </td>
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                $ {order.total}
+              </td>
             </tr>
             <tr class="text-right">
-                <td colspan="3" class="border rounded-md border-slate-400 pl-5 pr-5"></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5"><b>Tarifa plana de envio</b></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">$ {envio}</td>
+              <td
+                colspan="3"
+                class="border rounded-md border-slate-400 pl-5 pr-5"
+              />
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                <b>Tarifa plana de envio</b>
+              </td>
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                $ {envio}
+              </td>
             </tr>
             <tr class="text-right">
-                <td colspan="3" class="border rounded-md border-slate-400 pl-5 pr-5"></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5"><b>total</b></td>
-                <td class="border rounded-md border-slate-400 pl-5 pr-5">$ {order.total + envio}</td>
+              <td
+                colspan="3"
+                class="border rounded-md border-slate-400 pl-5 pr-5"
+              />
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                <b>total</b>
+              </td>
+              <td class="border rounded-md border-slate-400 pl-5 pr-5">
+                $ {order.total + envio}
+              </td>
             </tr>
-            
           </table>
         </div>
         <b>Historial del pedido</b>
         <div class="mt-3 mb-5 rounded-md">
           <table class="border rounded-md shadow-md border-slate-400 text-base text-center ">
             <tr class="border rounded-md border-slate-400 bg-[#f2f2f2]">
-              <th class="border rounded-md border-slate-400 pr-5 pl-5">Fecha de creación</th>
-              <th class="border rounded-md border-slate-400 pr-5 pl-5">Comentarios</th>
-              <th class="border rounded-md border-slate-400 pr-5 pl-5">Estatus</th>
+              <th class="border rounded-md border-slate-400 pr-5 pl-5">
+                Fecha de creación
+              </th>
+              <th class="border rounded-md border-slate-400 pr-5 pl-5">
+                Comentarios
+              </th>
+              <th class="border rounded-md border-slate-400 pr-5 pl-5">
+                Estatus
+              </th>
             </tr>
 
             <tr>
               <td class="border rounded-md border-slate-400">{order.date}</td>
-              <td class="border rounded-md border-slate-400"></td>
+              <td class="border rounded-md border-slate-400" />
               <td class="border rounded-md border-slate-400">{order.status}</td>
-
             </tr>
           </table>
         </div>
-    </div>}
-
-</Layout>
+      </div>
+    )
+  }
+</Layout>../../data/orders

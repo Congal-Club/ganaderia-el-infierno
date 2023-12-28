@@ -1,17 +1,14 @@
 ---
 import Products from '../components/Products.astro'
 
-import { products as db } from '../data/db'
+import { products } from '../data/products'
 import Layout from '../layouts/Layout.astro'
-import { type Product } from '../types/products'
-
-const products: Product[] = db
 ---
 
 <Layout
-	title="Ganadería el infierno | calidad para tu ganadería"
-	description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+	title='Ganadería el infierno | calidad para tu ganadería'
+	description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   showCategories={true}
 >
 	<Products 

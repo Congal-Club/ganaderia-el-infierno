@@ -1,32 +1,45 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import Products from '../../components/Products.astro'
-import { products } from "../../data/db"
-import type { Product } from "../../types/products"
+import Products from "../../components/Products.astro";
+import { products } from "../../data/db";
+import Layout from "../../layouts/Layout.astro";
+import type { Product } from "../../types/product";
 
-const { query } = Astro.params
-let filteredProducts: Product[] = []
+const { query } = Astro.params;
+let filteredProducts: Product[] = [];
 
 switch (query) {
-  case 'alimento': {
-    filteredProducts = products.filter((p) => p.categories.includes('Alimentación') || p.categories.includes('Engorda') || p.categories.includes('Forraje'))
-    break
+  case "alimento": {
+    filteredProducts = products.filter(
+      (p) =>
+        p.categories.includes("Alimentación") ||
+        p.categories.includes("Engorda") ||
+        p.categories.includes("Forraje")
+    );
+    break;
   }
-  case 'toros': {
-    filteredProducts = products.filter((p) => p.categories.includes('Toros') || p.categories.includes('Carne') || p.categories.includes('Becerro') || p.categories.includes('Registro'))
-    break
+  case "toros": {
+    filteredProducts = products.filter(
+      (p) =>
+        p.categories.includes("Toros") ||
+        p.categories.includes("Carne") ||
+        p.categories.includes("Becerro") ||
+        p.categories.includes("Registro")
+    );
+    break;
   }
-  case 'vacas': {
-    filteredProducts = products.filter((p) => p.categories.includes('Vaca') || p.categories.includes('Leche'))
-    break
+  case "vacas": {
+    filteredProducts = products.filter(
+      (p) => p.categories.includes("Vaca") || p.categories.includes("Leche")
+    );
+    break;
   }
-  case 'nutricional': {
-    filteredProducts = products.filter((p) => p.categories.includes('Salud'))
-    break
+  case "nutricional": {
+    filteredProducts = products.filter((p) => p.categories.includes("Salud"));
+    break;
   }
   default: {
-    filteredProducts = products
-    break
+    filteredProducts = products;
+    break;
   }
 }
 ---
@@ -43,3 +56,4 @@ switch (query) {
     title={`Productos destacados de ${query}`}
   />
 </Layout>
+ ../../data/orders
