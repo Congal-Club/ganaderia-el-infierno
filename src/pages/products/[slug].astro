@@ -19,19 +19,16 @@ if (product === undefined) {
   imageFullUrl={`https://ganaderia-el-infierno.vercel.app/${product?.image}`}
   showSlider={false}
 >
-  {product === undefined ? (
-    <div class="h-64 grid place-content-center">
-      <h1 class="text-7xl font-bold text-slate-700">
-        Product Not Found
-      </h1>
-    </div>
-  ) : (
-    <ProductDetails product={product} />
-    
-    <h3 class="mt-16 text-2xl font-medium">
-      Opiniones Sobre el Producto
-    </h3>
+  <ProductDetails
+    product={product}
+  />
+  
+  <h3 class='mt-16 text-2xl font-medium'>
+    Opiniones Sobre el Producto
+  </h3>
 
-    <Reviews client:load reviews={product.reviews}/>
-  )}
+  <Reviews
+    client:load
+    reviews={product.reviews}
+  />
 </Layout>

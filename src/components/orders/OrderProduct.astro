@@ -1,0 +1,50 @@
+---
+import { currencyFormatter } from '../../lib/currency-formatter'
+import type { Product } from '../../types/product'
+
+interface Props {
+  product: Product
+  quantity: number
+}
+
+const { product, quantity } = Astro.props
+---
+
+<article class='w-full rounded-md overflow-hidden'>
+  <header>
+    <img
+      src={product.image}
+      alt={product.name}
+      title={product.name}
+      class='object-cover object-center w-full aspect-[16/12] rounded mb-2'
+    />
+  </header>
+
+  <main class='px-3 pb-3'>
+    <h3 class='text-lg text-slate-800 font-semibold text-center'>
+      {product.name.length < 25 ? (
+        product.name
+      ) : (
+        product.name.slice(0, 25) + '...'
+      )}
+    </h3>
+
+    <p class='text-base text-gray-700 mt-1 description text-pretty'>
+      {product['short-description'].length < 80 ? (
+        product['short-description']
+      ) : (
+        product['short-description'].slice(0, 80) + '...'
+      )}
+    </p>
+
+    <div class='w-full flex justify-between items-center'>
+      <p class='mt-1 font-bold text-indigo-500 text-2xl'>
+        {currencyFormatter.format(product.price)}
+      </p>
+
+      <span class='w-8 h-8 grid place-content-center bg-indigo-700 text-white font-bold rounded-full'>
+        {quantity}
+      </span>
+    </div>
+  </main>
+</article>

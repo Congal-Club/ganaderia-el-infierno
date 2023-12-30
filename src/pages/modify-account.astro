@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import ModifyProfile from '../components/users/ModifyProfile'
 import Title from '../components/Title.astro'
 ---
 
@@ -11,5 +10,74 @@ import Title from '../components/Title.astro'
   showSlider={false}
 >
   <Title title='Editar mi información de cuenta' />
-  <ModifyProfile />
+  
+  <div class='w-full my-4'>
+    <form class='w-full md:w-2/3 lg:w-1/2 mx-auto border-[1px] border-gray-300 p-4 rounded'>
+      <h3 class='text-center text-lg font-medium'>
+        Modifica tus datos personales
+      </h3>
+
+      <div class='w-full my-4 flex flex-col justify-start items-start gap-0.5'>
+        <label for='name' class='w-full text-sm font-medium'>
+          Nombre
+        </label>
+
+        <input
+          type='text'
+          name='name'
+          id='name'
+          class='w-full py-2 px-4 border-[1px] border-gray-300 outline-none rounded'
+          placeholder='Escriba su nombre'
+        />
+      </div>
+
+      <div class='w-full my-4 flex flex-col justify-start items-start gap-0.5'>
+        <label for='lastname' class='w-full text-sm font-medium'>
+          Apellidos
+        </label>
+
+        <input
+          type='text'
+          name='lastname'
+          id='lastname'
+          class='w-full py-2 px-4 border-[1px] border-gray-300 outline-none rounded'
+          placeholder='Escriba su apellido'
+        />
+      </div>
+
+      <div class='w-full my-4 flex flex-col justify-start items-start gap-0.5'>
+        <label for='user-name' class='w-full text-sm font-medium'>
+          Nombre de usuario
+        </label>
+
+        <input
+          type='text'
+          name='user-name'
+          id='user-name'
+          class='w-full py-2 px-4 border-[1px] border-gray-300 outline-none rounded'
+          placeholder='Escribe tu nombre de usuario'
+        />
+      </div>
+    
+      <div class='w-full my-4 flex flex-col justify-start items-start gap-0.5'>
+        <label for='email' class='w-full text-sm font-medium'>
+          Correo Electrónico
+        </label>
+
+        <input
+          type='email'
+          name='email'
+          id='email'
+          class='w-full py-2 px-4 border-[1px] border-gray-300 outline-none rounded'
+          placeholder='Escribe un correo electrónico'
+        />
+      </div>
+
+      <div class='w-full grid place-content-center'>
+        <button type='submit' class='inline-block mx-auto py-2 px-4 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition'>
+          Guardar información
+        </button>
+      </div>
+    </form>
+  </div>
 </Layout>

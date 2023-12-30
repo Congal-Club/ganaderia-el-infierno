@@ -12,22 +12,22 @@ const { product } = Astro.props
 const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
-<div class="w-full container">
-  <section class="images-container">
-    <figure class="image-container">
+<div class='w-full flex flex-row justify-between items-start gap-8 flex-wrap lg:flex-nowrap'>
+  <section class='w-full lg:w-1/2'>
+    <figure class='w-full rounded overflow-hidden mb-4'>
       <img
-        class="image"
+        class='w-full hover:scale-110 transition'
         src={product.image}
         alt={product.name}
         title={product.name}
       />
     </figure>
 
-    <footer class="secondary-images">
+    <footer class='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
       {product.images.map((image) => (
         <img 
-          class="image-thumb"
-          src={image}
+          class='w-full aspect-[16/10] object-cover object-center hover:scale-110 hover:shadow-lg rounded transition'
+          src={image.link}
           alt={product.name}
           title={product.name}
         />
@@ -35,66 +35,59 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
     </footer>
   </section>
 
-  <section class="info">
-    <h3 class="title">
+  <section class='w-full lg:w-1/2'>
+    <h3 class='text-4xl font-black mb-3 text-center'>
       {product.name}
     </h3>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Modelo: </span>
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Modelo: </span>
       {product.model}
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Disponibilidad: </span>
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Disponibilidad: </span>
       {product.stock} en stock
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Descripción: </span>
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Descripción: </span>
       {product['short-description']}
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Peso: </span>
-      {product['weight']} kg
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Peso: </span>
+      {product.weight} kg
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Longitud: </span>
-      {product['length']} mts
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Longitud: </span>
+      {product.length} mts
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Ancho: </span>
-      {product['width']} mts
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Ancho: </span>
+      {product.width} mts
     </p>
 
-    <p class="paragraph">
-      <span class="paragraph-description">Alto: </span>
-      {product['height']} mts
+    <p class='font-normal text-base'>
+      <span class='font-semibold'>Alto: </span>
+      {product.height} mts
     </p>
 
-    <p class="price">
+    <p class='my-4 text-4xl font-black text-indigo-500'>
       ${(product.price)}
     </p>
 
-    <div class="actions">
-      <AddToWishList 
-        id={product.id}
-        product={product}
-        stock={product.stock}
-        client:load
-      />
-    </div>
+    <AddToWishList 
+      product={product}
+      client:load
+    />
 
     <AddToCart
-      id={product.id}
       stock={product.stock}
       product={product}
-      clientId={clientId}
       client:load
-      updatedCart
     />
 
     <Description
@@ -103,99 +96,3 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
     />
   </section>
 </div>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .images-container {
-    display: inline-block;
-    width: 55%;
-  }
-
-  .image-container {
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-
-  .image {
-    display: inline-block;
-    width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 20px -2px rgb(0 0 0 / 25%);
-  }
-
-  .secondary-images {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .image-thumb {
-    display: inline-block;
-    width: 175px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0.25rem;
-  }
-
-  .info {
-    width: 45%;
-  }
-
-  .title {
-    color: rgb(51 65 85);
-    font-size: 2.5rem;
-    line-height: 1.15;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-wrap: balance;
-  }
-
-  .paragraph {
-    color: #25292e;
-  }
-
-  .paragraph-description {
-    font-weight: 600;
-  }
-
-  .price {
-    margin-top: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-    color: #25292e;
-  }
-
-  .tax-price {
-    color: #25292edd;
-  }
-
-  .actions {
-    margin-top: 1rem;
-  }
-
-  .action-button {
-    padding-block: 0.5rem;
-    padding-inline: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 0.25rem;
-    color: #fff;
-    background-color: rgb(51 65 85);
-    transition: all 0.2s ease;
-  }
-
-  .action-button:hover {
-    box-shadow: 2px 2px 0px #25292e;
-    transform: translateY(-1.5px);
-  }
-</style>
