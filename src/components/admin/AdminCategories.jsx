@@ -98,7 +98,7 @@ function FormCategories({ activeCategory, isEditing, onAddCategory, onEditCatego
 
       <button
         type='submit'
-        className='flex flex-row gap-2 justify-center bg-blue-600 py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
+        className='flex flex-row gap-2 justify-center bg-indigo-500 hover:bg-indigo-700 hover:scale-95 font-bold transition py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
       >
         <span>
           {isEditing ? 'Editar Categoría ' : 'Agregar Categoría '}
@@ -129,7 +129,7 @@ function TableOfCategories({ categories, onClickCategory, onDeleteCategory }) {
 
             <div className='flex flex-row justify-start items-center gap-4'>
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onClickCategory(category)}
               >
                 Editar{' '}
@@ -137,7 +137,7 @@ function TableOfCategories({ categories, onClickCategory, onDeleteCategory }) {
               </button>
               
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onDeleteCategory(category.id)}
               >
                 Eliminar{' '}

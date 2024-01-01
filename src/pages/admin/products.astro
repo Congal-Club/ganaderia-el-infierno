@@ -1,17 +1,20 @@
 ---
-import AdminProducts from "../../components/admin/AdminProducts";
-import { products } from "../../data/db";
-import AdminLayout from "../../layouts/AdminLayout.astro";
+import AdminProducts from '../../components/admin/AdminProducts'
+import AdminLayout from '../../layouts/AdminLayout.astro'
+import { products } from '../../data/products'
 ---
 
 <AdminLayout
-  title="Ganadería el infierno | panel de administración"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | panel de administración'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
 >
-  <section class="pl-60 pr-4">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">Productos</h1>
+  <section class='pr-4'>
+    <h1 class='text-3xl text-slate-800 font-medium my-4'>Productos</h1>
 
-    <AdminProducts client:load products={products} />
+    <AdminProducts
+      client:load
+      products={products}
+    />
   </section>
 </AdminLayout>

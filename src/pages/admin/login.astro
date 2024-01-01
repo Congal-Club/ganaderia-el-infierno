@@ -1,21 +1,21 @@
 ---
-import AdminForm from "../../components/admin/AdminLogin"
-import AdminLayout from "../../layouts/AdminLayout.astro"
+import AdminLogin from '../../components/admin/AdminLogin'
+import AdminLayout from '../../layouts/AdminLayout.astro'
 ---
 
 <AdminLayout
-  title="Ganadería el infierno | panel de administración"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | panel de administración'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
   isForLogin
 >
-  <h1 class="my-4 text-3xl font-medium text-center text-slate-800">
+  <h1 class='my-4 text-3xl font-medium text-center text-slate-800'>
     Panel de administración
   </h1>
 
-  <AdminForm client:load />
+  <AdminLogin client:load />
 
-  <p class="mt-12 text-center">
-    Todos los derechos reservados © 2023 <span class="font-medium">GIOficial</span>
+  <p class='mt-12 text-center'>
+    Todos los derechos reservados © 2023 <span class='font-medium'>GIOficial</span>
   </p>
 </AdminLayout>

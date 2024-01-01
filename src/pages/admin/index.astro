@@ -1,162 +1,165 @@
 ---
-import BarChar from "../../components/admin/BarChar";
-import { COOKIE_NAME } from "../../constants";
-import { categories } from "../../data/categories";
-import { orders } from "../../data/orders";
-import { products } from "../../data/products";
-import { users } from "../../data/users";
-import AdminLayout from "../../layouts/AdminLayout.astro";
+import BarChar from '../../components/admin/BarChar'
+import AdminLayout from '../../layouts/AdminLayout.astro'
+import { COOKIE_NAME } from '../../constants'
+import { categories } from '../../data/categories'
+import { orders } from '../../data/orders'
+import { products } from '../../data/products'
+import { users } from '../../data/users'
 
-const cookie = Astro.cookies.get(COOKIE_NAME);
+const cookie = Astro.cookies.get(COOKIE_NAME)
 
 if (cookie === undefined) {
-  return Astro.redirect("/admin/login");
+  return Astro.redirect('/admin/login')
 }
 
 const numberOfReviews = products.reduce((acc, el) => {
-  return el.reviews && el.reviews.length > 0 ? acc + el.reviews.length : acc;
-}, 0);
+  return el.reviews && el.reviews.length > 0 ? acc + el.reviews.length : acc
+}, 0)
 ---
 
 <AdminLayout
-  title="Ganadería el infierno | panel de administración"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | panel de administración'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
 >
-  <section class="pr-4 pl-60">
-    <div class="flex items-center justify-start gap-4 my-4">
-      <h1 class="text-3xl font-medium text-slate-800">
+  <section>
+    <div class='flex items-center justify-start gap-4 my-4'>
+      <h1 class='text-3xl font-medium text-slate-800'>
         Panel de administración
       </h1>
 
       <a
-        href="/"
-        target="_blank"
-        class="px-3 py-1 bg-gray-200 rounded-md shadow-sm"
+        href='/'
+        target='_blank'
+        class='px-3 py-1 bg-gray-200 rounded-md shadow-sm'
       >
         Ir a la tienda ↗️
       </a>
     </div>
 
-    <div class="grid grid-cols-4 gap-4">
+    <div class='grid grid-cols-4 gap-4'>
       <a
-        href="/admin/products"
-        class="flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg"
+        href='/admin/products'
+        class='flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg'
       >
-        <span class="mb-2 text-green-600 scale-150">
+        <span class='mb-2 text-green-600 scale-150'>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-shopping-cart-filled"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-shopping-cart-filled'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
           >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
             <path
-              d="M6 2a1 1 0 0 1 .993 .883l.007 .117v1.068l13.071 .935a1 1 0 0 1 .929 1.024l-.01 .114l-1 7a1 1 0 0 1 -.877 .853l-.113 .006h-12v2h10a3 3 0 1 1 -2.995 3.176l-.005 -.176l.005 -.176c.017 -.288 .074 -.564 .166 -.824h-5.342a3 3 0 1 1 -5.824 1.176l-.005 -.176l.005 -.176a3.002 3.002 0 0 1 1.995 -2.654v-12.17h-1a1 1 0 0 1 -.993 -.883l-.007 -.117a1 1 0 0 1 .883 -.993l.117 -.007h2zm0 16a1 1 0 1 0 0 2a1 1 0 0 0 0 -2zm11 0a1 1 0 1 0 0 2a1 1 0 0 0 0 -2z"
-              stroke-width="0"
-              fill="currentColor"></path>
+              d='M6 2a1 1 0 0 1 .993 .883l.007 .117v1.068l13.071 .935a1 1 0 0 1 .929 1.024l-.01 .114l-1 7a1 1 0 0 1 -.877 .853l-.113 .006h-12v2h10a3 3 0 1 1 -2.995 3.176l-.005 -.176l.005 -.176c.017 -.288 .074 -.564 .166 -.824h-5.342a3 3 0 1 1 -5.824 1.176l-.005 -.176l.005 -.176a3.002 3.002 0 0 1 1.995 -2.654v-12.17h-1a1 1 0 0 1 -.993 -.883l-.007 -.117a1 1 0 0 1 .883 -.993l.117 -.007h2zm0 16a1 1 0 1 0 0 2a1 1 0 0 0 0 -2zm11 0a1 1 0 1 0 0 2a1 1 0 0 0 0 -2z'
+              stroke-width='0'
+              fill='currentColor'></path>
           </svg>
         </span>
 
-        <p class="mt-2 text-xl leading-tight text-center text-gray-700">
+        <p class='mt-2 text-xl leading-tight text-center text-gray-700'>
           {products.length} productos en la tienda
         </p>
       </a>
 
       <a
-        href="/admin/users"
-        class="flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg"
+        href='/admin/users'
+        class='flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg'
       >
-        <span class="mb-2 text-gray-600 scale-150">
+        <span class='mb-2 text-gray-600 scale-150'>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-user"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-user'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
           >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0'></path>
+            <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2'></path>
           </svg>
         </span>
 
-        <p class="mt-2 text-xl leading-tight text-center text-gray-700">
+        <p class='mt-2 text-xl leading-tight text-center text-gray-700'>
           {users.length} usuarios registrados en la tienda
         </p>
       </a>
 
       <a
-        href="/admin/reviews"
-        class="flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg"
+        href='/admin/reviews'
+        class='flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg'
       >
-        <span class="mb-2 text-yellow-500 scale-150">
+        <span class='mb-2 text-yellow-500 scale-150'>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-star-filled"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-star-filled'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
           >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
             <path
-              d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-              stroke-width="0"
-              fill="currentColor"></path>
+              d='M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z'
+              stroke-width='0'
+              fill='currentColor'></path>
           </svg>
         </span>
 
-        <p class="mt-2 text-xl leading-tight text-center text-gray-700">
+        <p class='mt-2 text-xl leading-tight text-center text-gray-700'>
           {numberOfReviews} reseñas sobre los productos
         </p>
       </a>
 
       <a
-        href="/admin/categories"
-        class="flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg"
+        href='/admin/categories'
+        class='flex flex-col items-center justify-center px-6 py-12 transition bg-white rounded-md shadow hover:shadow-lg'
       >
-        <span class="mb-2 text-blue-600 scale-150">
+        <span class='mb-2 text-blue-600 scale-150'>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-pencil"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-pencil'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
           >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path d='M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4'
             ></path>
-            <path d="M13.5 6.5l4 4"></path>
+            <path d='M13.5 6.5l4 4'></path>
           </svg>
         </span>
 
-        <p class="mt-2 text-xl leading-tight text-center text-gray-700">
+        <p class='mt-2 text-xl leading-tight text-center text-gray-700'>
           {categories.length} categorías registradas
         </p>
       </a>
     </div>
 
-    <BarChar client:only orders={orders} />
+    <BarChar
+      client:only
+      orders={orders}
+    />
   </section>
 </AdminLayout>

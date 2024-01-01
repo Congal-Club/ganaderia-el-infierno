@@ -1,9 +1,9 @@
 ---
 import Title from '../../components/Title.astro'
 import OrderProduct from '../../components/orders/OrderProduct.astro'
-import { orders as db } from '../../data/orders'
 import Layout from '../../layouts/Layout.astro'
 import { currencyFormatter } from '../../lib/currency-formatter'
+import { orders as db } from '../../data/orders'
 
 const { id } = Astro.params
 const order = db.find((p) => p.id === Number(id))

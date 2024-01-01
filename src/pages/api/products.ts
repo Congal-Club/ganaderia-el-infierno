@@ -1,5 +1,5 @@
 import { type APIRoute } from 'astro'
-import { products } from '../../data/products';
+import { products } from '../../data/products'
 
 export const GET: APIRoute = async ({}) => {
   const allProducts = products

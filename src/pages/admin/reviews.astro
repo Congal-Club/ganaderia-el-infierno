@@ -1,24 +1,26 @@
 ---
-import AdminReviews from "../../components/admin/AdminReviews.astro";
-import { products } from "../../data/db";
-import AdminLayout from "../../layouts/AdminLayout.astro";
+import AdminReviews from '../../components/admin/AdminReviews.astro'
+import AdminLayout from '../../layouts/AdminLayout.astro'
+import { products } from '../../data/products'
 ---
 
 <AdminLayout
-  title="Ganadería el infierno | panel de administración"
-  description="Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc."
-  imageFullUrl="https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png"
+  title='Ganadería el infierno | panel de administración'
+  description='Tienda en linea para la venta de ganado, alimento para ganado, vacas, toros, forrajes, alimentos balanceados, becerros, etc.'
+  imageFullUrl='https://ganaderia-el-infierno.vercel.app/images/logo-magtimus.png'
 >
-  <section class="pl-60 pr-4">
-    <h1 class="text-3xl text-slate-800 font-medium my-4">
+  <section class='pr-4'>
+    <h1 class='text-3xl text-slate-800 font-medium my-4'>
       Reseñas sobre los productos
     </h1>
 
-    <div class="grid grid-cols-2 gap-4 mb-4">
+    <div class='grid grid-cols-2 gap-4 mb-4'>
       {
         products
           .filter((p) => p.reviews && p.reviews.length > 0)
-          .map((product) => <AdminReviews product={product} />)
+          .map((product) => (
+            <AdminReviews product={product} />
+          ))
       }
     </div>
   </section>

@@ -4,7 +4,7 @@ import Plus from '../icons/Plus'
 import Pencil from '../icons/Pencil'
 import Trash from '../icons/Trash'
 
-export default function AdminUsers({users}){
+export default function AdminUsers({ users }){
   const [adminUsers, setAdminUsers] = useState(users)
   const [activeUser, setActiveUser] = useState(null)
   const [isEditing, setIsEditing] = useState(false)
@@ -169,7 +169,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
 
       <button
         type='submit'
-        className='flex flex-row gap-2 justify-center bg-blue-600 py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
+        className='flex flex-row gap-2 justify-center bg-indigo-500 hover:scale-95 hover:bg-indigo-700 font-bold transition py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
       >
         <span>
           {isEditing ? 'Editar Usuario ' : 'Agregar Usuario '}
@@ -209,7 +209,7 @@ function TableOfUsers({ users, onClickUser, onDeleteUser }){
 
             <div className='flex flex-row justify-start items-center gap-4'>
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onClickUser(user)}
               >
                 Editar{' '}
@@ -217,7 +217,7 @@ function TableOfUsers({ users, onClickUser, onDeleteUser }){
               </button>
               
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onDeleteUser(user.id)}
               >
                 Eliminar{' '}

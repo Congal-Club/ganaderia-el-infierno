@@ -1,8 +1,8 @@
 ---
 import ProductDetails from '../../components/products/ProductDetails.astro'
 import Reviews from '../../components/products/Reviews'
-import { products as db } from '../../data/products'
 import Layout from '../../layouts/Layout.astro'
+import { products as db } from '../../data/products'
 
 const { slug } = Astro.params
 const product = db.find((p) => p.slug === slug)

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Plus from '../icons/Plus'
 import Pencil from '../icons/Pencil'
 import Trash from '../icons/Trash'
+import { categories } from '../../data/categories'
 
 export default function AdminProducts({ products }) {
   const [adminProducts, setAdminProducts] = useState(products)
@@ -53,13 +54,19 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
     const data = new FormData(e.target)
     const product = Object.fromEntries(data)
 
-    const images = product.images.split(',').map(image => '/products/' + image.trim())
+    const imagesNames = product.images.split(',').map((image) => '/products/' + image.trim())
+    const [firstImage] = imagesNames
+    const images = imagesNames.map((image) => ({
+      id: Math.floor(Math.random() * (99999 - 1000 + 1)) + 1000,
+      link: image
+    }))
+
     const productFormatted = {
       id: isEditing ? activeProduct.id : Date.now(),
       model: product.name,
       slug: product.name.toLowerCase().replaceAll(' ', '-'),
       stock: Number(product.stock),
-      image: images[0],
+      image: firstImage,
       images,
       price: Number(product.price),
       weight: Number(product.weight),
@@ -71,7 +78,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
       'short-description': product['short-description'],
       name: product.name,
       tag: [],
-      categories: ['Todo'],
+      categories: [categories[4]],
       reviews: []
     }
 
@@ -232,14 +239,14 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
           id='images'
           placeholder='Imágenes separadas por coma...'
           rows={2}
-          defaultValue={activeProduct ? activeProduct.images.map((img) => img.split('/products/')[1]).join(', ') : ''}
+          defaultValue={activeProduct ? activeProduct.images.map((img) => img.link.split('/products/')[1]).join(', ') : ''}
           className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
       <button
         type='submit'
-        className='flex flex-row gap-2 justify-center bg-blue-600 py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
+        className='flex flex-row gap-2 justify-center bg-indigo-500 hover:bg-indigo-700 hover:scale-95 font-bold transition py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
       >
         <span>
           {isEditing ? 'Editar Producto ' : 'Agregar Producto '}
@@ -289,7 +296,7 @@ function TableOfProducts({ products, onClickProduct, onDeleteProduct }) {
 
             <div className='flex flex-row justify-start items-center gap-4'>
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onClickProduct(product)}
               >
                 Editar{' '}
@@ -297,7 +304,7 @@ function TableOfProducts({ products, onClickProduct, onDeleteProduct }) {
               </button>
               
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md shadow-md font-semibold'
+                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
                 onClick={() => onDeleteProduct(product.id)}
               >
                 Eliminar{' '}
