@@ -42,10 +42,10 @@ export default function AddToCart({ stock, product }) {
   }
 
   return (
-    <section className='w-full flex justify-start gap-12 mt-6 mb-6 items-center'>
-      <div className='flex justify-between items-center gap-3'>
+    <section className='flex items-center justify-start w-full gap-12 mt-6 mb-6'>
+      <div className='flex items-center justify-between gap-3'>
         <button
-          className='p-2 bg-indigo-500 text-white rounded-full font-bold hover:bg-indigo-700 transition-colors'
+          className='p-2 font-bold text-white transition-colors bg-indigo-500 rounded-full hover:bg-indigo-700'
           onClick={handleDecrease}
         >
           <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-minus' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
@@ -54,12 +54,12 @@ export default function AddToCart({ stock, product }) {
           </svg>
         </button>
 
-        <span className='text-5xl w-8 text-center text-indigo-500 font-black leading-none'>
+        <span className='w-8 text-5xl font-black leading-none text-center text-indigo-500'>
           {quantity}
         </span>
 
         <button
-          className='p-2 bg-indigo-500 text-white rounded-full font-bold hover:bg-indigo-700 transition-colors'
+          className='p-2 font-bold text-white transition-colors bg-indigo-500 rounded-full hover:bg-indigo-700'
           onClick={handleIncrease}
         >
           <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-plus' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
@@ -72,7 +72,7 @@ export default function AddToCart({ stock, product }) {
 
       <button
         onClick={handleAddToCart}
-        className='text-base flex justify-start items-center gap-2 bg-indigo-500 text-white font-bold py-1 px-2 rounded-md hover:scale-105 hover:shadow-lg hover:bg-indigo-700 transition'
+        className='flex items-center justify-start gap-2 px-2 py-1 text-base font-bold text-white transition bg-indigo-500 rounded-md hover:scale-105 hover:shadow-lg hover:bg-indigo-700'
       >
         Agregar al carrito
       </button>

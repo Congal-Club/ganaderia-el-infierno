@@ -8,15 +8,15 @@ interface Props {
 const { product } = Astro.props
 ---
 
-<article class='shadow bg-white rounded-md'>
-  <h3 class='text-lg font-medium pt-2 px-4'>
+<article class='bg-white rounded-md shadow'>
+  <h3 class='px-4 pt-2 text-lg font-medium'>
     Reseña sobre el producto: {product.name}
   </h3>
 
   <div class='[&>*:nth-child(even)]:bg-gray-200'>
     {product.reviews?.map((review) => (
-      <article class='mt-2 py-2 px-4'>
-        <div class='w-full flex flex-row justify-start items-center gap-1'>
+      <article class='px-4 py-2 mt-2'>
+        <div class='flex flex-row items-center justify-start w-full gap-1'>
           <h4 class='font-medium'>
             {review.name}
           </h4>

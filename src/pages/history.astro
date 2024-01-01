@@ -15,17 +15,17 @@ import { currencyFormatter } from '../lib/currency-formatter'
 
   {orders.map((order) => (
     <article class='w-full my-4 border-[1px] border-gray-300 rounded p-4'>
-      <header class='w-full flex justify-between items-center gap-4'>
+      <header class='flex items-center justify-between w-full gap-4'>
         <h2 class='text-2xl font-bold'>
           Orden con id: <span class='font-normal'>{order.id}</span>
         </h2>
 
-        <div class='flex justify-end items-center gap-2'>
-          <p class='bg-gray-200 py-1 px-4 rounded-full text-sm'>
+        <div class='flex items-center justify-end gap-2'>
+          <p class='px-4 py-1 text-sm bg-gray-200 rounded-full'>
             Fecha: <span class='font-light'>{order.date}</span>
           </p>
           
-          <a href={`/orders/${order.id}`} class='bg-indigo-500 hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition text-white font-medium py-1 px-4 rounded-full text-sm'>
+          <a href={`/orders/${order.id}`} class='px-4 py-1 text-sm font-medium text-white transition bg-indigo-500 rounded-full hover:bg-indigo-700 hover:shadow-lg hover:scale-105'>
             Ver más...
           </a>
         </div>
@@ -59,9 +59,9 @@ import { currencyFormatter } from '../lib/currency-formatter'
         </p>
       </main>
 
-      <footer class='w-full mt-4 flex justify-start items-start gap-4 flex-wrap'>
+      <footer class='flex flex-wrap items-start justify-start w-full gap-4 mt-4'>
         {order.products.map(({ quantity, product }) => (
-          <article class='flex flex-col justify-center items-center'>
+          <article class='flex flex-col items-center justify-center'>
             <picture>
               <img
                 src={product.image}
@@ -71,12 +71,12 @@ import { currencyFormatter } from '../lib/currency-formatter'
               />
             </picture>
 
-            <div class='flex mt-2 justify-center items-start gap-2'>
+            <div class='flex items-start justify-center gap-2 mt-2'>
               <p class='max-w-48 text-pretty'>
                 {product.name}
               </p>
 
-              <span class='w-8 h-8 bg-indigo-500 text-white grid place-content-center font-bold rounded-full'>
+              <span class='grid w-8 h-8 font-bold text-white bg-indigo-500 rounded-full place-content-center'>
                 {quantity}
               </span>
             </div>

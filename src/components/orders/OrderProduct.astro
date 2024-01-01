@@ -10,7 +10,7 @@ interface Props {
 const { product, quantity } = Astro.props
 ---
 
-<article class='w-full rounded-md overflow-hidden'>
+<article class='w-full overflow-hidden rounded-md'>
   <header>
     <img
       src={product.image}
@@ -21,7 +21,7 @@ const { product, quantity } = Astro.props
   </header>
 
   <main class='px-3 pb-3'>
-    <h3 class='text-lg text-slate-800 font-semibold text-center'>
+    <h3 class='text-lg font-semibold text-center text-slate-800'>
       {product.name.length < 25 ? (
         product.name
       ) : (
@@ -29,7 +29,7 @@ const { product, quantity } = Astro.props
       )}
     </h3>
 
-    <p class='text-base text-gray-700 mt-1 description text-pretty'>
+    <p class='mt-1 text-base text-gray-700 description text-pretty'>
       {product['short-description'].length < 80 ? (
         product['short-description']
       ) : (
@@ -37,12 +37,12 @@ const { product, quantity } = Astro.props
       )}
     </p>
 
-    <div class='w-full flex justify-between items-center'>
-      <p class='mt-1 font-bold text-indigo-500 text-2xl'>
+    <div class='flex items-center justify-between w-full'>
+      <p class='mt-1 text-2xl font-bold text-indigo-500'>
         {currencyFormatter.format(product.price)}
       </p>
 
-      <span class='w-8 h-8 grid place-content-center bg-indigo-700 text-white font-bold rounded-full'>
+      <span class='grid w-8 h-8 font-bold text-white bg-indigo-700 rounded-full place-content-center'>
         {quantity}
       </span>
     </div>

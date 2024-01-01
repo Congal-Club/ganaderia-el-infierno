@@ -1,8 +1,8 @@
 ---
-import Footer from "../components/Footer.astro"
-import GoogleAnalytics from "../components/GoogleAnalytics.astro"
-import Header from "../components/Header.astro"
-import ToasterViewer from "../components/ToasterViewer"
+import Footer from '../components/Footer.astro'
+import GoogleAnalytics from '../components/GoogleAnalytics.astro'
+import Header from '../components/Header.astro'
+import ToasterViewer from '../components/ToasterViewer'
 
 interface Props {
   title: string
@@ -16,56 +16,56 @@ interface Props {
 const {
   title,
   description,
-  keywords = "",
-  imageFullUrl = "",
+  keywords = '',
+  imageFullUrl = '',
   showSlider = true,
   showCategories = false,
 } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang='es'>
   <head>
     <!-- Google Analytics -->
     <GoogleAnalytics />
 
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
     <meta
-      name="keywords"
+      name='keywords'
       content={`Ganadería el infierno, Ganadería, Ganado, Alimento para ganado, Toros, Vacas, Becerros, Bovinos, Crianza, Ganaderos, Engorda, Ganaderías, Ranchos, Compra, Venta, ${keywords}`}
     />
     <meta
-      name="author"
-      content="Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu"
+      name='author'
+      content='Equipo 3 - Cesar, Luis, Hector, Manuel y Aranzazu'
     />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Language" content="es" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name='robots' content='index, follow' />
+    <meta http-equiv='Content-Language' content='es' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <!-- <meta http-equiv='refresh' content='5url=https://ganaderia-el-infierno.vercel.app/'> -->
-    <link rel="canonical" href="https://ganaderia-el-infierno.vercel.app/" />
+    <link rel='canonical' href='https://ganaderia-el-infierno.vercel.app/' />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@chicho69_cesar" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageFullUrl} />
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:site' content='@chicho69_cesar' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={imageFullUrl} />
 
-    <meta name="og:title" content={title} />
-    <meta name="og:description" content={description} />
-    {imageFullUrl && <meta name="og:image" content={imageFullUrl} />}
+    <meta name='og:title' content={title} />
+    <meta name='og:description' content={description} />
+    {imageFullUrl && <meta name='og:image' content={imageFullUrl} />}
 
-    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel='icon' type='image/png' href='/icon.png' />
     <title>{title}</title>
   </head>
 
-  <body class="min-h-screen">
+  <body class='min-h-screen'>
     <!-- Header -->
     <Header showSlider={showSlider} showCategories={showCategories} />
 
-    <main class="w-[90%] lg:max-w-6xl mx-auto pt-4 pb-8">
+    <main class='w-[90%] lg:max-w-6xl mx-auto pt-4 pb-8'>
       <slot />
     </main>
 

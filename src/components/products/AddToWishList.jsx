@@ -27,7 +27,7 @@ export default function AddToWishList({ product }){
 
   return(
     <button
-      className='text-base flex justify-start items-center gap-2 bg-indigo-500 text-white font-bold py-1 px-2 rounded-md hover:scale-105 hover:shadow-lg hover:bg-indigo-700 transition'
+      className='flex items-center justify-start gap-2 px-2 py-1 text-base font-bold text-white transition bg-indigo-500 rounded-md hover:scale-105 hover:shadow-lg hover:bg-indigo-700'
       onClick={handleAddToWishList}
     >
       <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-heart-filled' width='24' height='24' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>

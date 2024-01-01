@@ -65,16 +65,16 @@ function SliderElement({ link, img, title, description }) {
     <a href={link} className='h-[300px] md:h-[400px] lg:h-[600px] relative grid place-content-center'>
       <img
         src={img}
-        className='w-full h-full object-cover object-center absolute top-0 left-0 -z-10'
+        className='absolute top-0 left-0 object-cover object-center w-full h-full -z-10'
         alt={title}
         title={title}
       />
 
-      <h1 className='text-5xl text-white font-black text-center'>
+      <h1 className='text-5xl font-black text-center text-white'>
         {title}
       </h1>
 
-      <p className='w-2/3 mx-auto mt-4 text-white text-center text-lg'>
+      <p className='w-2/3 mx-auto mt-4 text-lg text-center text-white'>
         {description}
       </p>
     </a>

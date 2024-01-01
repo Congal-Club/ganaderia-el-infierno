@@ -33,7 +33,7 @@ export default function LoginForm () {
   return (
     <div className='w-full my-4'>
       <form onSubmit={handleSubmit} className='w-full md:w-2/3 lg:w-1/2 mx-auto border-[1px] border-gray-300 p-4 rounded'> 
-        <h3 className='text-center text-lg font-medium'>
+        <h3 className='text-lg font-medium text-center'>
           Iniciar sesión
         </h3>
         
@@ -66,11 +66,11 @@ export default function LoginForm () {
         </div>
 
         <a href='/register' className='inline-block w-full mb-4 font-medium'>
-          ¿Aun no tiene cuenta? <span className='text-indigo-700 font-semibold'>Regístrate</span>
+          ¿Aun no tiene cuenta? <span className='font-semibold text-indigo-700'>Regístrate</span>
         </a>
 
-        <div className='w-full grid place-content-center'>
-          <button type='submit' className='inline-block mx-auto py-2 px-4 bg-indigo-500 text-white font-bold rounded hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition'>
+        <div className='grid w-full place-content-center'>
+          <button type='submit' className='inline-block px-4 py-2 mx-auto font-bold text-white transition bg-indigo-500 rounded hover:bg-indigo-700 hover:shadow-lg hover:scale-105'>
             Iniciar Sesión
           </button>
         </div>

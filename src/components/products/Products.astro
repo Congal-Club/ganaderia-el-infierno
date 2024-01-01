@@ -34,11 +34,11 @@ if (sortByPrice) {
 
   <Title title={title ? title : 'Los mejores productos de la tienda'} />
 
-  <div class='mb-4 flex justify-start items-center gap-4 flex-wrap'>
+  <div class='flex flex-wrap items-center justify-start gap-4 mb-4'>
     <label class='font-medium'>
       Ordenar por nombre
     
-      <select class='py-2 px-4 border border-gray-300 rounded-md outline-none' name='sortName' id='sortName'>
+      <select class='px-4 py-2 border border-gray-300 rounded-md outline-none' name='sortName' id='sortName'>
         <option value='default'>Seleccionar...</option>
         
         <option value='ascending'>
@@ -54,7 +54,7 @@ if (sortByPrice) {
     <label class='font-medium'>
       Ordenar por precio
     
-      <select class='py-2 px-4 border border-gray-300 rounded-md outline-none' name='sortPrice' id='sortPrice'>
+      <select class='px-4 py-2 border border-gray-300 rounded-md outline-none' name='sortPrice' id='sortPrice'>
         <option value='default'>Seleccionar...</option>
         
         <option value='ascending'>
@@ -67,12 +67,12 @@ if (sortByPrice) {
       </select>
     </label>
 
-    <button id='apply-filters' class='bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition py-2 px-4 rounded-md text-white font-bold shadow'>
+    <button id='apply-filters' class='px-4 py-2 font-bold text-white transition bg-indigo-600 rounded-md shadow hover:bg-indigo-700 hover:shadow-lg hover:scale-105'>
       Aplicar filtros
     </button>
   </div>
 
-  <section id='products' class='w-full gap-x-6 gap-y-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+  <section id='products' class='grid w-full grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
     {products.map((product) => (
       <Product product={product} />
     ))}

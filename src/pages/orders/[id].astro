@@ -21,7 +21,7 @@ if (order === undefined) {
 >
   <Title title={`Orden con id: ${order.id}`} />
 
-  <p class='text-lg font-semibold mb-1'>
+  <p class='mb-1 text-lg font-semibold'>
     Fecha de la orden:{' '}
     <span class='py-0.5 px-3 bg-gray-300 rounded-full text-sm font-light'>{order.date}</span>
   </p>
@@ -62,14 +62,14 @@ if (order === undefined) {
     </span>
   </p>
 
-  <p class='text-lg font-semibold mb-4'>
+  <p class='mb-4 text-lg font-semibold'>
     Teléfono:{' '}
     <span class='font-normal'>{order.address.phone}</span>
   </p>
 
   <Title title='Productos en la orden' />
 
-  <section id='products' class='w-full gap-x-6 gap-y-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+  <section id='products' class='grid w-full grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
     {order.products.map(({ quantity, product }) => (
       <OrderProduct
         product={product}

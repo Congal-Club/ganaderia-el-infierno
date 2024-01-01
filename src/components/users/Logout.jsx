@@ -8,7 +8,7 @@ export default function Logout() {
   }
 
   return (
-    <button onClick={handleLogout} className='py-1 px-4 bg-red-600 text-white font-bold mt-2 rounded hover:bg-red-700 hover:shadow hover:scale-105 transition'>
+    <button onClick={handleLogout} className='px-4 py-1 mt-2 font-bold text-white transition bg-red-600 rounded hover:bg-red-700 hover:shadow hover:scale-105'>
       Cerrar sesión
     </button>
   )

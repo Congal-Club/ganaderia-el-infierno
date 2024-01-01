@@ -35,12 +35,12 @@ export default function CartProducts({ clientId }) {
         currency: 'MXN'
       }}
     >
-      <div className='flex flex-row flex-wrap md:flex-nowrap justify-between items-start gap-6'>
-        <section className='w-full md:flex-1 flex flex-col gap-2'>
+      <div className='flex flex-row flex-wrap items-start justify-between gap-6 md:flex-nowrap'>
+        <section className='flex flex-col w-full gap-2 md:flex-1'>
           {cart.map(({ product, quantity }) => (
             <article
               key={product.id}
-              className='w-full flex flex-row justify-start gap-4 items-center bg-gray-100 py-2 px-4 shadow-sm rounded-md'
+              className='flex flex-row items-center justify-start w-full gap-4 px-4 py-2 bg-gray-100 rounded-md shadow-sm'
             >
               <picture>
                 <img
@@ -52,17 +52,17 @@ export default function CartProducts({ clientId }) {
               </picture>
 
               <section className='flex-1'>
-                <h3 className='text-xl font-medium text-slate-800 mb-1'>
+                <h3 className='mb-1 text-xl font-medium text-slate-800'>
                   {product.name}
                 </h3>
 
-                <p className='font-normal text-slate-900 mb-2 text-pretty'>
+                <p className='mb-2 font-normal text-slate-900 text-pretty'>
                   {product['short-description']}
                 </p>
 
-                <section className='flex justify-between items-center'>
+                <section className='flex items-center justify-between'>
                   <div>
-                    <p className='text-lg font-bold mt-4 text-slate-700'>
+                    <p className='mt-4 text-lg font-bold text-slate-700'>
                       <span className='font-medium text-slate-900'>Cantidad: </span>
                       {quantity}
                     </p>
@@ -79,7 +79,7 @@ export default function CartProducts({ clientId }) {
                   </div>
 
                   <button
-                    className='flex gap-1 text-white border border-red-500 rounded-md bg-red-500 p-2 hover:bg-red-600'
+                    className='flex gap-1 p-2 text-white bg-red-500 border border-red-500 rounded-md hover:bg-red-600'
                     onClick={()=>removeFromCart(product.id)}
                   >
                     <Trash />{' '}
@@ -92,7 +92,7 @@ export default function CartProducts({ clientId }) {
         </section>
 
         <section className='w-full md:w-[30%] border border-slate-400 rounded-md'>
-          <h3 className='p-2 border-b border-slate-400 text-2xl text-slate-800 text-center font-semibold'>
+          <h3 className='p-2 text-2xl font-semibold text-center border-b border-slate-400 text-slate-800'>
             Carrito de compras
           </h3>
 

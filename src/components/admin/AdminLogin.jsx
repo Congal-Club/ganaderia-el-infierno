@@ -34,13 +34,13 @@ export default function AdminForm() {
   return (
     <form onSubmit={handleSubmit} className='w-1/2 mx-auto my-4 bg-white shadow-lg border-[0.125px] border-gray-300 rounded-md'>
       <header className='p-4 border-b border-gray-300'>
-        <h2 className='text-center text-lg font-medium text-slate-700'>
+        <h2 className='text-lg font-medium text-center text-slate-700'>
           Por favor, ingrese sus datos de inicio de sesión
         </h2>
       </header>
 
       <main className='w-full p-4'>
-        <div className='w-full flex flex-col mb-4 gap-1'>
+        <div className='flex flex-col w-full gap-1 mb-4'>
           <label htmlFor='email' className='font-medium'>Correo electrónico</label>
 
           <input
@@ -52,7 +52,7 @@ export default function AdminForm() {
           />
         </div>
 
-        <div className='w-full flex flex-col mb-4 gap-1'>
+        <div className='flex flex-col w-full gap-1 mb-4'>
           <label htmlFor='password' className='font-medium'>Contraseña</label>
 
           <input
@@ -64,8 +64,8 @@ export default function AdminForm() {
           />
         </div>
 
-        <div className='w-full flex flex-row-reverse'>
-          <button type='submit' className='bg-indigo-500 hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition text-white py-2 px-4 rounded-md shadow-md'>
+        <div className='flex flex-row-reverse w-full'>
+          <button type='submit' className='px-4 py-2 text-white transition bg-indigo-500 rounded-md shadow-md hover:bg-indigo-700 hover:shadow-lg hover:scale-105'>
             Iniciar sesión
           </button>
         </div>

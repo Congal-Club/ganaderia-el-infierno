@@ -46,7 +46,7 @@ export default function WishListProducts() {
 
   if (wishlist.length === 0) {
     return (
-      <h3 className='text-center text-2xl font-bold'>
+      <h3 className='text-2xl font-bold text-center'>
         No hay productos en tu lista de deseos.
       </h3>
     )
@@ -57,7 +57,7 @@ export default function WishListProducts() {
       {wishlist.map((product) => (
         <article
           key={product.id}
-          className='w-full flex flex-row justify-start gap-4 items-center py-2 px-4'
+          className='flex flex-row items-center justify-start w-full gap-4 px-4 py-2'
         >
           <picture>
             <img
@@ -69,11 +69,11 @@ export default function WishListProducts() {
           </picture>
 
           <section className='flex-1'>
-            <h3 className='text-xl font-medium text-slate-800 mb-1'>
+            <h3 className='mb-1 text-xl font-medium text-slate-800'>
               {product.name}
             </h3>
 
-            <p className='font-normal text-slate-900 mb-2 text-pretty'>
+            <p className='mb-2 font-normal text-slate-900 text-pretty'>
               {product['short-description']}
             </p>
 
@@ -94,16 +94,16 @@ export default function WishListProducts() {
               </p>
             </div>
 
-            <div className='w-full flex flex-row justify-start items-center gap-2'>
+            <div className='flex flex-row items-center justify-start w-full gap-2'>
               <button
-                className='text-white rounded-md bg-red-500 py-1 px-4 hover:bg-red-600 hover:shadow-lg hover:scale-105 transition'
+                className='px-4 py-1 text-white transition bg-red-500 rounded-md hover:bg-red-600 hover:shadow-lg hover:scale-105'
                 onClick={() => removeFromWishlist(product.id)}
               >
                 Eliminar
               </button>
 
               <button
-                className='text-white rounded-md bg-indigo-500 py-1 px-4 hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition'
+                className='px-4 py-1 text-white transition bg-indigo-500 rounded-md hover:bg-indigo-700 hover:shadow-lg hover:scale-105'
                 onClick={() => addToCart(product)}
               >
                 Agregar al carrito

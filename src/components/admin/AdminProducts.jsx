@@ -28,7 +28,7 @@ export default function AdminProducts({ products }) {
   }
 
   return (
-    <div className='w-full flex flex-row justify-between items-start gap-4'>
+    <div className='flex flex-row items-start justify-between w-full gap-4'>
       <FormProducts
         activeProduct={activeProduct}
         isEditing={isEditing}
@@ -87,7 +87,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
   }
 
   return (
-    <form className='w-1/3 bg-white shadow-lg rounded-md p-2 mb-4' onSubmit={handleSubmit}>
+    <form className='w-1/3 p-2 mb-4 bg-white rounded-md shadow-lg' onSubmit={handleSubmit}>
       <div className='w-full flex flex-col gap-0.5 items-start my-3'>
         <label htmlFor='name' className='text-sm font-medium'>
           Nombre del producto
@@ -99,7 +99,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
           id='name'
           placeholder='Nombre...'
           defaultValue={activeProduct?.name}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
@@ -114,7 +114,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
           placeholder='Descripción corta...'
           rows={2}
           defaultValue={activeProduct ? activeProduct['short-description'] : ''}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
@@ -129,11 +129,11 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
           placeholder='Descripción...'
           rows={5}
           defaultValue={activeProduct ? activeProduct.description : ''}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
-      <div className='flex flex-row justify-between items-center gap-2 my-3'>
+      <div className='flex flex-row items-center justify-between gap-2 my-3'>
         <div className='w-full flex flex-col gap-0.5 items-start'>
           <label htmlFor='stock' className='text-sm font-medium'>
             Stock
@@ -145,7 +145,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='stock'
             placeholder='Stock...'
             defaultValue={activeProduct?.stock}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
 
@@ -160,12 +160,12 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='price'
             placeholder='Precio...'
             defaultValue={activeProduct?.price}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
       </div>
 
-      <div className='flex flex-row justify-between items-center gap-2 my-3'>
+      <div className='flex flex-row items-center justify-between gap-2 my-3'>
         <div className='w-full flex flex-col gap-0.5 items-start'>
           <label htmlFor='weight' className='text-sm font-medium'>
             Peso del producto
@@ -177,7 +177,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='weight'
             placeholder='Peso...'
             defaultValue={activeProduct?.weight}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
 
@@ -192,12 +192,12 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='height'
             placeholder='Altura...'
             defaultValue={activeProduct?.height}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
       </div>
 
-      <div className='flex flex-row justify-between items-center gap-2 my-3'>
+      <div className='flex flex-row items-center justify-between gap-2 my-3'>
         <div className='w-full flex flex-col gap-0.5 items-start'>
           <label htmlFor='length' className='text-sm font-medium'>
             Largo del producto
@@ -209,7 +209,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='length'
             placeholder='Largo...'
             defaultValue={activeProduct?.length}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
 
@@ -224,7 +224,7 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
             id='width'
             placeholder='Ancho...'
             defaultValue={activeProduct?.width}
-            className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+            className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
           />
         </div>
       </div>
@@ -240,13 +240,13 @@ function FormProducts({ activeProduct, isEditing, onAddProduct, onEditProduct })
           placeholder='Imágenes separadas por coma...'
           rows={2}
           defaultValue={activeProduct ? activeProduct.images.map((img) => img.link.split('/products/')[1]).join(', ') : ''}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
       <button
         type='submit'
-        className='flex flex-row gap-2 justify-center bg-indigo-500 hover:bg-indigo-700 hover:scale-95 font-bold transition py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
+        className='flex flex-row justify-center w-full gap-2 px-4 py-1 mb-2 font-bold text-center text-white transition bg-indigo-500 rounded-md shadow-sm hover:bg-indigo-700 hover:scale-95'
       >
         <span>
           {isEditing ? 'Editar Producto ' : 'Agregar Producto '}
@@ -264,7 +264,7 @@ function TableOfProducts({ products, onClickProduct, onDeleteProduct }) {
       {products.map((product) => (
         <article
           key={product.id}
-          className='w-full flex gap-4 justify-between items-center p-2 mb-2 rounded-md'
+          className='flex items-center justify-between w-full gap-4 p-2 mb-2 rounded-md'
         >
           <figure>
             <img
@@ -279,24 +279,24 @@ function TableOfProducts({ products, onClickProduct, onDeleteProduct }) {
               {product.name}
             </h3>
 
-            <p className='text-gray-800 mb-2'>
+            <p className='mb-2 text-gray-800'>
               {product['short-description']}
             </p>
 
-            <p className='text-3xl font-semibold text-gray-600 mb-2'>
+            <p className='mb-2 text-3xl font-semibold text-gray-600'>
               ${product.price}
             </p>
 
-            <p className='text-base font-medium mb-2'>
+            <p className='mb-2 text-base font-medium'>
               En stock:{' '}
               <span className={`font-bold ${product.stock <= 20 ? 'text-red-600' : 'text-green-600'}`}>
                 {product.stock}
               </span>
             </p>
 
-            <div className='flex flex-row justify-start items-center gap-4'>
+            <div className='flex flex-row items-center justify-start gap-4'>
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
+                className='flex justify-center w-32 gap-2 px-3 py-1 font-semibold text-white transition bg-orange-500 rounded-md hover:scale-105 hover:shadow-lg'
                 onClick={() => onClickProduct(product)}
               >
                 Editar{' '}
@@ -304,7 +304,7 @@ function TableOfProducts({ products, onClickProduct, onDeleteProduct }) {
               </button>
               
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
+                className='flex justify-center w-32 gap-2 px-3 py-1 font-semibold text-white transition bg-red-600 rounded-md hover:scale-105 hover:shadow-lg'
                 onClick={() => onDeleteProduct(product.id)}
               >
                 Eliminar{' '}

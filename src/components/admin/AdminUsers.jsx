@@ -27,7 +27,7 @@ export default function AdminUsers({ users }){
   }
 
   return(
-    <div className='w-full flex flex-row justify-between items-start gap-4'>
+    <div className='flex flex-row items-start justify-between w-full gap-4'>
       <FormUsers
         activeUser={activeUser}
         isEditing={isEditing}
@@ -68,7 +68,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
   }
 
   return (
-    <form className='w-1/3 bg-white shadow-lg rounded-md p-2 mb-4' onSubmit={handleSubmit}>
+    <form className='w-1/3 p-2 mb-4 bg-white rounded-md shadow-lg' onSubmit={handleSubmit}>
       <div className='w-full flex flex-col gap-0.5 items-start my-3'>
         <label htmlFor='email' className='text-sm font-medium'>
           Email del usuario
@@ -80,7 +80,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='email'
           placeholder='Email...'
           defaultValue={activeUser?.email}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
@@ -95,7 +95,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='name'
           placeholder='Nombre...'
           defaultValue={activeUser?.name}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
@@ -110,7 +110,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='last_name'
           placeholder='Apellidos...'
           defaultValue={activeUser?.last_name}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
       
@@ -125,7 +125,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='role'
           placeholder='Role...'
           defaultValue={activeUser?.role}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         >
           <option value='user'>
             Usuario            
@@ -148,7 +148,7 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='password'
           placeholder='Contraseña...'
           defaultValue={activeUser?.password}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
@@ -163,13 +163,13 @@ function FormUsers({ activeUser, isEditing, onAddUser, onEditUser }){
           id='user_name'
           placeholder='Nombre de usuario...'
           defaultValue={activeUser?.user_name}
-          className='w-full py-1 px-2 border-2 border-gray-300 rounded-md outline-none'
+          className='w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none'
         />
       </div>
 
       <button
         type='submit'
-        className='flex flex-row gap-2 justify-center bg-indigo-500 hover:scale-95 hover:bg-indigo-700 font-bold transition py-1 px-4 mb-2 w-full text-center rounded-md text-white shadow-sm'
+        className='flex flex-row justify-center w-full gap-2 px-4 py-1 mb-2 font-bold text-center text-white transition bg-indigo-500 rounded-md shadow-sm hover:scale-95 hover:bg-indigo-700'
       >
         <span>
           {isEditing ? 'Editar Usuario ' : 'Agregar Usuario '}
@@ -195,21 +195,21 @@ function TableOfUsers({ users, onClickUser, onDeleteUser }){
               {user.name} 
             </h3>
 
-            <p className='text-gray-800 mb-2'>
+            <p className='mb-2 text-gray-800'>
               <span className='font-bold'>Nombre de usuario: </span> {user.user_name}
             </p>
 
-            <p className='text-gray-800 mb-2'>
+            <p className='mb-2 text-gray-800'>
               <span className='font-bold'>Email: </span> {user.email}
             </p>
             
-            <p className='text-gray-800 mb-2'>
+            <p className='mb-2 text-gray-800'>
               <span className='font-bold'>Role: </span> {user.role}
             </p>
 
-            <div className='flex flex-row justify-start items-center gap-4'>
+            <div className='flex flex-row items-center justify-start gap-4'>
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-orange-500 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
+                className='flex justify-center w-32 gap-2 px-3 py-1 font-semibold text-white transition bg-orange-500 rounded-md hover:scale-105 hover:shadow-lg'
                 onClick={() => onClickUser(user)}
               >
                 Editar{' '}
@@ -217,7 +217,7 @@ function TableOfUsers({ users, onClickUser, onDeleteUser }){
               </button>
               
               <button
-                className='flex justify-center gap-2 py-1 px-3 bg-red-600 text-white w-32 rounded-md hover:scale-105 hover:shadow-lg transition font-semibold'
+                className='flex justify-center w-32 gap-2 px-3 py-1 font-semibold text-white transition bg-red-600 rounded-md hover:scale-105 hover:shadow-lg'
                 onClick={() => onDeleteUser(user.id)}
               >
                 Eliminar{' '}

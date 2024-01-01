@@ -12,18 +12,18 @@ const { product } = Astro.props
 const clientId = import.meta.env.PUBLIC_CLIENT_ID
 ---
 
-<div class='w-full flex flex-row justify-between items-start gap-8 flex-wrap lg:flex-nowrap'>
+<div class='flex flex-row flex-wrap items-start justify-between w-full gap-8 lg:flex-nowrap'>
   <section class='w-full lg:w-1/2'>
-    <figure class='w-full rounded overflow-hidden mb-4'>
+    <figure class='w-full mb-4 overflow-hidden rounded'>
       <img
-        class='w-full hover:scale-110 transition'
+        class='w-full transition hover:scale-110'
         src={product.image}
         alt={product.name}
         title={product.name}
       />
     </figure>
 
-    <footer class='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+    <footer class='grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
       {product.images.map((image) => (
         <img 
           class='w-full aspect-[16/10] object-cover object-center hover:scale-110 hover:shadow-lg rounded transition'
@@ -36,41 +36,41 @@ const clientId = import.meta.env.PUBLIC_CLIENT_ID
   </section>
 
   <section class='w-full lg:w-1/2'>
-    <h3 class='text-4xl font-black mb-3 text-center'>
+    <h3 class='mb-3 text-4xl font-black text-center'>
       {product.name}
     </h3>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Modelo: </span>
       {product.model}
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Disponibilidad: </span>
       {product.stock} en stock
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Descripción: </span>
       {product['short-description']}
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Peso: </span>
       {product.weight} kg
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Longitud: </span>
       {product.length} mts
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Ancho: </span>
       {product.width} mts
     </p>
 
-    <p class='font-normal text-base'>
+    <p class='text-base font-normal'>
       <span class='font-semibold'>Alto: </span>
       {product.height} mts
     </p>

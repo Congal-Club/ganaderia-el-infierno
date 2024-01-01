@@ -44,12 +44,12 @@ function ReviewForm({ onAddReview }) {
   }
 
   return (
-    <form className='w-full lg:w-1/2 my-4 pb-2' onSubmit={handleSubmit}>
+    <form className='w-full pb-2 my-4 lg:w-1/2' onSubmit={handleSubmit}>
       <h2 className='text-2xl font-medium'>
         Escribir una opinión
       </h2>
 
-      <div className='w-full flex flex-col flex-nowrap gap-1 my-4'>
+      <div className='flex flex-col w-full gap-1 my-4 flex-nowrap'>
         <label className='text-sm font-bold'>
           Nombre
         </label>
@@ -63,7 +63,7 @@ function ReviewForm({ onAddReview }) {
         />
       </div>
 
-      <div className='w-full flex flex-col flex-nowrap gap-1 my-4'>
+      <div className='flex flex-col w-full gap-1 my-4 flex-nowrap'>
         <label className='text-sm font-bold'>
           Correo
         </label>
@@ -77,7 +77,7 @@ function ReviewForm({ onAddReview }) {
         />
       </div>
 
-      <div className='w-full flex flex-col flex-nowrap gap-1 my-4'>
+      <div className='flex flex-col w-full gap-1 my-4 flex-nowrap'>
         <label className='text-sm font-bold'>
           Tu opinion
         </label>
@@ -90,23 +90,23 @@ function ReviewForm({ onAddReview }) {
         />
       </div>
 
-      <div className='w-full flex flex-col flex-nowrap gap-1 my-4'>
+      <div className='flex flex-col w-full gap-1 my-4 flex-nowrap'>
         <label className='text-sm font-bold'>
           Valoración
         </label>
 
-        <div className='flex justify-start items-center gap-2'>
-          <span className='text-red-600 font-medium'>Malo</span>
+        <div className='flex items-center justify-start gap-2'>
+          <span className='font-medium text-red-600'>Malo</span>
           <input type='radio' name='rate' id='rate' value='1' className='accent-yellow-500' />
           <input type='radio' name='rate' id='rate' value='2' className='accent-yellow-500' />
           <input type='radio' name='rate' id='rate' value='3' className='accent-yellow-500' />
           <input type='radio' name='rate' id='rate' value='4' className='accent-yellow-500' />
           <input type='radio' name='rate' id='rate' value='5' className='accent-yellow-500' />
-          <span className='text-green-600 font-medium'>Bueno</span>
+          <span className='font-medium text-green-600'>Bueno</span>
         </div>
       </div>
 
-      <button className='bg-indigo-500 hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition py-1 px-4 text-white font-bold rounded'>
+      <button className='px-4 py-1 font-bold text-white transition bg-indigo-500 rounded hover:bg-indigo-700 hover:shadow-lg hover:scale-105'>
         Guardar
       </button>
     </form>
@@ -117,13 +117,13 @@ function Review({ review }) {
   return (
     <div className='w-full lg:w-1/2 my-2 p-2 border-[1px] border-gray-300 rounded-md'>
       <header className='w-full'>
-        <p className='w-full flex justify-start items-center gap-2'>
+        <p className='flex items-center justify-start w-full gap-2'>
           <span className='text-lg'>{review.name}</span>
           <span className='text-sm text-gray-500'>{review.email}</span>
         </p>
       </header>
 
-      <div className='mb-1 flex flex-row gap-1'>
+      <div className='flex flex-row gap-1 mb-1'>
         {[1, 2, 3, 4, 5].map((rating) => (
           <span
             key={rating}

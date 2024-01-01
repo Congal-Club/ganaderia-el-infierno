@@ -4,7 +4,7 @@ export default function AdminMenu() {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <div className='w-1/5 bg-slate-800 fixed top-0 bottom-0 overflow-y-scroll nav-scroll transition'>
+    <div className='fixed top-0 bottom-0 w-1/5 overflow-y-scroll transition bg-slate-800 nav-scroll'>
       <ul>
         <li className={`text-gray-100 border-b border-gray-700`}>
           <a
@@ -106,7 +106,7 @@ function MenuItem({ children, icon, text }) {
   return (
     <div>
       <button
-        className='w-full py-2 px-4 flex flex-row justify-start items-center gap-2'
+        className='flex flex-row items-center justify-start w-full gap-2 px-4 py-2'
         onClick={handleToggle}
       >
         <span>
@@ -117,7 +117,7 @@ function MenuItem({ children, icon, text }) {
           {text}
         </span>
 
-        <span className='flex-1 justify-end flex'>
+        <span className='flex justify-end flex-1'>
           {isOpen ? (
             <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} className='icon icon-tabler icon-tabler-chevron-down'>
               <path stroke='none' d='M0 0h24v24H0z' />

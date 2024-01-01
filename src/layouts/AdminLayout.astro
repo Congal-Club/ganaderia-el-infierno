@@ -68,7 +68,7 @@ const {
         <section>
           <div>
             <img
-              class='w-20 object-cover object-center'
+              class='object-cover object-center w-20'
               src='/logo.jpeg'
               alt='Logo de la tienda'
               title='Logo de la tienda'
@@ -81,7 +81,7 @@ const {
     )}
 
     <main
-      class='w-full flex flex-row justify-start items-start gap-4 bg-gray-100'
+      class='flex flex-row items-start justify-start w-full gap-4 bg-gray-100'
     >
       <!-- Admin Menu -->
       {!isForLogin && <AdminMenu client:only />}
